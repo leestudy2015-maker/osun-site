@@ -1,102 +1,254 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>後台管理｜Osun Beauty</title>
-  <meta name="description" content="Osun Beauty 後台管理頁面，可快速更新商品資訊與圖片提示。" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Osun Content Studio</title>
+  <meta name="description" content="Update homepage copy, featured categories, and hero imagery with Osun's lightweight admin studio." />
   <link rel="canonical" href="https://osun.example.com/admin" />
-  <meta property="og:title" content="Osun Beauty｜後台管理" />
-  <meta property="og:description" content="快速記錄商品更新與圖片變更的管理表單。" />
+  <meta property="og:title" content="Osun Beauty | Admin" />
+  <meta property="og:description" content="Keep your boutique content fresh with quick notes and exports." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="hero.jpg" />
   <meta property="og:url" content="https://osun.example.com/admin" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            brand: {
-              rose: '#ec4899',
-              blush: '#fce7f3',
-              dark: '#4b5563'
-            }
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: { brand: { red:'#E11D48', yellow:'#F59E0B' } },
+          boxShadow: {
+            'elev': '0 10px 30px -12px rgba(0,0,0,0.25)'
           }
         }
       }
-    };
+    }
   </script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .shine-btn{ position:relative; overflow:hidden; }
+    .shine-btn::after{
+      content:''; position:absolute; top:0; left:-75%; width:50%; height:100%;
+      background:linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.5) 50%, rgba(255,255,255,0) 100%);
+      transform:skewX(-20deg); transition:.9s;
+    }
+    .shine-btn:hover::after{ left:125%; }
+    .mask { background: rgba(0,0,0,.35); backdrop-filter: saturate(120%) blur(1px); }
+  </style>
 </head>
-<body class="font-sans text-gray-800 bg-gray-50">
-  <header class="fixed inset-x-0 top-0 z-30 bg-white/95 backdrop-blur shadow-sm">
-    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-3">
-      <a href="index.html" class="text-2xl font-semibold text-brand-rose tracking-tight">Osun Beauty</a>
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
-        <a href="index.html" class="hover:text-brand-rose transition">首頁</a>
-        <a href="categories.html" class="hover:text-brand-rose transition">依分類選購</a>
-        <a href="about.html" class="hover:text-brand-rose transition">關於我們</a>
-        <a href="admin.html" class="text-brand-rose">後台管理</a>
+<body class="bg-gray-50 text-gray-800">
+  <header class="sticky top-0 z-40 bg-white/85 backdrop-blur border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between" data-aos="fade-down">
+      <a href="index.html" class="flex items-center gap-2" aria-label="Osun home">
+        <span class="h-8 w-8 rounded-full bg-brand.red inline-block shadow-elev"></span>
+        <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-brand.red">Osun Beauty &amp; Boutique</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6" aria-label="Primary">
+        <a href="index.html#shop" class="hover:text-brand.yellow transition" data-i18n="nav.shop">Shop</a>
+        <a href="categories.html" class="hover:text-brand.yellow transition" data-i18n="nav.categories">Categories</a>
+        <a href="index.html#beauty" class="hover:text-brand.yellow transition" data-i18n="nav.beauty">Beauty</a>
+        <a href="about.html" class="hover:text-brand.yellow transition" data-i18n="nav.about">About</a>
+        <a href="admin.html" class="text-brand.yellow font-semibold" data-i18n="nav.admin">Admin</a>
       </nav>
-      <button id="menuToggle" class="md:hidden rounded-lg border px-3 py-2 text-sm" aria-expanded="false" aria-controls="mobileNav">選單</button>
+      <div class="flex items-center gap-2">
+        <button id="lang-zh" class="px-3 py-1 rounded-full border hover:shadow-elev transition text-sm">中文</button>
+        <button id="lang-en" class="px-3 py-1 rounded-full border hover:shadow-elev transition text-sm">EN</button>
+        <button id="cart-open" class="relative ml-1 p-2 rounded-full border hover:shadow-elev transition" aria-label="Open cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span id="cart-count" class="absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 text-xs rounded-full bg-brand.red text-white grid place-items-center">0</span>
+        </button>
+        <button id="menu-toggle" class="md:hidden p-2 rounded-lg border hover:shadow-elev" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
     </div>
-    <nav id="mobileNav" class="md:hidden hidden border-t bg-white">
-      <div class="px-6 py-4 space-y-3 text-sm">
-        <a href="index.html" class="block hover:text-brand-rose">首頁</a>
-        <a href="categories.html" class="block hover:text-brand-rose">依分類選購</a>
-        <a href="about.html" class="block hover:text-brand-rose">關於我們</a>
-        <a href="admin.html" class="block text-brand-rose">後台管理</a>
+    <nav id="mobile-menu" class="md:hidden hidden border-t bg-white" aria-label="Mobile">
+      <div class="px-4 py-3 space-y-2">
+        <a href="index.html#shop" class="block py-2" data-i18n="nav.shop">Shop</a>
+        <a href="categories.html" class="block py-2" data-i18n="nav.categories">Categories</a>
+        <a href="index.html#beauty" class="block py-2" data-i18n="nav.beauty">Beauty</a>
+        <a href="about.html" class="block py-2" data-i18n="nav.about">About</a>
+        <a href="admin.html" class="block py-2" data-i18n="nav.admin">Admin</a>
       </div>
     </nav>
   </header>
 
-  <main class="pt-28 pb-16">
-    <section class="max-w-3xl mx-auto px-6">
-      <div class="rounded-3xl bg-white shadow-xl border border-rose-100/70 p-8">
-        <h1 class="text-2xl font-bold text-gray-900 text-center">後台管理系統</h1>
-        <p class="mt-3 text-sm text-gray-600 text-center">此頁面用於快速記錄最新上架資訊。表單結果僅顯示於下方提示區塊，請再與開發者同步正式更新。</p>
-        <form id="adminForm" class="mt-8 space-y-6">
+  <main class="pt-28 pb-20">
+    <section class="max-w-4xl mx-auto px-6" aria-labelledby="admin-title">
+      <div class="rounded-3xl bg-white shadow-xl border border-rose-100/80 p-8" data-aos="fade-up">
+        <h1 id="admin-title" class="text-3xl font-bold text-gray-900 text-center" data-i18n="admin.title">Osun Content Studio</h1>
+        <p class="mt-3 text-sm text-gray-600 text-center" data-i18n="admin.subtitle">Update homepage copy, surface new categories, and refresh hero imagery before publishing.</p>
+        <div class="mt-8 grid gap-4 rounded-2xl bg-rose-50/60 border border-rose-100 p-5 text-sm text-gray-600" data-aos="fade-up" data-aos-delay="100">
           <div>
-            <label for="title" class="block text-sm font-semibold text-gray-700">商品／系列名稱</label>
-            <input id="title" name="title" type="text" placeholder="輸入新名稱" class="mt-2 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand-rose focus:outline-none" />
+            <p class="font-semibold text-brand.red" data-i18n="admin.status.storage">Local save</p>
+            <p data-i18n="admin.status.storageDesc">Changes are stored in your browser. Export JSON when you are ready to push live.</p>
           </div>
           <div>
-            <label for="description" class="block text-sm font-semibold text-gray-700">重點描述</label>
-            <textarea id="description" name="description" rows="3" placeholder="簡述本次更新亮點" class="mt-2 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand-rose focus:outline-none"></textarea>
+            <p class="font-semibold text-brand.red" data-i18n="admin.status.workflow">Workflow tip</p>
+            <p data-i18n="admin.status.workflowDesc">After saving, share the export file with your web developer or replace content manually.</p>
           </div>
-          <div>
-            <label for="imageUpload" class="block text-sm font-semibold text-gray-700">上傳參考圖片</label>
-            <input id="imageUpload" name="imageUpload" type="file" class="mt-2 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand-rose focus:outline-none" />
-          </div>
-          <button type="submit" class="w-full rounded-full bg-brand-rose px-6 py-3 text-sm font-semibold text-white shadow hover:bg-pink-500 transition">儲存更新記錄</button>
+        </div>
+
+        <form id="adminForm" class="mt-10 space-y-6" data-aos="fade-up" data-aos-delay="150">
+          <fieldset class="space-y-4">
+            <legend class="text-lg font-semibold text-gray-900" data-i18n="admin.hero.heading">Homepage hero</legend>
+            <p class="text-sm text-gray-600" data-i18n="admin.hero.desc">Adjust the main headline, supporting copy, and call-to-action buttons.</p>
+            <div>
+              <label for="title" class="block text-sm font-semibold text-gray-700" data-i18n="admin.hero.title">Hero title</label>
+              <input id="title" name="title" type="text" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand.red focus:outline-none" placeholder="Elegance. Confidence. Osun." />
+            </div>
+            <div>
+              <label for="description" class="block text-sm font-semibold text-gray-700" data-i18n="admin.hero.subtitle">Hero subtitle</label>
+              <textarea id="description" name="description" rows="3" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand.red focus:outline-none" placeholder="Discover your radiance where fashion meets inner glow."></textarea>
+            </div>
+            <div class="grid gap-4 md:grid-cols-2">
+              <div>
+                <label for="primaryCta" class="block text-sm font-semibold text-gray-700" data-i18n="admin.hero.cta">Primary CTA</label>
+                <input id="primaryCta" name="primaryCta" type="text" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand.red focus:outline-none" placeholder="Shop Now" />
+              </div>
+              <div>
+                <label for="secondaryCta" class="block text-sm font-semibold text-gray-700" data-i18n="admin.hero.secondary">Secondary CTA</label>
+                <input id="secondaryCta" name="secondaryCta" type="text" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand.red focus:outline-none" placeholder="Explore Beauty" />
+              </div>
+            </div>
+            <div>
+              <label for="imageUrl" class="block text-sm font-semibold text-gray-700" data-i18n="admin.hero.imageUrl">Hero image URL</label>
+              <input id="imageUrl" name="imageUrl" type="url" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand.red focus:outline-none" placeholder="https://..." />
+            </div>
+            <div>
+              <label for="imageUpload" class="block text-sm font-semibold text-gray-700" data-i18n="admin.hero.imageUpload">Upload new hero image</label>
+              <input id="imageUpload" name="imageUpload" type="file" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand.red focus:outline-none" />
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <button type="submit" class="shine-btn rounded-full bg-brand.red px-6 py-3 text-sm font-semibold text-white shadow hover:bg-rose-600 transition" data-i18n="admin.hero.save">Save hero section</button>
+              <button type="button" id="adminReset" class="shine-btn rounded-full border border-brand.red px-6 py-3 text-sm font-semibold text-brand.red hover:bg-white hover:shadow transition" data-i18n="admin.hero.reset">Reset to defaults</button>
+            </div>
+          </fieldset>
         </form>
-        <div id="result" class="mt-8 rounded-2xl border border-dashed border-brand-rose/60 bg-brand-blush/50 px-4 py-5 text-sm text-gray-700 hidden"></div>
+
+        <section class="mt-12 grid gap-6 md:grid-cols-[1fr,1fr]" data-aos="fade-up" data-aos-delay="200">
+          <div class="rounded-2xl border border-rose-100 bg-white p-5 shadow-sm">
+            <h2 class="text-lg font-semibold text-gray-900" data-i18n="admin.preview.heading">Live preview</h2>
+            <p class="mt-2 text-sm text-gray-600" data-i18n="admin.preview.desc">This preview reflects the text and image you save above.</p>
+            <div class="mt-4 space-y-2 text-sm text-gray-700">
+              <p><span class="font-semibold" data-i18n="admin.hero.title">Hero title</span>: <span id="previewTitle">Elegance. Confidence. Osun.</span></p>
+              <p><span class="font-semibold" data-i18n="admin.hero.subtitle">Hero subtitle</span>: <span id="previewSubtitle">Discover your radiance where fashion meets inner glow.</span></p>
+              <p><span class="font-semibold" data-i18n="admin.hero.cta">Primary CTA</span>: <span id="previewPrimary">Shop Now</span></p>
+              <p><span class="font-semibold" data-i18n="admin.hero.secondary">Secondary CTA</span>: <span id="previewSecondary">Explore Beauty</span></p>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-rose-100 bg-white p-5 shadow-sm">
+            <h2 class="text-lg font-semibold text-gray-900" data-i18n="admin.categories.heading">Category library</h2>
+            <p class="mt-2 text-sm text-gray-600" data-i18n="admin.categories.desc">Add new collections and reorder highlights for the categories page.</p>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <button type="button" id="adminExport" class="shine-btn rounded-full bg-brand.red px-6 py-3 text-sm font-semibold text-white shadow hover:bg-rose-600 transition" data-i18n="admin.categories.export">Export JSON</button>
+            </div>
+            <table class="mt-5 w-full text-left text-sm text-gray-700 border-collapse">
+              <thead>
+                <tr class="border-b text-xs uppercase tracking-wide text-gray-500">
+                  <th class="pb-2" data-i18n="admin.categories.table.name">Name</th>
+                  <th class="pb-2" data-i18n="admin.categories.table.description">Description</th>
+                  <th class="pb-2" data-i18n="admin.categories.table.group">Group</th>
+                </tr>
+              </thead>
+              <tbody id="categoryTable">
+                <tr>
+                  <td data-i18n="catpage.card.dresses.title">Statement Dresses</td>
+                  <td data-i18n="catpage.card.dresses.desc">Romantic silhouettes, petite to plus sizing, and special-occasion exclusives.</td>
+                  <td data-i18n="admin.categories.group.apparel">Apparel</td>
+                </tr>
+                <tr>
+                  <td data-i18n="catpage.card.skincare.title">Glow Skincare Rituals</td>
+                  <td data-i18n="catpage.card.skincare.desc">Cleansers, essences, serums, and creams curated for humid climates.</td>
+                  <td data-i18n="admin.categories.group.beauty">Beauty</td>
+                </tr>
+                <tr>
+                  <td data-i18n="catpage.card.bridal.title">Bridal Studio</td>
+                  <td data-i18n="catpage.card.bridal.desc">Made-to-measure gowns, veil styling, and premium fitting appointments.</td>
+                  <td data-i18n="admin.categories.group.lifestyle">Lifestyle</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="mt-12 rounded-2xl border border-dashed border-rose-200 bg-rose-50/70 p-6 text-sm text-gray-600" data-aos="fade-up" data-aos-delay="250">
+          <h2 class="text-base font-semibold text-brand.red" data-i18n="admin.notes.heading">Publishing notes</h2>
+          <p class="mt-2" data-i18n="admin.notes.desc">Share the exported configuration or manually replace copy within the HTML files. For rapid updates, coordinate with your developer to connect these inputs to a CMS or headless backend.</p>
+          <ul class="mt-4 list-disc space-y-2 pl-5">
+            <li><span data-i18n="admin.notes.item1.prefix">Homepage hero updates live in</span> <code class="rounded bg-white px-2 py-1 text-xs text-brand.red">index.html</code></li>
+            <li><span data-i18n="admin.notes.item2.prefix">Category cards can be updated in</span> <code class="rounded bg-white px-2 py-1 text-xs text-brand.red">categories.html</code></li>
+            <li><span data-i18n="admin.notes.item3.prefix">Founder story copy resides in</span> <code class="rounded bg-white px-2 py-1 text-xs text-brand.red">about.html</code></li>
+          </ul>
+        </section>
+
+        <div id="admin-result" class="mt-8 hidden rounded-2xl border border-rose-200 bg-rose-50/80 p-5 text-sm text-gray-700"></div>
       </div>
     </section>
   </main>
 
-  <footer class="border-t bg-white">
-    <div class="max-w-6xl mx-auto px-6 py-8 text-sm text-gray-500 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-      <p>© 2025 Osun Beauty &amp; Boutique. Designed with ❤️ in Klang.</p>
-      <div class="flex gap-4">
-        <a href="privacy.html" class="hover:text-brand-rose">隱私權政策</a>
-        <a href="shipping.html" class="hover:text-brand-rose">運送政策</a>
-        <a href="returns.html" class="hover:text-brand-rose">退貨說明</a>
+  <footer class="bg-gray-900 text-gray-300" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid md:grid-cols-4 gap-10">
+      <div>
+        <p class="text-yellow-400 font-semibold">Osun Beauty &amp; Boutique</p>
+        <p class="mt-3 text-sm text-gray-400">© 2025 Osun. All Rights Reserved.</p>
+      </div>
+      <div>
+        <p class="font-semibold text-white" data-i18n="foot.shop">Shop</p>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a href="index.html#categories" class="hover:text-white" data-i18n="cat.dresses">Dresses</a></li>
+          <li><a href="index.html#categories" class="hover:text-white" data-i18n="cat.tops">Tops &amp; Blouses</a></li>
+          <li><a href="index.html#beauty" class="hover:text-white" data-i18n="cat.beauty">Beauty</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold text-white" data-i18n="foot.support">Support</p>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a href="shipping.html" class="hover:text-white" data-i18n="pol.ship">Shipping</a></li>
+          <li><a href="returns.html" class="hover:text-white" data-i18n="pol.return">Returns</a></li>
+          <li><a href="privacy.html" class="hover:text-white" data-i18n="pol.privacy">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold text-white" data-i18n="foot.follow">Follow</p>
+        <div class="mt-3 flex items-center gap-3">
+          <a href="#" aria-label="Instagram" class="hover:text-white">IG</a>
+          <a href="#" aria-label="Facebook" class="hover:text-white">FB</a>
+          <a href="#" aria-label="TikTok" class="hover:text-white">TT</a>
+        </div>
+        <a href="admin.html" class="mt-4 inline-block text-sm text-yellow-400 hover:text-white" data-i18n="foot.admin">Admin</a>
       </div>
     </div>
   </footer>
 
+  <div id="cart-drawer" class="fixed inset-0 hidden z-50">
+    <div id="cart-mask" class="absolute inset-0 mask opacity-0 transition-opacity"></div>
+    <aside class="absolute right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl translate-x-full transition-transform flex flex-col" aria-labelledby="cart-title" role="dialog" aria-modal="true">
+      <div class="px-5 h-16 border-b flex items-center justify-between">
+        <h3 id="cart-title" class="text-lg font-semibold" data-i18n="cart.title">Your Cart</h3>
+        <button id="cart-close" class="p-2 rounded-lg border hover:shadow-elev" aria-label="Close cart">×</button>
+      </div>
+      <div id="cart-items" class="flex-1 overflow-y-auto p-4 space-y-4"></div>
+      <div class="border-t p-5">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-sm text-gray-600" data-i18n="cart.subtotal">Subtotal</span>
+          <span id="cart-subtotal" class="text-lg font-semibold">MYR 0.00</span>
+        </div>
+        <button class="w-full shine-btn rounded-full bg-brand.red text-white py-3 font-semibold hover:bg-rose-600 transition" aria-label="Checkout" data-i18n="cart.checkout">Checkout (Demo)</button>
+        <p class="text-xs text-gray-500 mt-2" data-i18n="cart.note">This is a demo cart. No real payments.</p>
+      </div>
+    </aside>
+  </div>
+
+  <script src="js/site.js"></script>
   <script src="js/admin.js"></script>
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileNav = document.getElementById('mobileNav');
-    if (menuToggle && mobileNav) {
-      menuToggle.addEventListener('click', () => {
-        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        menuToggle.setAttribute('aria-expanded', String(!expanded));
-        mobileNav.classList.toggle('hidden');
-      });
-    }
-  </script>
 </body>
 </html>

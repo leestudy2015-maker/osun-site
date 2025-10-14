@@ -1,111 +1,276 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>依分類選購｜Osun Beauty</title>
-  <meta name="description" content="瀏覽 Osun Beauty 精選的洋裝、上衣、保養與配件分類，找到專屬的優雅風格。" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Osun Beauty | Categories</title>
+  <meta name="description" content="Browse Osun Beauty &amp; Boutique apparel, beauty and lifestyle categories curated for your glow." />
   <link rel="canonical" href="https://osun.example.com/categories" />
-  <meta property="og:title" content="Osun Beauty｜依分類選購" />
-  <meta property="og:description" content="精選分類，為你呈現優雅與自信的生活風格。" />
+  <meta property="og:title" content="Osun Beauty | Categories" />
+  <meta property="og:description" content="Explore dresses, tops, beauty rituals and lifestyle services." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="hero.jpg" />
   <meta property="og:url" content="https://osun.example.com/categories" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            brand: {
-              rose: '#ec4899',
-              blush: '#fce7f3',
-              dark: '#4b5563'
-            }
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: { brand: { red:'#E11D48', yellow:'#F59E0B' } },
+          boxShadow: {
+            'elev': '0 10px 30px -12px rgba(0,0,0,0.25)'
           }
         }
       }
-    };
+    }
   </script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .shine-btn{ position:relative; overflow:hidden; }
+    .shine-btn::after{
+      content:''; position:absolute; top:0; left:-75%; width:50%; height:100%;
+      background:linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.5) 50%, rgba(255,255,255,0) 100%);
+      transform:skewX(-20deg); transition:.9s;
+    }
+    .shine-btn:hover::after{ left:125%; }
+    .mask { background: rgba(0,0,0,.35); backdrop-filter: saturate(120%) blur(1px); }
+  </style>
 </head>
-<body class="font-sans text-gray-800 bg-white">
-  <header class="fixed inset-x-0 top-0 z-30 bg-white/90 backdrop-blur shadow-sm">
-    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-3">
-      <a href="index.html" class="text-2xl font-semibold text-brand-rose tracking-tight">Osun Beauty</a>
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
-        <a href="index.html" class="hover:text-brand-rose transition">首頁</a>
-        <a href="categories.html" class="text-brand-rose">依分類選購</a>
-        <a href="about.html" class="hover:text-brand-rose transition">關於我們</a>
-        <a href="admin.html" class="hover:text-brand-rose transition">後台管理</a>
+<body class="bg-white text-gray-800">
+  <header class="sticky top-0 z-40 bg-white/85 backdrop-blur border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between" data-aos="fade-down">
+      <a href="index.html" class="flex items-center gap-2" aria-label="Osun home">
+        <span class="h-8 w-8 rounded-full bg-brand.red inline-block shadow-elev"></span>
+        <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-brand.red">Osun Beauty &amp; Boutique</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6" aria-label="Primary">
+        <a href="index.html#shop" class="hover:text-brand.yellow transition" data-i18n="nav.shop">Shop</a>
+        <a href="categories.html" class="text-brand.yellow font-semibold" data-i18n="nav.categories">Categories</a>
+        <a href="index.html#beauty" class="hover:text-brand.yellow transition" data-i18n="nav.beauty">Beauty</a>
+        <a href="about.html" class="hover:text-brand.yellow transition" data-i18n="nav.about">About</a>
+        <a href="admin.html" class="hover:text-brand.yellow transition" data-i18n="nav.admin">Admin</a>
       </nav>
-      <button id="menuToggle" class="md:hidden rounded-lg border px-3 py-2 text-sm" aria-expanded="false" aria-controls="mobileNav">選單</button>
+      <div class="flex items-center gap-2">
+        <button id="lang-zh" class="px-3 py-1 rounded-full border hover:shadow-elev transition text-sm">中文</button>
+        <button id="lang-en" class="px-3 py-1 rounded-full border hover:shadow-elev transition text-sm">EN</button>
+        <button id="cart-open" class="relative ml-1 p-2 rounded-full border hover:shadow-elev transition" aria-label="Open cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span id="cart-count" class="absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 text-xs rounded-full bg-brand.red text-white grid place-items-center">0</span>
+        </button>
+        <button id="menu-toggle" class="md:hidden p-2 rounded-lg border hover:shadow-elev" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
     </div>
-    <nav id="mobileNav" class="md:hidden hidden border-t bg-white">
-      <div class="px-6 py-4 space-y-3 text-sm">
-        <a href="index.html" class="block hover:text-brand-rose">首頁</a>
-        <a href="categories.html" class="block text-brand-rose">依分類選購</a>
-        <a href="about.html" class="block hover:text-brand-rose">關於我們</a>
-        <a href="admin.html" class="block hover:text-brand-rose">後台管理</a>
+    <nav id="mobile-menu" class="md:hidden hidden border-t bg-white" aria-label="Mobile">
+      <div class="px-4 py-3 space-y-2">
+        <a href="index.html#shop" class="block py-2" data-i18n="nav.shop">Shop</a>
+        <a href="categories.html" class="block py-2" data-i18n="nav.categories">Categories</a>
+        <a href="index.html#beauty" class="block py-2" data-i18n="nav.beauty">Beauty</a>
+        <a href="about.html" class="block py-2" data-i18n="nav.about">About</a>
+        <a href="admin.html" class="block py-2" data-i18n="nav.admin">Admin</a>
       </div>
     </nav>
   </header>
 
-  <main class="pt-28">
-    <section class="bg-brand-blush/60">
+  <main class="pt-28 pb-20">
+    <section class="bg-gradient-to-b from-pink-50 via-white to-white" aria-labelledby="catpage-title">
       <div class="max-w-5xl mx-auto px-6 py-16 text-center">
-        <p class="text-sm uppercase tracking-[0.4em] text-brand-rose">Curated Library</p>
-        <h1 class="mt-4 text-4xl font-bold text-gray-900">依分類選購</h1>
-        <p class="mt-4 text-base md:text-lg text-gray-600">從華麗洋裝到療癒保養，快速找到適合你的生活靈感。</p>
+        <p class="text-sm uppercase tracking-[0.4em] text-brand.red" data-i18n="catpage.tag">Category Library</p>
+        <h1 id="catpage-title" class="mt-4 text-4xl font-bold text-gray-900" data-i18n="catpage.title">Explore Every Osun Category</h1>
+        <p class="mt-4 text-base md:text-lg text-gray-600" data-i18n="catpage.subtitle">Browse our full range of apparel, beauty rituals, and lifestyle services designed to celebrate your elegance.</p>
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+          <a href="index.html#shop" class="shine-btn inline-flex items-center rounded-full bg-brand.red px-6 py-3 text-sm font-semibold text-white hover:bg-rose-600 transition" data-i18n="catpage.cta.primary">Shop featured styles</a>
+          <a href="index.html#beauty" class="shine-btn inline-flex items-center rounded-full border border-brand.red px-6 py-3 text-sm font-semibold text-brand.red hover:bg-white hover:shadow transition" data-i18n="catpage.cta.secondary">Jump to beauty</a>
+        </div>
       </div>
     </section>
 
-    <section class="max-w-6xl mx-auto px-6 py-16">
-      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-        <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
-          <img src="product1.jpg" alt="洋裝" class="h-44 w-full rounded-xl object-cover shadow" />
-          <h2 class="mt-4 text-xl font-semibold text-gray-900">洋裝 Dress</h2>
-          <p class="mt-2 text-sm text-gray-600">日常到宴會皆適用的優雅剪裁，打造亮眼焦點。</p>
-        </article>
-        <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
-          <img src="dress_pink.jpg" alt="上衣" class="h-44 w-full rounded-xl object-cover shadow" />
-          <h2 class="mt-4 text-xl font-semibold text-gray-900">上衣 Tops</h2>
-          <p class="mt-2 text-sm text-gray-600">絲緞、棉質與襯衫，百搭你的日常與工作場合。</p>
-        </article>
-        <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
-          <img src="model1.png" alt="保養品" class="h-44 w-full rounded-xl object-cover shadow" />
-          <h2 class="mt-4 text-xl font-semibold text-gray-900">保養 Beauty</h2>
-          <p class="mt-2 text-sm text-gray-600">潔顏、精華與身體保養，喚醒肌膚的柔亮光澤。</p>
-        </article>
-        <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
-          <img src="dress_black.jpg" alt="飾品" class="h-44 w-full rounded-xl object-cover shadow" />
-          <h2 class="mt-4 text-xl font-semibold text-gray-900">飾品 Accessories</h2>
-          <p class="mt-2 text-sm text-gray-600">點綴造型的耳飾、包款與披肩，完整你的品味細節。</p>
-        </article>
+    <section class="max-w-6xl mx-auto px-6 py-16 space-y-16">
+      <div data-aos="fade-up">
+        <p class="text-sm uppercase tracking-[0.35em] text-brand.red" data-i18n="catpage.section1.tag">Apparel</p>
+        <div class="mt-4 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div class="max-w-2xl">
+            <h2 class="text-3xl font-bold text-gray-900" data-i18n="catpage.section1.title">Wardrobe Foundations</h2>
+            <p class="mt-3 text-gray-600" data-i18n="catpage.section1.desc">From day-to-night silhouettes to modest layers, discover the fits that make every moment yours.</p>
+          </div>
+        </div>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
+            <img src="product1.jpg" alt="Dresses" class="h-44 w-full rounded-xl object-cover shadow" />
+            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.dresses.title">Statement Dresses</h3>
+            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.dresses.desc">Romantic silhouettes, petite to plus sizing, and special-occasion exclusives.</p>
+          </article>
+          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
+            <img src="dress_pink.jpg" alt="Tops" class="h-44 w-full rounded-xl object-cover shadow" />
+            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.tops.title">Tops &amp; Blouses</h3>
+            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.tops.desc">Silk, satin, and breathable cotton staples tailored for tropical days.</p>
+          </article>
+          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
+            <img src="dress_black.jpg" alt="Bottoms" class="h-44 w-full rounded-xl object-cover shadow" />
+            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.bottoms.title">Elevated Bottoms</h3>
+            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.bottoms.desc">Wide-leg trousers, sculpted skirts, and denim with polished finishes.</p>
+          </article>
+          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
+            <img src="store.jpg" alt="Modest Layers" class="h-44 w-full rounded-xl object-cover shadow" />
+            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.modest.title">Modest Layers</h3>
+            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.modest.desc">Kaftans, abayas, and layering essentials that balance coverage and style.</p>
+          </article>
+          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
+            <img src="hero.jpg" alt="Outerwear" class="h-44 w-full rounded-xl object-cover shadow" />
+            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.outerwear.title">Outerwear &amp; Knits</h3>
+            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.outerwear.desc">Lightweight blazers, cropped jackets, and textured knits for every climate.</p>
+          </article>
+          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
+            <img src="model1.png" alt="Occasionwear" class="h-44 w-full rounded-xl object-cover shadow" />
+            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.occasion.title">Occasionwear</h3>
+            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.occasion.desc">Evening gowns, bridesmaid edits, and bespoke tailoring appointments.</p>
+          </article>
+        </div>
+      </div>
+
+      <div data-aos="fade-up">
+        <p class="text-sm uppercase tracking-[0.35em] text-brand.red" data-i18n="catpage.section2.tag">Beauty &amp; Glow</p>
+        <div class="mt-4 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div class="max-w-2xl">
+            <h2 class="text-3xl font-bold text-gray-900" data-i18n="catpage.section2.title">Radiance Rituals</h2>
+            <p class="mt-3 text-gray-600" data-i18n="catpage.section2.desc">Build your glow routine with clean skincare, artistry pigments, and sensorial treats.</p>
+          </div>
+        </div>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
+            <img src="model1.png" alt="Skincare" class="h-44 w-full rounded-xl object-cover shadow" />
+            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.skincare.title">Glow Skincare Rituals</h3>
+            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.skincare.desc">Cleansers, essences, serums, and creams curated for humid climates.</p>
+          </article>
+          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
+            <img src="dress_pink.jpg" alt="Makeup" class="h-44 w-full rounded-xl object-cover shadow" />
+            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.makeup.title">Color Cosmetics</h3>
+            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.makeup.desc">Skin-first foundations, multi-use palettes, and high-performance lip tints.</p>
+          </article>
+          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
+            <img src="store.jpg" alt="Body" class="h-44 w-full rounded-xl object-cover shadow" />
+            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.body.title">Body &amp; Wellness</h3>
+            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.body.desc">Body scrubs, spa-grade oils, and at-home massage essentials.</p>
+          </article>
+          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
+            <img src="product1.jpg" alt="Fragrance" class="h-44 w-full rounded-xl object-cover shadow" />
+            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.fragrance.title">Fragrance Library</h3>
+            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.fragrance.desc">Bespoke perfumes, travel atomisers, and home scents to set the mood.</p>
+          </article>
+          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
+            <img src="dress_black.jpg" alt="Beauty Tools" class="h-44 w-full rounded-xl object-cover shadow" />
+            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.beautytools.title">Beauty Tools</h3>
+            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.beautytools.desc">Facial rollers, LED tech, and pro brushes vetted by our glow artists.</p>
+          </article>
+          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
+            <img src="hero.jpg" alt="Gift sets" class="h-44 w-full rounded-xl object-cover shadow" />
+            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.giftsets.title">Gift Sets &amp; Minis</h3>
+            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.giftsets.desc">Ready-to-gift curation for bridesmaids, besties, and self-care moments.</p>
+          </article>
+        </div>
+      </div>
+
+      <div data-aos="fade-up">
+        <p class="text-sm uppercase tracking-[0.35em] text-brand.red" data-i18n="catpage.section3.tag">Lifestyle &amp; Services</p>
+        <div class="mt-4 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div class="max-w-2xl">
+            <h2 class="text-3xl font-bold text-gray-900" data-i18n="catpage.section3.title">Beyond the Boutique</h2>
+            <p class="mt-3 text-gray-600" data-i18n="catpage.section3.desc">Experience Osun through bespoke services and community-driven happenings.</p>
+          </div>
+        </div>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
+            <img src="hero.jpg" alt="Bridal" class="h-44 w-full rounded-xl object-cover shadow" />
+            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.bridal.title">Bridal Studio</h3>
+            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.bridal.desc">Made-to-measure gowns, veil styling, and premium fitting appointments.</p>
+          </article>
+          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
+            <img src="product1.jpg" alt="Styling" class="h-44 w-full rounded-xl object-cover shadow" />
+            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.styling.title">Personal Styling</h3>
+            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.styling.desc">One-on-one wardrobe edits and capsule-building sessions with our experts.</p>
+          </article>
+          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
+            <img src="store.jpg" alt="Workshops" class="h-44 w-full rounded-xl object-cover shadow" />
+            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.workshops.title">Workshops &amp; Events</h3>
+            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.workshops.desc">Weekend masterclasses on skincare layering, mindful beauty, and styling.</p>
+          </article>
+          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
+            <img src="model1.png" alt="Lounge" class="h-44 w-full rounded-xl object-cover shadow" />
+            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.lounge.title">Lounge &amp; Café</h3>
+            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.lounge.desc">Sip artisanal tea, preview lookbooks, and enjoy member-only pop-ups.</p>
+          </article>
+        </div>
+        <div class="mt-12 rounded-3xl border border-rose-100 bg-white/80 p-10 text-center shadow-sm">
+          <h3 class="text-2xl font-semibold text-gray-900" data-i18n="catpage.cta.title">Need a curated recommendation?</h3>
+          <p class="mt-3 text-gray-600" data-i18n="catpage.cta.desc">Book a styling or beauty consultation and our team will handpick pieces that match your lifestyle.</p>
+          <a href="index.html#visit" class="shine-btn mt-6 inline-flex items-center rounded-full bg-brand.red px-6 py-3 text-sm font-semibold text-white hover:bg-rose-600 transition" data-i18n="catpage.cta.button">Visit our boutique</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="border-t bg-white">
-    <div class="max-w-6xl mx-auto px-6 py-8 text-sm text-gray-500 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-      <p>© 2025 Osun Beauty &amp; Boutique. Designed with ❤️ in Klang.</p>
-      <div class="flex gap-4">
-        <a href="privacy.html" class="hover:text-brand-rose">隱私權政策</a>
-        <a href="shipping.html" class="hover:text-brand-rose">運送政策</a>
-        <a href="returns.html" class="hover:text-brand-rose">退貨說明</a>
+  <footer class="bg-gray-900 text-gray-300" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid md:grid-cols-4 gap-10">
+      <div>
+        <p class="text-yellow-400 font-semibold">Osun Beauty &amp; Boutique</p>
+        <p class="mt-3 text-sm text-gray-400">© 2025 Osun. All Rights Reserved.</p>
+      </div>
+      <div>
+        <p class="font-semibold text-white" data-i18n="foot.shop">Shop</p>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a href="index.html#categories" class="hover:text-white" data-i18n="cat.dresses">Dresses</a></li>
+          <li><a href="index.html#categories" class="hover:text-white" data-i18n="cat.tops">Tops &amp; Blouses</a></li>
+          <li><a href="index.html#beauty" class="hover:text-white" data-i18n="cat.beauty">Beauty</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold text-white" data-i18n="foot.support">Support</p>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a href="shipping.html" class="hover:text-white" data-i18n="pol.ship">Shipping</a></li>
+          <li><a href="returns.html" class="hover:text-white" data-i18n="pol.return">Returns</a></li>
+          <li><a href="privacy.html" class="hover:text-white" data-i18n="pol.privacy">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold text-white" data-i18n="foot.follow">Follow</p>
+        <div class="mt-3 flex items-center gap-3">
+          <a href="#" aria-label="Instagram" class="hover:text-white">IG</a>
+          <a href="#" aria-label="Facebook" class="hover:text-white">FB</a>
+          <a href="#" aria-label="TikTok" class="hover:text-white">TT</a>
+        </div>
+        <a href="admin.html" class="mt-4 inline-block text-sm text-yellow-400 hover:text-white" data-i18n="foot.admin">Admin</a>
       </div>
     </div>
   </footer>
 
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileNav = document.getElementById('mobileNav');
-    if (menuToggle && mobileNav) {
-      menuToggle.addEventListener('click', () => {
-        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        menuToggle.setAttribute('aria-expanded', String(!expanded));
-        mobileNav.classList.toggle('hidden');
-      });
-    }
-  </script>
+  <div id="cart-drawer" class="fixed inset-0 hidden z-50">
+    <div id="cart-mask" class="absolute inset-0 mask opacity-0 transition-opacity"></div>
+    <aside class="absolute right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl translate-x-full transition-transform flex flex-col" aria-labelledby="cart-title" role="dialog" aria-modal="true">
+      <div class="px-5 h-16 border-b flex items-center justify-between">
+        <h3 id="cart-title" class="text-lg font-semibold" data-i18n="cart.title">Your Cart</h3>
+        <button id="cart-close" class="p-2 rounded-lg border hover:shadow-elev" aria-label="Close cart">×</button>
+      </div>
+      <div id="cart-items" class="flex-1 overflow-y-auto p-4 space-y-4"></div>
+      <div class="border-t p-5">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-sm text-gray-600" data-i18n="cart.subtotal">Subtotal</span>
+          <span id="cart-subtotal" class="text-lg font-semibold">MYR 0.00</span>
+        </div>
+        <button class="w-full shine-btn rounded-full bg-brand.red text-white py-3 font-semibold hover:bg-rose-600 transition" aria-label="Checkout" data-i18n="cart.checkout">Checkout (Demo)</button>
+        <p class="text-xs text-gray-500 mt-2" data-i18n="cart.note">This is a demo cart. No real payments.</p>
+      </div>
+    </aside>
+  </div>
+
+  <script src="js/site.js"></script>
 </body>
 </html>
