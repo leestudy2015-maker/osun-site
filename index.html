@@ -1,224 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Osun Beauty &amp; Boutique | Elegance. Confidence. Osun.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Osun Beauty &amp; Boutique｜優雅．自信．自然</title>
+  <meta name="description" content="Osun Beauty &amp; Boutique 專注於優雅、自信、自然的生活風格，提供洋裝、上衣、保養品等多元選擇。" />
+  <link rel="canonical" href="https://osun.example.com/" />
 
-  <meta name="description" content="Osun Beauty &amp; Boutique — Fashion &amp; beauty curated for elegance and confidence. Shop dresses, blouses, skincare and more." />
-  <link rel="canonical" href="https://osun.example.com/">
+  <meta property="og:title" content="Osun Beauty &amp; Boutique" />
+  <meta property="og:description" content="優雅．自信．自然" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="hero.jpg" />
+  <meta property="og:url" content="https://osun.example.com/" />
 
-  <meta property="og:title" content="Osun Beauty &amp; Boutique">
-  <meta property="og:description" content="Elegance. Confidence. Osun.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/img/hero.jpg">
-  <meta property="og:url" content="https://osun.example.com/">
-
-  <!-- Tailwind (CDN dev-friendly). For production, consider building Tailwind to purge unused CSS. -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
-          colors: { brand: { red:'#E11D48', yellow:'#F59E0B' } },
-          boxShadow: { 'elev': '0 10px 30px -12px rgba(0,0,0,0.25)' }
+          colors: {
+            brand: {
+              rose: '#ec4899',
+              blush: '#fce7f3',
+              dark: '#4b5563'
+            }
+          }
         }
       }
-    }
+    };
   </script>
-
-  <!-- AOS -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-
-<body class="bg-white text-gray-800">
-  <!-- Entry overlay -->
-  <div class="entry-overlay">
-    <div class="entry-logo text-2xl md:text-3xl">
-      <span class="entry-dot"></span>
-      <span>Osun Beauty &amp; Boutique</span>
-    </div>
-  </div>
-
-  <!-- Top bar -->
-  <div class="w-full bg-gradient-to-r from-pink-50 via-amber-50 to-pink-50 text-gray-800 text-sm py-2 px-4 text-center">
-    <span data-i18n="bar.free" class="font-semibold">Free shipping</span> <span>MYR 300+</span> ·
-    <span data-i18n="bar.return">7-day returns</span>
-  </div>
-
-  <!-- Header -->
-  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between" data-aos="fade-down">
-      <a href="#" class="flex items-center gap-2" aria-label="Osun home">
-        <span class="h-8 w-8 rounded-full bg-brand.red inline-block shadow-elev"></span>
-        <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-brand.red">Osun Beauty &amp; Boutique</span>
-      </a>
-
-      <nav class="relative md:flex md:items-center md:gap-6">
-        <button id="nav-toggle" class="md:hidden p-2 text-gray-700 border rounded-lg" aria-label="Toggle menu">☰</button>
-        <ul id="nav-menu" class="hidden absolute top-14 right-0 bg-white w-screen shadow-elev md:static md:flex md:shadow-none md:w-auto">
-          <li><a href="#shop" class="block py-2 px-4 hover:text-brand.yellow" data-i18n="nav.shop">Shop</a></li>
-          <li><a href="#categories" class="block py-2 px-4 hover:text-brand.yellow" data-i18n="nav.categories">Categories</a></li>
-          <li><a href="#beauty" class="block py-2 px-4 hover:text-brand.yellow" data-i18n="nav.beauty">Beauty</a></li>
-          <li><a href="#about" class="block py-2 px-4 hover:text-brand.yellow" data-i18n="nav.about">About</a></li>
-          <li><a href="#visit" class="block py-2 px-4 hover:text-brand.yellow" data-i18n="nav.visit">Visit Us</a></li>
-        </ul>
+<body class="font-sans text-gray-800 bg-white">
+  <!-- 導覽列 -->
+  <header class="fixed inset-x-0 top-0 z-30 bg-white/90 backdrop-blur shadow-sm">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-3">
+      <a href="index.html" class="text-2xl font-semibold text-brand-rose tracking-tight">Osun Beauty</a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+        <a href="index.html" class="text-brand-rose">首頁</a>
+        <a href="categories.html" class="hover:text-brand-rose transition">依分類選購</a>
+        <a href="about.html" class="hover:text-brand-rose transition">關於我們</a>
+        <a href="admin.html" class="hover:text-brand-rose transition">後台管理</a>
       </nav>
-
-      <div class="flex items-center gap-2" data-aos="zoom-in" data-aos-delay="150">
-        <button id="lang-zh" class="px-3 py-1 rounded-full border hover:shadow-elev hover:-translate-y-0.5 transition text-sm">中文</button>
-        <button id="lang-en" class="px-3 py-1 rounded-full border hover:shadow-elev hover:-translate-y-0.5 transition text-sm">EN</button>
-        <button id="lang-ms" class="px-3 py-1 rounded-full border hover:shadow-elev hover:-translate-y-0.5 transition text-sm">BM</button>
-        <a href="#cart" id="cart-link" class="ml-2 font-semibold">🛒 <span id="cart-count">0</span></a>
-      </div>
+      <button id="menuToggle" class="md:hidden rounded-lg border px-3 py-2 text-sm" aria-expanded="false" aria-controls="mobileNav">選單</button>
     </div>
+    <nav id="mobileNav" class="md:hidden hidden border-t bg-white">
+      <div class="px-6 py-4 space-y-3 text-sm">
+        <a href="index.html" class="block text-brand-rose">首頁</a>
+        <a href="categories.html" class="block hover:text-brand-rose">依分類選購</a>
+        <a href="about.html" class="block hover:text-brand-rose">關於我們</a>
+        <a href="admin.html" class="block hover:text-brand-rose">後台管理</a>
+      </div>
+    </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="relative">
-    <img src="assets/img/hero.jpg" alt="Osun Boutique hero" class="w-full h-[62vh] md:h-[76vh] object-cover">
-    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent"></div>
-    <div class="absolute inset-0 flex items-center justify-center text-center px-6">
-      <div data-aos="fade-up" data-aos-delay="300">
-        <h1 class="text-white text-4xl md:text-6xl font-extrabold drop-shadow mb-4">
-          <span data-i18n="hero.title">Elegance. Confidence. Osun.</span>
-        </h1>
-        <p class="text-white/90 md:text-lg mb-8 max-w-2xl mx-auto" data-i18n="hero.subtitle">
-          Discover your radiance where fashion meets inner glow.
+  <main class="pt-28">
+    <!-- 首頁 Hero -->
+    <section class="bg-brand-blush/70">
+      <div class="max-w-5xl mx-auto px-6 py-16 text-center">
+        <p class="text-sm uppercase tracking-[0.35em] text-brand-rose">Elegance · Confidence · Nature</p>
+        <h1 class="mt-5 text-4xl md:text-5xl font-bold text-gray-900">Elegance. Confidence. Osun.</h1>
+        <p class="mt-6 text-base md:text-lg text-gray-600 leading-relaxed">
+          以優雅與自信為靈感，延伸自然柔滑的生活風格。從洋裝到保養，Osun 精心策劃的選品陪伴你走過每一個重要時刻。
         </p>
-        <div class="flex justify-center gap-4">
-          <a href="#shop" class="shine-btn inline-flex items-center rounded-full bg-brand.red px-8 py-3 font-semibold text-white hover:bg-rose-600 transition">Shop Now</a>
-          <a href="#beauty" class="shine-btn inline-flex items-center rounded-full border border-white/70 text-white px-8 py-3 font-semibold hover:bg-white hover:text-gray-900 transition">Explore Beauty</a>
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+          <a href="categories.html" class="inline-flex items-center rounded-full bg-brand-rose px-8 py-3 text-sm font-semibold text-white shadow hover:bg-pink-500 transition">查看全部分類</a>
+          <a href="about.html" class="inline-flex items-center rounded-full border border-brand-rose px-8 py-3 text-sm font-semibold text-brand-rose hover:bg-white hover:shadow transition">認識品牌故事</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Categories -->
-  <section id="categories" class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-    <div class="flex items-end justify-between mb-8">
-      <h2 class="text-3xl font-bold" data-i18n="cat.title">Shop by Category</h2>
-      <a href="#shop" class="text-brand.red hover:underline" data-i18n="cat.viewall">View all</a>
-    </div>
+    <!-- 精選分類 -->
+    <section class="max-w-6xl mx-auto px-6 py-16">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <div>
+          <p class="text-sm uppercase tracking-wide text-brand-rose">Signature Picks</p>
+          <h2 class="mt-2 text-3xl font-bold text-gray-900">本季精選</h2>
+          <p class="mt-3 text-gray-600">結合線條與質感，打造專屬你的日常華麗，延續 Osun 生活美學。</p>
+        </div>
+        <a href="categories.html" class="self-start md:self-center text-sm font-semibold text-brand-rose hover:underline">立即探索所有分類 →</a>
+      </div>
+      <div class="mt-10 grid gap-8 md:grid-cols-3">
+        <article class="rounded-2xl bg-white shadow-sm ring-1 ring-rose-100/70 p-6 text-center">
+          <img src="product1.jpg" alt="洋裝" class="mx-auto h-52 w-full max-w-xs rounded-xl object-cover shadow" />
+          <h3 class="mt-5 text-xl font-semibold text-gray-900">花漾洋裝</h3>
+          <p class="mt-3 text-sm text-gray-600">浪漫剪裁與細膩層次，襯托每個場合的光彩。</p>
+        </article>
+        <article class="rounded-2xl bg-white shadow-sm ring-1 ring-rose-100/70 p-6 text-center">
+          <img src="dress_pink.jpg" alt="上衣" class="mx-auto h-52 w-full max-w-xs rounded-xl object-cover shadow" />
+          <h3 class="mt-5 text-xl font-semibold text-gray-900">氣質上衣</h3>
+          <p class="mt-3 text-sm text-gray-600">絲緞與棉質的完美平衡，帶來舒適自在的優雅。</p>
+        </article>
+        <article class="rounded-2xl bg-white shadow-sm ring-1 ring-rose-100/70 p-6 text-center">
+          <img src="model1.png" alt="保養品" class="mx-auto h-52 w-full max-w-xs rounded-xl object-cover shadow" />
+          <h3 class="mt-5 text-xl font-semibold text-gray-900">光采保養</h3>
+          <p class="mt-3 text-sm text-gray-600">以自然精華呵護肌膚，喚醒由內而外的柔亮光澤。</p>
+        </article>
+      </div>
+    </section>
 
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-      <a href="#shop" class="group relative rounded-2xl overflow-hidden shadow hover:shadow-elev transform transition hover:-translate-y-1" data-aos="zoom-in">
-        <img src="assets/img/product1.jpg" alt="Dresses" class="h-64 w-full object-cover group-hover:scale-105 transition">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-        <div class="absolute bottom-4 left-4 text-white font-semibold text-lg" data-i18n="cat.dresses">Dresses</div>
-      </a>
+    <!-- 品牌理念 -->
+    <section class="bg-slate-50">
+      <div class="max-w-5xl mx-auto px-6 py-16 text-center">
+        <h2 class="text-3xl font-bold text-gray-900">品牌理念</h2>
+        <p class="mt-5 text-base md:text-lg text-gray-600 leading-relaxed">
+          Osun 相信「美麗是源自內心的自信」。我們在每一件商品中注入柔軟與力量，
+          讓所有女性在日常中感受被理解的溫度，創造最真實的優雅姿態。
+        </p>
+      </div>
+    </section>
 
-      <a href="#shop" class="group relative rounded-2xl overflow-hidden shadow hover:shadow-elev transform transition hover:-translate-y-1" data-aos="zoom-in" data-aos-delay="100">
-        <img src="assets/img/dress_pink.jpg" alt="Tops &amp; Blouses" class="h-64 w-full object-cover group-hover:scale-105 transition">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-        <div class="absolute bottom-4 left-4 text-white font-semibold text-lg" data-i18n="cat.tops">Tops &amp; Blouses</div>
-      </a>
-
-      <a href="#beauty" class="group relative rounded-2xl overflow-hidden shadow hover:shadow-elev transform transition hover:-translate-y-1" data-aos="zoom-in" data-aos-delay="200">
-        <img src="assets/img/model1.png" alt="Beauty" class="h-64 w-full object-cover group-hover:scale-105 transition">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-        <div class="absolute bottom-4 left-4 text-white font-semibold text-lg" data-i18n="cat.beauty">Beauty</div>
-      </a>
-    </div>
-  </section>
-
-  <!-- Featured / Shop -->
-  <section id="shop" class="bg-gray-50 border-y">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-      <h2 class="text-3xl font-bold text-center" data-aos="fade-up" data-i18n="feat.title">Featured Collections</h2>
-      <p class="text-center text-gray-600 mt-2" data-aos="fade-up" data-aos-delay="100" data-i18n="feat.subtitle">Hand-picked styles &amp; glow kits.</p>
-
-      <div id="product-grid" class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-    </div>
-  </section>
-
-  <!-- Beauty section -->
-  <section id="beauty" class="py-16 bg-pink-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-3xl font-bold mb-6" data-i18n="nav.beauty">Beauty</h2>
-      <p class="text-gray-600 mb-8" data-i18n="beauty.desc">Discover our curated selection of skincare and cosmetics that let your inner glow shine.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="beauty-grid"></div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-      <h2 class="text-3xl font-bold mb-4" data-i18n="nav.about">About Us</h2>
-      <p class="text-gray-700 max-w-2xl mx-auto" data-i18n="about.text">
-        Founded in Klang, Osun celebrates timeless elegance and everyday confidence. We curate fashion and beauty for women of all ages.
-      </p>
-    </div>
-  </section>
-
-  <!-- Visit -->
-  <section id="visit" class="py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 items-center">
-      <img src="assets/img/store.jpg" alt="Osun storefront" class="rounded-3xl w-full object-cover shadow-elev" data-aos="fade-right"/>
-      <div data-aos="fade-left" data-aos-delay="150">
-        <h2 class="text-3xl font-bold" data-i18n="visit.title">Visit Our Store</h2>
-        <p class="mt-3 text-gray-600" data-i18n="visit.desc">Find us at Bayu Tinggi, Klang. Welcome to try on and shop.</p>
-        <div class="mt-6 p-5 rounded-2xl bg-white border shadow-sm">
-          <p class="font-semibold" data-i18n="visit.addrTitle">Address</p>
-          <p class="mt-1 text-gray-700">
-            No. 4, 4A, 4B, Jln Bayu Tinggi 2a, KS6, Bayu Tinggi, 41200 Klang, Selangor
-          </p>
-          <p class="mt-4 text-sm text-gray-600" data-i18n="visit.hours">Daily 10:00–20:00</p>
+    <!-- 門市資訊 -->
+    <section class="max-w-6xl mx-auto px-6 py-16 grid gap-10 md:grid-cols-2 md:items-center">
+      <img src="store.jpg" alt="Osun 門市" class="h-full rounded-3xl object-cover shadow-lg" />
+      <div>
+        <p class="text-sm uppercase tracking-wide text-brand-rose">Visit Us</p>
+        <h2 class="mt-2 text-3xl font-bold text-gray-900">歡迎光臨門市</h2>
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          門市位於 Klang 的 Bayu Tinggi 區。預約造型服務或親自挑選喜愛的商品，感受 Osun 專屬的貼心接待。
+        </p>
+        <div class="mt-6 space-y-2 rounded-2xl border border-rose-100 bg-white/70 p-6 shadow-sm">
+          <p class="text-sm font-semibold text-gray-500">門市地址</p>
+          <p class="font-medium text-gray-800">No. 4, 4A, 4B, Jln Bayu Tinggi 2a, KS6, Bayu Tinggi, 41200 Klang, Selangor</p>
+          <p class="pt-2 text-sm text-gray-500">營業時間｜每日 10:00–20:00</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Cart / Drawer -->
-  <section id="cart" class="py-10 bg-gray-100 border-t">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-2xl font-bold mb-4" data-i18n="cart.title">Your Cart</h2>
-      <div id="cart-items" class="space-y-4"></div>
-      <div id="cart-summary" class="mt-6 text-right font-semibold"></div>
-      <div class="mt-4 text-right">
-        <button id="checkout-btn" class="shine-btn inline-flex items-center rounded-full bg-brand.red px-6 py-2 font-semibold text-white hover:bg-rose-600 transition" data-i18n="cart.checkout">Checkout (Demo)</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-300" data-aos="fade-up">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid md:grid-cols-4 gap-10">
-      <div>
-        <p class="text-yellow-400 font-semibold">Osun Beauty &amp; Boutique</p>
-        <p class="mt-3 text-sm text-gray-400">© 2025 Osun. All Rights Reserved.</p>
-      </div>
-      <div>
-        <p class="font-semibold text-white" data-i18n="foot.shop">Shop</p>
-        <ul class="mt-3 space-y-2 text-sm">
-          <li><a href="#categories" class="hover:text-white" data-i18n="cat.dresses">Dresses</a></li>
-          <li><a href="#categories" class="hover:text-white" data-i18n="cat.tops">Tops &amp; Blouses</a></li>
-          <li><a href="#beauty" class="hover:text-white" data-i18n="cat.beauty">Beauty</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="font-semibold text-white" data-i18n="foot.support">Support</p>
-        <ul class="mt-3 space-y-2 text-sm">
-          <li><a href="policies/shipping.html" class="hover:text-white" data-i18n="pol.ship">Shipping</a></li>
-          <li><a href="policies/returns.html" class="hover:text-white" data-i18n="pol.return">Returns</a></li>
-          <li><a href="policies/privacy.html" class="hover:text-white" data-i18n="pol.privacy">Privacy</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="font-semibold text-white" data-i18n="foot.follow">Follow</p>
-        <div class="mt-3 flex items-center gap-3">
-          <a href="#" aria-label="Instagram" class="hover:text-white">IG</a>
-          <a href="#" aria-label="Facebook" class="hover:text-white">FB</a>
-          <a href="#" aria-label="TikTok" class="hover:text-white">TT</a>
-        </div>
+  <footer class="border-t bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-8 text-sm text-gray-500 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <p>© 2025 Osun Beauty &amp; Boutique. Designed with ❤️ in Klang.</p>
+      <div class="flex gap-4">
+        <a href="privacy.html" class="hover:text-brand-rose">隱私權政策</a>
+        <a href="shipping.html" class="hover:text-brand-rose">運送政策</a>
+        <a href="returns.html" class="hover:text-brand-rose">退貨說明</a>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/i18n-cart.js"></script>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    if (menuToggle && mobileNav) {
+      menuToggle.addEventListener('click', () => {
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', String(!expanded));
+        mobileNav.classList.toggle('hidden');
+      });
+    }
+  </script>
 </body>
 </html>

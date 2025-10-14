@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>關於我們｜Osun Beauty</title>
+  <meta name="description" content="了解 Osun Beauty 的品牌故事、創辦人理念與里程碑，探索優雅與自信的生活方式。" />
+  <link rel="canonical" href="https://osun.example.com/about" />
+  <meta property="og:title" content="Osun Beauty｜關於我們" />
+  <meta property="og:description" content="以優雅與自信為核心，打造自然柔滑的生活風格。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="hero.jpg" />
+  <meta property="og:url" content="https://osun.example.com/about" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              rose: '#ec4899',
+              blush: '#fce7f3',
+              dark: '#4b5563'
+            }
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="font-sans text-gray-800 bg-white">
+  <header class="fixed inset-x-0 top-0 z-30 bg-white/90 backdrop-blur shadow-sm">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-3">
+      <a href="index.html" class="text-2xl font-semibold text-brand-rose tracking-tight">Osun Beauty</a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+        <a href="index.html" class="hover:text-brand-rose transition">首頁</a>
+        <a href="categories.html" class="hover:text-brand-rose transition">依分類選購</a>
+        <a href="about.html" class="text-brand-rose">關於我們</a>
+        <a href="admin.html" class="hover:text-brand-rose transition">後台管理</a>
+      </nav>
+      <button id="menuToggle" class="md:hidden rounded-lg border px-3 py-2 text-sm" aria-expanded="false" aria-controls="mobileNav">選單</button>
+    </div>
+    <nav id="mobileNav" class="md:hidden hidden border-t bg-white">
+      <div class="px-6 py-4 space-y-3 text-sm">
+        <a href="index.html" class="block hover:text-brand-rose">首頁</a>
+        <a href="categories.html" class="block hover:text-brand-rose">依分類選購</a>
+        <a href="about.html" class="block text-brand-rose">關於我們</a>
+        <a href="admin.html" class="block hover:text-brand-rose">後台管理</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pt-28">
+    <section class="bg-brand-blush/60">
+      <div class="max-w-4xl mx-auto px-6 py-16 text-center">
+        <p class="text-sm uppercase tracking-[0.4em] text-brand-rose">Our Story</p>
+        <h1 class="mt-4 text-4xl font-bold text-gray-900">關於 Osun Beauty &amp; Boutique</h1>
+        <p class="mt-4 text-base md:text-lg text-gray-600">
+          Osun 的誕生源於創辦人對「優雅與自信」的堅持。每件商品都代表自然柔滑的風格，陪伴女性在每個日常展現獨特光彩。
+        </p>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-6 py-16 grid gap-10 md:grid-cols-[1fr,1.3fr] md:items-center">
+      <img src="model1.png" alt="Osun 創辦人" class="w-full rounded-3xl object-cover shadow-lg" />
+      <div>
+        <p class="text-sm uppercase tracking-wide text-brand-rose">Founder</p>
+        <h2 class="mt-2 text-3xl font-bold text-gray-900">認識 Madam Liyana Osman</h2>
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          來自 Klang 的 Liyana 女士將娘惹文化與現代審美融合，打造出專屬東南亞女性的時尚與保養哲學。
+          她相信美麗是一種溫柔的儀式，每一次服務都向這份儀式致敬。
+        </p>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2">
+          <div class="rounded-2xl border border-rose-100 bg-white/80 p-4 shadow-sm">
+            <p class="text-sm font-semibold text-gray-500">15 年策展經驗</p>
+            <p class="mt-1 text-sm text-gray-600">深耕東南亞設計師網絡，挑選兼具質感與故事的作品。</p>
+          </div>
+          <div class="rounded-2xl border border-rose-100 bg-white/80 p-4 shadow-sm">
+            <p class="text-sm font-semibold text-gray-500">專業造型背景</p>
+            <p class="mt-1 text-sm text-gray-600">擁有美容治療與服裝造型證照，提供客製化的貼心建議。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-50">
+      <div class="max-w-5xl mx-auto px-6 py-16">
+        <h2 class="text-3xl font-bold text-gray-900 text-center">品牌理念與里程碑</h2>
+        <div class="mt-10 grid gap-8 md:grid-cols-3">
+          <article class="rounded-2xl bg-white p-6 shadow-sm">
+            <h3 class="text-xl font-semibold text-gray-900">溫柔工藝</h3>
+            <p class="mt-3 text-sm text-gray-600">與堅持公平製作與精緻工藝的品牌合作，呈現細膩質感。</p>
+          </article>
+          <article class="rounded-2xl bg-white p-6 shadow-sm">
+            <h3 class="text-xl font-semibold text-gray-900">專屬儀式</h3>
+            <p class="mt-3 text-sm text-gray-600">透過造型諮詢與保養課程，陪伴每位顧客打造日常自信。</p>
+          </article>
+          <article class="rounded-2xl bg-white p-6 shadow-sm">
+            <h3 class="text-xl font-semibold text-gray-900">社群連結</h3>
+            <p class="mt-3 text-sm text-gray-600">舉辦工作坊與沙龍，凝聚女性互相鼓勵的溫暖力量。</p>
+          </article>
+        </div>
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
+          <div class="rounded-2xl border border-rose-100 bg-white/90 p-6 shadow-sm">
+            <p class="text-sm font-semibold text-brand-rose">2010</p>
+            <h4 class="mt-2 text-lg font-semibold text-gray-900">客廳造型會</h4>
+            <p class="mt-2 text-sm text-gray-600">Liyana 女士在自家庭院與朋友試穿，分享穿搭秘訣。</p>
+          </div>
+          <div class="rounded-2xl border border-rose-100 bg-white/90 p-6 shadow-sm">
+            <p class="text-sm font-semibold text-brand-rose">2015</p>
+            <h4 class="mt-2 text-lg font-semibold text-gray-900">首間門市開幕</h4>
+            <p class="mt-2 text-sm text-gray-600">Osun 在 Bayu Tinggi 正式落腳，提供時裝與美妝體驗。</p>
+          </div>
+          <div class="rounded-2xl border border-rose-100 bg-white/90 p-6 shadow-sm">
+            <p class="text-sm font-semibold text-brand-rose">2023</p>
+            <h4 class="mt-2 text-lg font-semibold text-gray-900">Glow 社群</h4>
+            <p class="mt-2 text-sm text-gray-600">定期舉辦 Glow 圓桌與線上造型諮詢，與全球客戶互動。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-8 text-sm text-gray-500 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <p>© 2025 Osun Beauty &amp; Boutique. Designed with ❤️ in Klang.</p>
+      <div class="flex gap-4">
+        <a href="privacy.html" class="hover:text-brand-rose">隱私權政策</a>
+        <a href="shipping.html" class="hover:text-brand-rose">運送政策</a>
+        <a href="returns.html" class="hover:text-brand-rose">退貨說明</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    if (menuToggle && mobileNav) {
+      menuToggle.addEventListener('click', () => {
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', String(!expanded));
+        mobileNav.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>
