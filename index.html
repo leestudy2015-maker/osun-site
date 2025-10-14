@@ -63,6 +63,10 @@
       <!-- Desktop nav -->
       <nav class="hidden md:flex items-center gap-6" aria-label="Primary navigation">
         <a href="#shop" class="hover:text-brand.yellow transition" data-i18n="nav.shop">Shop</a>
+        <a href="categories.html" class="hover:text-brand.yellow transition" data-i18n="nav.categories">Categories</a>
+        <a href="#beauty" class="hover:text-brand.yellow transition" data-i18n="nav.beauty">Beauty</a>
+        <a href="about.html" class="hover:text-brand.yellow transition" data-i18n="nav.about">About</a>
+        <a href="admin.html" class="hover:text-brand.yellow transition" data-i18n="admin.nav">Admin</a>
         <a href="#categories" class="hover:text-brand.yellow transition" data-i18n="nav.categories">Categories</a>
         <a href="#beauty" class="hover:text-brand.yellow transition" data-i18n="nav.beauty">Beauty</a>
         <a href="#about" class="hover:text-brand.yellow transition" data-i18n="nav.about">About</a>
@@ -92,6 +96,10 @@
     <nav id="mobile-menu" class="md:hidden hidden border-t bg-white" aria-label="Mobile navigation">
       <div class="px-4 py-3 space-y-2">
         <a href="#shop" class="block py-2" data-i18n="nav.shop">Shop</a>
+        <a href="categories.html" class="block py-2" data-i18n="nav.categories">Categories</a>
+        <a href="#beauty" class="block py-2" data-i18n="nav.beauty">Beauty</a>
+        <a href="about.html" class="block py-2" data-i18n="nav.about">About</a>
+        <a href="admin.html" class="block py-2" data-i18n="admin.nav">Admin</a>
         <a href="#categories" class="block py-2" data-i18n="nav.categories">Categories</a>
         <a href="#beauty" class="block py-2" data-i18n="nav.beauty">Beauty</a>
         <a href="#about" class="block py-2" data-i18n="nav.about">About</a>
@@ -118,10 +126,36 @@
     </div>
   </section>
 
+  <!-- Signature collection snapshot -->
+  <section id="signature" class="bg-rose-50/70" aria-labelledby="signature-heading">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+      <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+        <h2 id="signature-heading" class="text-3xl font-bold text-brand.red" data-i18n="landing.curated.title">Elegance. Confidence. Osun.</h2>
+        <p class="mt-4 text-lg text-gray-600" data-i18n="landing.curated.subtitle">Inspired by poise and softness, discover our everyday favourites that blend graceful tailoring with natural radiance.</p>
+        <a href="categories.html" class="mt-6 inline-flex items-center justify-center rounded-full bg-brand.red px-8 py-3 font-semibold text-white shadow-sm hover:bg-rose-600 transition" data-i18n="landing.curated.cta">Browse all categories</a>
+      </div>
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        <article class="rounded-3xl bg-white shadow-sm hover:shadow-elev transition p-6 text-center" data-aos="zoom-in">
+          <img src="product1.jpg" alt="Signature dresses" class="mx-auto h-48 w-full max-w-xs rounded-2xl object-cover shadow" />
+          <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="landing.curated.dresses">Statement dresses</h3>
+        </article>
+        <article class="rounded-3xl bg-white shadow-sm hover:shadow-elev transition p-6 text-center" data-aos="zoom-in" data-aos-delay="100">
+          <img src="dress_pink.jpg" alt="Elevated tops" class="mx-auto h-48 w-full max-w-xs rounded-2xl object-cover shadow" />
+          <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="landing.curated.tops">Polished tops</h3>
+        </article>
+        <article class="rounded-3xl bg-white shadow-sm hover:shadow-elev transition p-6 text-center" data-aos="zoom-in" data-aos-delay="200">
+          <img src="model1.png" alt="Glow beauty" class="mx-auto h-48 w-full max-w-xs rounded-2xl object-cover shadow" />
+          <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="landing.curated.beauty">Glow rituals</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- Categories -->
   <section id="categories" class="max-w-7xl mx-auto px-4 sm:px-6 py-16" aria-labelledby="categories-title">
     <div class="flex items-end justify-between mb-8">
       <h2 id="categories-title" class="text-3xl font-bold" data-aos="fade-right" data-i18n="cat.title">Shop by Category</h2>
+      <a href="categories.html" class="text-brand.red hover:underline" data-aos="fade-left" data-i18n="cat.viewall">View all</a>
       <a href="#shop" class="text-brand.red hover:underline" data-aos="fade-left" data-i18n="cat.viewall">View all</a>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -296,6 +330,7 @@
           <li><a href="shipping.html" class="hover:text-white" data-i18n="pol.ship">Shipping</a></li>
           <li><a href="returns.html" class="hover:text-white" data-i18n="pol.return">Returns</a></li>
           <li><a href="privacy.html" class="hover:text-white" data-i18n="pol.privacy">Privacy</a></li>
+          <li><a href="admin.html" class="hover:text-white" data-i18n="foot.admin">Admin</a></li>
         </ul>
       </div>
       <div>
