@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Osun Beauty &amp; Boutique | Categories Directory</title>
+  <meta name="description" content="Explore every Osun Beauty &amp; Boutique category, from apparel and beauty rituals to lifestyle services." />
+  <link rel="canonical" href="https://osun.example.com/categories" />
+
+  <meta property="og:title" content="Osun Beauty &amp; Boutique Categories" />
+  <meta property="og:description" content="Discover every style, beauty ritual, and experience we curate for you." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="hero.jpg" />
+  <meta property="og:url" content="https://osun.example.com/categories" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: { brand: { red:'#E11D48', yellow:'#F59E0B' } },
+          boxShadow: { elev: '0 10px 30px -12px rgba(0,0,0,0.25)' }
+        }
+      }
+    };
+  </script>
+
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-white text-gray-800">
+  <div class="entry-overlay" aria-hidden="true">
+    <div class="entry-logo text-2xl md:text-3xl">
+      <span class="entry-dot"></span>
+      <span>Osun Beauty &amp; Boutique</span>
+    </div>
+  </div>
+
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between" data-aos="fade-down">
+      <a href="index.html#hero" class="flex items-center gap-2" aria-label="Osun home">
+        <span class="h-8 w-8 rounded-full bg-brand.red inline-block shadow-elev"></span>
+        <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-brand.red">Osun Beauty &amp; Boutique</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6" aria-label="Primary navigation">
+        <a href="index.html#shop" class="hover:text-brand.yellow transition" data-i18n="nav.shop">Shop</a>
+        <a href="categories.html" class="text-brand.red font-semibold" data-i18n="nav.categories">Categories</a>
+        <a href="index.html#beauty" class="hover:text-brand.yellow transition" data-i18n="nav.beauty">Beauty</a>
+        <a href="about.html" class="hover:text-brand.yellow transition" data-i18n="nav.about">About</a>
+        <a href="admin.html" class="hover:text-brand.yellow transition" data-i18n="admin.nav">Admin</a>
+        <a href="index.html#visit" class="hover:text-brand.yellow transition" data-i18n="nav.visit">Visit Us</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button id="lang-zh" class="px-3 py-1 rounded-full border hover:shadow-elev hover:-translate-y-0.5 transition text-sm" aria-label="切換中文">中文</button>
+        <button id="lang-en" class="px-3 py-1 rounded-full border hover:shadow-elev hover:-translate-y-0.5 transition text-sm" aria-label="Switch to English">EN</button>
+        <button id="cart-open" class="relative ml-1 p-2 rounded-full border hover:shadow-elev transition" aria-label="Open cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span id="cart-count" class="absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 text-xs rounded-full bg-brand.red text-white grid place-items-center">0</span>
+        </button>
+        <button id="menu-toggle" class="md:hidden p-2 rounded-lg border hover:shadow-elev" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+    <nav id="mobile-menu" class="md:hidden hidden border-t bg-white" aria-label="Mobile navigation">
+      <div class="px-4 py-3 space-y-2">
+        <a href="index.html#shop" class="block py-2" data-i18n="nav.shop">Shop</a>
+        <a href="categories.html" class="block py-2 font-semibold text-brand.red" data-i18n="nav.categories">Categories</a>
+        <a href="index.html#beauty" class="block py-2" data-i18n="nav.beauty">Beauty</a>
+        <a href="about.html" class="block py-2" data-i18n="nav.about">About</a>
+        <a href="admin.html" class="block py-2" data-i18n="admin.nav">Admin</a>
+        <a href="index.html#visit" class="block py-2" data-i18n="nav.visit">Visit Us</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="relative overflow-hidden bg-gradient-to-r from-rose-50 via-white to-amber-50">
+      <div class="absolute inset-y-0 right-0 w-1/2 bg-[url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center opacity-20 pointer-events-none" aria-hidden="true"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-20">
+        <div class="max-w-3xl" data-aos="fade-right">
+          <p class="text-brand.red font-semibold uppercase tracking-wide" data-i18n="catpage.tag">Category Library</p>
+          <h1 class="mt-4 text-4xl md:text-5xl font-extrabold text-gray-900" data-i18n="catpage.title">Explore Every Osun Category</h1>
+          <p class="mt-4 text-lg text-gray-600" data-i18n="catpage.subtitle">Browse our full range of apparel, beauty rituals, and lifestyle services designed to celebrate your elegance.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="index.html#shop" class="shine-btn inline-flex items-center rounded-full bg-brand.red px-8 py-3 font-semibold text-white hover:bg-rose-600 transition" data-i18n="catpage.cta.primary">Shop featured styles</a>
+            <a href="#beauty-categories" class="shine-btn inline-flex items-center rounded-full border border-gray-300 text-gray-900 px-8 py-3 font-semibold hover:bg-white hover:shadow-elev transition" data-i18n="catpage.cta.secondary">Jump to beauty</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 py-16" aria-labelledby="quick-categories-heading">
+      <div class="text-center" data-aos="fade-up">
+        <p class="text-sm uppercase tracking-widest text-brand.red" data-i18n="catpage.quick.tag">Spotlight</p>
+        <h2 id="quick-categories-heading" class="mt-2 text-3xl font-bold text-gray-900" data-i18n="catpage.quick.title">Shop the highlights</h2>
+        <p class="mt-3 text-gray-600" data-i18n="catpage.quick.subtitle">A boutique snapshot of our most-loved categories for effortless browsing.</p>
+      </div>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="rounded-2xl bg-white p-6 text-center shadow-sm hover:shadow-elev transition" data-aos="zoom-in">
+          <img src="product1.jpg" alt="Osun dresses" class="mx-auto h-40 w-full max-w-xs rounded-2xl object-cover shadow" />
+          <h3 class="mt-4 text-lg font-semibold text-gray-900" data-i18n="catpage.quick.dresses">Romantic dresses</h3>
+        </article>
+        <article class="rounded-2xl bg-white p-6 text-center shadow-sm hover:shadow-elev transition" data-aos="zoom-in" data-aos-delay="75">
+          <img src="dress_pink.jpg" alt="Osun tops" class="mx-auto h-40 w-full max-w-xs rounded-2xl object-cover shadow" />
+          <h3 class="mt-4 text-lg font-semibold text-gray-900" data-i18n="catpage.quick.tops">Polished tops</h3>
+        </article>
+        <article class="rounded-2xl bg-white p-6 text-center shadow-sm hover:shadow-elev transition" data-aos="zoom-in" data-aos-delay="150">
+          <img src="model1.png" alt="Osun glow beauty" class="mx-auto h-40 w-full max-w-xs rounded-2xl object-cover shadow" />
+          <h3 class="mt-4 text-lg font-semibold text-gray-900" data-i18n="catpage.quick.beauty">Glow rituals</h3>
+        </article>
+        <article class="rounded-2xl bg-white p-6 text-center shadow-sm hover:shadow-elev transition" data-aos="zoom-in" data-aos-delay="225">
+          <img src="dress_black.jpg" alt="Osun accessories" class="mx-auto h-40 w-full max-w-xs rounded-2xl object-cover shadow" />
+          <h3 class="mt-4 text-lg font-semibold text-gray-900" data-i18n="catpage.quick.accessories">Finishing touches</h3>
+        </article>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16" id="apparel-categories" aria-labelledby="apparel-heading">
+      <div class="md:flex md:items-end md:justify-between" data-aos="fade-up">
+        <div>
+          <p class="text-sm uppercase tracking-widest text-brand.red" data-i18n="catpage.section1.tag">Apparel</p>
+          <h2 id="apparel-heading" class="mt-2 text-3xl font-bold text-gray-900" data-i18n="catpage.section1.title">Wardrobe Foundations</h2>
+          <p class="mt-3 text-gray-600" data-i18n="catpage.section1.desc">From day-to-night silhouettes to modest layers, discover the fits that make every moment yours.</p>
+        </div>
+      </div>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="rounded-2xl border bg-white/70 p-6 shadow-sm hover:shadow-elev transition" data-aos="fade-up">
+          <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.card.dresses.title">Statement Dresses</h3>
+          <p class="mt-3 text-gray-600" data-i18n="catpage.card.dresses.desc">Romantic silhouettes, petite to plus sizing, and special-occasion exclusives.</p>
+        </article>
+        <article class="rounded-2xl border bg-white/70 p-6 shadow-sm hover:shadow-elev transition" data-aos="fade-up" data-aos-delay="50">
+          <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.card.tops.title">Tops &amp; Blouses</h3>
+          <p class="mt-3 text-gray-600" data-i18n="catpage.card.tops.desc">Silk, satin, and breathable cotton staples tailored for tropical days.</p>
+        </article>
+        <article class="rounded-2xl border bg-white/70 p-6 shadow-sm hover:shadow-elev transition" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.card.bottoms.title">Elevated Bottoms</h3>
+          <p class="mt-3 text-gray-600" data-i18n="catpage.card.bottoms.desc">Wide-leg trousers, sculpted skirts, and denim with polished finishes.</p>
+        </article>
+        <article class="rounded-2xl border bg-white/70 p-6 shadow-sm hover:shadow-elev transition" data-aos="fade-up" data-aos-delay="150">
+          <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.card.modest.title">Modest Layers</h3>
+          <p class="mt-3 text-gray-600" data-i18n="catpage.card.modest.desc">Kaftans, abayas, and layering essentials that balance coverage and style.</p>
+        </article>
+        <article class="rounded-2xl border bg-white/70 p-6 shadow-sm hover:shadow-elev transition" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.card.outerwear.title">Outerwear &amp; Knits</h3>
+          <p class="mt-3 text-gray-600" data-i18n="catpage.card.outerwear.desc">Lightweight blazers, cropped jackets, and textured knits for every climate.</p>
+        </article>
+        <article class="rounded-2xl border bg-white/70 p-6 shadow-sm hover:shadow-elev transition" data-aos="fade-up" data-aos-delay="250">
+          <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.card.occasion.title">Occasionwear</h3>
+          <p class="mt-3 text-gray-600" data-i18n="catpage.card.occasion.desc">Evening gowns, bridesmaid edits, and bespoke tailoring appointments.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="bg-gray-50 border-y" id="beauty-categories" aria-labelledby="beauty-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+        <div class="md:flex md:items-end md:justify-between" data-aos="fade-up">
+          <div>
+            <p class="text-sm uppercase tracking-widest text-brand.red" data-i18n="catpage.section2.tag">Beauty &amp; Glow</p>
+            <h2 id="beauty-heading" class="mt-2 text-3xl font-bold text-gray-900" data-i18n="catpage.section2.title">Radiance Rituals</h2>
+            <p class="mt-3 text-gray-600" data-i18n="catpage.section2.desc">Build your glow routine with clean skincare, artistry pigments, and sensorial treats.</p>
+          </div>
+        </div>
+        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="rounded-2xl bg-white p-6 shadow-sm hover:shadow-elev transition" data-aos="fade-up">
+            <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.card.skincare.title">Glow Skincare Rituals</h3>
+            <p class="mt-3 text-gray-600" data-i18n="catpage.card.skincare.desc">Cleansers, essences, serums, and creams curated for humid climates.</p>
+          </article>
+          <article class="rounded-2xl bg-white p-6 shadow-sm hover:shadow-elev transition" data-aos="fade-up" data-aos-delay="50">
+            <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.card.makeup.title">Color Cosmetics</h3>
+            <p class="mt-3 text-gray-600" data-i18n="catpage.card.makeup.desc">Skin-first foundations, multi-use palettes, and high-performance lip tints.</p>
+          </article>
+          <article class="rounded-2xl bg-white p-6 shadow-sm hover:shadow-elev transition" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.card.body.title">Body &amp; Wellness</h3>
+            <p class="mt-3 text-gray-600" data-i18n="catpage.card.body.desc">Body scrubs, spa-grade oils, and at-home massage essentials.</p>
+          </article>
+          <article class="rounded-2xl bg-white p-6 shadow-sm hover:shadow-elev transition" data-aos="fade-up" data-aos-delay="150">
+            <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.card.fragrance.title">Fragrance Library</h3>
+            <p class="mt-3 text-gray-600" data-i18n="catpage.card.fragrance.desc">Bespoke perfumes, travel atomisers, and home scents to set the mood.</p>
+          </article>
+          <article class="rounded-2xl bg-white p-6 shadow-sm hover:shadow-elev transition" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.card.beautytools.title">Beauty Tools</h3>
+            <p class="mt-3 text-gray-600" data-i18n="catpage.card.beautytools.desc">Facial rollers, LED tech, and pro brushes vetted by our glow artists.</p>
+          </article>
+          <article class="rounded-2xl bg-white p-6 shadow-sm hover:shadow-elev transition" data-aos="fade-up" data-aos-delay="250">
+            <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.card.giftsets.title">Gift Sets &amp; Minis</h3>
+            <p class="mt-3 text-gray-600" data-i18n="catpage.card.giftsets.desc">Ready-to-gift curation for bridesmaids, besties, and self-care moments.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16" id="lifestyle-categories" aria-labelledby="lifestyle-heading">
+      <div class="md:flex md:items-end md:justify-between" data-aos="fade-up">
+        <div>
+          <p class="text-sm uppercase tracking-widest text-brand.red" data-i18n="catpage.section3.tag">Lifestyle &amp; Services</p>
+          <h2 id="lifestyle-heading" class="mt-2 text-3xl font-bold text-gray-900" data-i18n="catpage.section3.title">Beyond the Boutique</h2>
+          <p class="mt-3 text-gray-600" data-i18n="catpage.section3.desc">Experience Osun through bespoke services and community-driven happenings.</p>
+        </div>
+      </div>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="rounded-2xl border bg-white/70 p-6 shadow-sm hover:shadow-elev transition" data-aos="fade-up">
+          <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.card.bridal.title">Bridal Studio</h3>
+          <p class="mt-3 text-gray-600" data-i18n="catpage.card.bridal.desc">Made-to-measure gowns, veil styling, and premium fitting appointments.</p>
+        </article>
+        <article class="rounded-2xl border bg-white/70 p-6 shadow-sm hover:shadow-elev transition" data-aos="fade-up" data-aos-delay="75">
+          <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.card.styling.title">Personal Styling</h3>
+          <p class="mt-3 text-gray-600" data-i18n="catpage.card.styling.desc">One-on-one wardrobe edits and capsule-building sessions with our experts.</p>
+        </article>
+        <article class="rounded-2xl border bg-white/70 p-6 shadow-sm hover:shadow-elev transition" data-aos="fade-up" data-aos-delay="150">
+          <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.card.workshops.title">Workshops &amp; Events</h3>
+          <p class="mt-3 text-gray-600" data-i18n="catpage.card.workshops.desc">Weekend masterclasses on skincare layering, mindful beauty, and styling.</p>
+        </article>
+        <article class="rounded-2xl border bg-white/70 p-6 shadow-sm hover:shadow-elev transition" data-aos="fade-up" data-aos-delay="225">
+          <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.card.lounge.title">Lounge &amp; Café</h3>
+          <p class="mt-3 text-gray-600" data-i18n="catpage.card.lounge.desc">Sip artisanal tea, preview lookbooks, and enjoy member-only pop-ups.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="bg-gradient-to-r from-brand.red via-rose-500 to-amber-400 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:flex md:items-center md:justify-between">
+        <div data-aos="fade-right">
+          <h2 class="text-3xl font-bold" data-i18n="catpage.cta.title">Need a curated recommendation?</h2>
+          <p class="mt-4 text-white/90" data-i18n="catpage.cta.desc">Book a styling or beauty consultation and our team will handpick pieces that match your lifestyle.</p>
+        </div>
+        <div class="mt-8 md:mt-0" data-aos="fade-left">
+          <a href="index.html#visit" class="shine-btn inline-flex items-center rounded-full bg-white px-8 py-3 font-semibold text-brand.red hover:bg-rose-50 transition" data-i18n="catpage.cta.button">Visit our boutique</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-gray-300" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid md:grid-cols-4 gap-10">
+      <div>
+        <p class="text-yellow-400 font-semibold">Osun Beauty &amp; Boutique</p>
+        <p class="mt-3 text-sm text-gray-400">© 2025 Osun. All Rights Reserved.</p>
+      </div>
+      <div>
+        <p class="font-semibold text-white" data-i18n="foot.shop">Shop</p>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a href="index.html#categories" class="hover:text-white" data-i18n="cat.dresses">Dresses</a></li>
+          <li><a href="index.html#categories" class="hover:text-white" data-i18n="cat.tops">Tops &amp; Blouses</a></li>
+          <li><a href="index.html#beauty" class="hover:text-white" data-i18n="cat.beauty">Beauty</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold text-white" data-i18n="foot.support">Support</p>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a href="shipping.html" class="hover:text-white" data-i18n="pol.ship">Shipping</a></li>
+          <li><a href="returns.html" class="hover:text-white" data-i18n="pol.return">Returns</a></li>
+          <li><a href="privacy.html" class="hover:text-white" data-i18n="pol.privacy">Privacy</a></li>
+          <li><a href="admin.html" class="hover:text-white" data-i18n="foot.admin">Admin</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold text-white" data-i18n="foot.follow">Follow</p>
+        <div class="mt-3 flex items-center gap-3">
+          <a href="#" aria-label="Instagram" class="hover:text-white">IG</a>
+          <a href="#" aria-label="Facebook" class="hover:text-white">FB</a>
+          <a href="#" aria-label="TikTok" class="hover:text-white">TT</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cart-drawer" class="fixed inset-0 hidden z-50">
+    <div id="cart-mask" class="absolute inset-0 mask opacity-0 transition-opacity"></div>
+    <aside class="absolute right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl translate-x-full transition-transform flex flex-col" aria-labelledby="cart-title" role="dialog" aria-modal="true">
+      <div class="px-5 h-16 border-b flex items-center justify-between">
+        <h3 id="cart-title" class="text-lg font-semibold" data-i18n="cart.title">Your Cart</h3>
+        <button id="cart-close" class="p-2 rounded-lg border hover:shadow-elev" aria-label="Close cart">×</button>
+      </div>
+      <div id="cart-items" class="flex-1 overflow-y-auto p-4 space-y-4"></div>
+      <div class="border-t p-5">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-sm text-gray-600" data-i18n="cart.subtotal">Subtotal</span>
+          <span id="cart-subtotal" class="text-lg font-semibold">MYR 0.00</span>
+        </div>
+        <button class="w-full shine-btn rounded-full bg-brand.red text-white py-3 font-semibold hover:bg-rose-600 transition" aria-label="Checkout" data-i18n="cart.checkout">Checkout (Demo)</button>
+        <p class="text-xs text-gray-500 mt-2" data-i18n="cart.note">This is a demo cart. No real payments.</p>
+      </div>
+    </aside>
+  </div>
+
+  <script src="i18n-cart.js"></script>
+</body>
+</html>
