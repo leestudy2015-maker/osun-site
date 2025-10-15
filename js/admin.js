@@ -156,7 +156,7 @@ function renderHeroForm(){
       </div>
       <div class="flex flex-wrap gap-3">
         <button type="submit" class="shine-btn rounded-full bg-brand.red px-6 py-3 text-sm font-semibold text-white shadow hover:bg-rose-600 transition">${escapeHtml(t('admin.hero.save'))}</button>
-        <button type="button" data-action="reset-hero" class="shine-btn rounded-full border border-brand.red bg-rose-50/80 px-6 py-3 text-sm font-semibold text-brand.red hover:bg-rose-100 hover:shadow transition">${escapeHtml(t('admin.hero.reset'))}</button>
+        <button type="button" data-action="reset-hero" class="shine-btn rounded-full border border-brand.red px-6 py-3 text-sm font-semibold text-brand.red hover:bg-white hover:shadow transition">${escapeHtml(t('admin.hero.reset'))}</button>
       </div>
     </form>
   `;
@@ -253,7 +253,7 @@ function renderCategoryManager(){
     <div class="flex flex-wrap gap-3" role="tablist">
       ${Object.keys(groups).map(key => {
         const active = key === activeCategory;
-        return `<button type="button" data-category-tab="${key}" class="shine-btn rounded-full ${active ? 'bg-brand.red text-white shadow' : 'border border-brand.red bg-rose-50/80 text-brand.red hover:bg-rose-100 hover:shadow'} px-4 py-2 text-sm font-semibold">${escapeHtml(groupLabel(key))}</button>`;
+        return `<button type="button" data-category-tab="${key}" class="shine-btn rounded-full ${active ? 'bg-brand.red text-white shadow' : 'border border-brand.red text-brand.red hover:bg-white hover:shadow'} px-4 py-2 text-sm font-semibold">${escapeHtml(groupLabel(key))}</button>`;
       }).join('')}
     </div>
     <div id="categoryItemsWrap" class="mt-6 space-y-6">
@@ -261,7 +261,7 @@ function renderCategoryManager(){
     </div>
     <div class="mt-6 flex flex-wrap gap-3">
       <button type="button" class="shine-btn rounded-full bg-brand.red px-6 py-3 text-sm font-semibold text-white shadow hover:bg-rose-600 transition" data-action="save-category">${escapeHtml(t('admin.categories.save'))}</button>
-      <button type="button" class="shine-btn rounded-full border border-brand.red bg-rose-50/80 px-6 py-3 text-sm font-semibold text-brand.red hover:bg-rose-100 hover:shadow transition" data-action="add-item">${escapeHtml(t('admin.categories.add'))}</button>
+      <button type="button" class="shine-btn rounded-full border border-brand.red px-6 py-3 text-sm font-semibold text-brand.red hover:bg-white hover:shadow transition" data-action="add-item">${escapeHtml(t('admin.categories.add'))}</button>
     </div>
   `;
 
@@ -726,7 +726,7 @@ function renderAboutForm(){
 
       <div class="flex flex-wrap gap-3">
         <button type="submit" class="shine-btn rounded-full bg-brand.red px-6 py-3 text-sm font-semibold text-white shadow hover:bg-rose-600 transition">${escapeHtml(t('admin.about.save'))}</button>
-        <button type="button" data-action="reset-about" class="shine-btn rounded-full border border-brand.red bg-rose-50/80 px-6 py-3 text-sm font-semibold text-brand.red hover:bg-rose-100 hover:shadow transition">${escapeHtml(t('admin.about.reset'))}</button>
+        <button type="button" data-action="reset-about" class="shine-btn rounded-full border border-brand.red px-6 py-3 text-sm font-semibold text-brand.red hover:bg-white hover:shadow transition">${escapeHtml(t('admin.about.reset'))}</button>
       </div>
     </form>
   `;

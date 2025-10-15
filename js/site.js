@@ -88,14 +88,6 @@
       'checkout.common.back': 'Back',
       'checkout.account.title': 'Create your Osun profile',
       'checkout.account.desc': 'Save your contact details for faster glow deliveries.',
-      'checkout.account.newTag': 'New to Osun?',
-      'checkout.account.newTitle': 'First time shopping?',
-      'checkout.account.newDesc': 'Create an Osun member account to save preferences and track parcels.',
-      'checkout.account.newCtaPrimary': 'Register now',
-      'checkout.account.newCtaSecondary': 'Continue as guest',
-      'checkout.account.newHint': 'Complete the registration form below to continue.',
-      'checkout.account.sectionTitle': 'New member registration',
-      'checkout.account.sectionDesc': 'Enter your details below to store them for future checkouts.',
       'checkout.account.fullName': 'Full name',
       'checkout.account.fullName.placeholder': 'e.g. Liyana Osman',
       'checkout.account.email': 'Email',
@@ -104,17 +96,6 @@
       'checkout.account.password.placeholder': 'Create a secure password',
       'checkout.account.notes': 'Order notes (optional)',
       'checkout.account.notes.placeholder': 'Let us know about sizing preferences or delivery notes',
-      'checkout.login.tag': 'Member access',
-      'checkout.login.title': 'Member sign in',
-      'checkout.login.desc': 'Sign in to load your saved addresses and orders.',
-      'checkout.login.email': 'Email address',
-      'checkout.login.email.placeholder': 'Registered email',
-      'checkout.login.password': 'Password',
-      'checkout.login.password.placeholder': 'Enter your account password',
-      'checkout.login.submit': 'Sign in',
-      'checkout.login.forgot': 'Forgot password?',
-      'checkout.login.error': 'We could not find an account with those details. Please register below.',
-      'checkout.login.success': 'Welcome back! Your saved details have been loaded.',
       'checkout.verify.title': 'Verify your phone number',
       'checkout.verify.desc': 'We will send a one-time code to keep your parcel updates secure.',
       'checkout.verify.phone': 'Mobile number',
@@ -363,16 +344,10 @@
       'admin.about.save': 'Save about page',
       'admin.about.reset': 'Reset to defaults',
       'admin.notes.heading': 'Publishing notes',
-      'admin.notes.desc': 'Share the exported configuration or manually replace copy within the HTML files. A condensed integration checklist is included below when you are ready to connect a CMS.',
+      'admin.notes.desc': 'Share the exported configuration or manually replace copy within the HTML files. For rapid updates, coordinate with your developer to connect these inputs to a CMS or headless backend.',
       'admin.notes.item1.prefix': 'Homepage hero updates live in',
       'admin.notes.item2.prefix': 'Category cards can be updated in',
       'admin.notes.item3.prefix': 'Founder story copy resides in',
-      'admin.integration.heading': 'Headless CMS integration guide',
-      'admin.integration.desc': 'When you are ready to automate updates, follow the quick plan below or share it with your developer.',
-      'admin.integration.step1': 'Connect a headless CMS such as Sanity, Contentful, or Strapi and recreate the hero, category, and about models that mirror the forms above.',
-      'admin.integration.step2': 'Replace the demo fetch in js/content.js with live API calls, then hydrate the pages using the same data attributes.',
-      'admin.integration.step3': 'Use the export JSON action as your migration seed and schedule webhooks so content saves trigger a redeploy or cache refresh.',
-      'admin.integration.link': 'View the README integration checklist →',
       'admin.login.title': 'Secure admin access',
       'admin.login.subtitle': 'Enter the admin password to continue updating boutique content.',
       'admin.login.password': 'Admin password',
@@ -472,14 +447,6 @@
       'checkout.common.back': '返回',
       'checkout.account.title': '建立你的 OSUN 帳戶',
       'checkout.account.desc': '保存聯絡資訊，讓每次寄送更順暢。',
-      'checkout.account.newTag': '首次造訪 OSUN？',
-      'checkout.account.newTitle': '第一次購物嗎？',
-      'checkout.account.newDesc': '註冊 OSUN 會員以儲存偏好並追蹤訂單。',
-      'checkout.account.newCtaPrimary': '立即註冊',
-      'checkout.account.newCtaSecondary': '以訪客身分繼續',
-      'checkout.account.newHint': '向下捲動填寫註冊表單即可繼續。',
-      'checkout.account.sectionTitle': '新會員註冊',
-      'checkout.account.sectionDesc': '填寫以下資料，未來結帳即可直接套用。',
       'checkout.account.fullName': '姓名',
       'checkout.account.fullName.placeholder': '例：Liyana Osman',
       'checkout.account.email': '電子郵件',
@@ -488,17 +455,6 @@
       'checkout.account.password.placeholder': '設定安全密碼',
       'checkout.account.notes': '訂單備註（選填）',
       'checkout.account.notes.placeholder': '可填寫尺寸偏好或配送提醒',
-      'checkout.login.tag': '會員登入',
-      'checkout.login.title': '已有帳戶？',
-      'checkout.login.desc': '登入後即可載入先前儲存的地址與訂單。',
-      'checkout.login.email': '電子郵件',
-      'checkout.login.email.placeholder': '註冊時使用的信箱',
-      'checkout.login.password': '密碼',
-      'checkout.login.password.placeholder': '輸入帳戶密碼',
-      'checkout.login.submit': '登入',
-      'checkout.login.forgot': '忘記密碼',
-      'checkout.login.error': '查無此帳戶資訊，請於下方完成註冊。',
-      'checkout.login.success': '歡迎回來！已載入你的帳戶資料。',
       'checkout.verify.title': '驗證你的手機號碼',
       'checkout.verify.desc': '我們會傳送一次性驗證碼，保護配送通知安全。',
       'checkout.verify.phone': '手機號碼',
@@ -744,16 +700,10 @@
       'admin.about.save': '儲存關於頁面',
       'admin.about.reset': '恢復預設內容',
       'admin.notes.heading': '發佈提醒',
-      'admin.notes.desc': '可將匯出的設定檔交給工程團隊，或手動複製到 HTML。下方提供精簡串接清單，協助你導入 CMS。',
+      'admin.notes.desc': '可將匯出的設定檔交給工程團隊，或手動複製到 HTML。建議後續串接 CMS 或 Headless 後台以自動化流程。',
       'admin.notes.item1.prefix': '首頁主視覺位於',
       'admin.notes.item2.prefix': '分類卡片可在此頁更新：',
       'admin.notes.item3.prefix': '創辦人故事內容位於',
-      'admin.integration.heading': 'Headless CMS 串接指南',
-      'admin.integration.desc': '想自動化更新時，可依照以下步驟規劃，或將清單交給合作的工程師。',
-      'admin.integration.step1': '選擇 Sanity、Contentful 或 Strapi 等 Headless CMS，建立對應的 hero、分類與關於我們資料模型。',
-      'admin.integration.step2': '以即時 API 取代 js/content.js 的示範資料來源，並沿用現有 data-* 屬性進行渲染。',
-      'admin.integration.step3': '使用匯出 JSON 作為初始資料，並設定 Webhook 讓每次儲存自動觸發重新部署或快取更新。',
-      'admin.integration.link': '前往 README 查看串接清單 →',
       'admin.login.title': '後台安全登入',
       'admin.login.subtitle': '請輸入後台密碼以繼續更新精品內容。',
       'admin.login.password': '後台密碼',
@@ -1321,30 +1271,24 @@
     let lastSentPhone = '';
     let currentOrder = loadOrder();
 
-    function computeCurrentStepIndex(){
-      if (currentOrder){
-        return 4;
-      }
-      if (!state.account.fullName || !state.account.email){
-        return 0;
-      }
-      if (!state.verify.verified){
-        return 1;
-      }
-      if (!state.shipping.address || !state.shipping.city || !state.shipping.postcode){
-        return 2;
-      }
-      return 3;
+    if (!state.account.fullName || !state.account.email){
+      currentStepIndex = 0;
+    } else if (!state.verify.verified){
+      currentStepIndex = 1;
+    } else if (!state.shipping.address || !state.shipping.city || !state.shipping.postcode){
+      currentStepIndex = 2;
+    } else {
+      currentStepIndex = 3;
     }
 
-    currentStepIndex = computeCurrentStepIndex();
+    if (currentOrder) {
+      currentStepIndex = 4;
+    }
 
     const sendBtn = document.getElementById('checkoutSendCode');
     const resendBtn = document.getElementById('checkoutResendCode');
     const statusEl = document.getElementById('checkoutCodeStatus');
     const accountForm = document.getElementById('checkout-account-form');
-    const loginForm = document.getElementById('checkout-login-form');
-    const loginErrorEl = document.getElementById('checkoutLoginError');
     const verifyForm = document.getElementById('checkout-verify-form');
     const shippingForm = document.getElementById('checkout-shipping-form');
     const paymentForm = document.getElementById('checkout-payment-form');
@@ -1359,8 +1303,6 @@
     const cardInputs = cardFields ? Array.from(cardFields.querySelectorAll('input')) : [];
     const cardNumberInput = document.getElementById('checkoutCardNumber');
     const cardExpiryInput = document.getElementById('checkoutCardExpiry');
-
-    const scrollButtons = Array.from(root.querySelectorAll('[data-scroll-target]'));
 
     function updateProgress(){
       progressItems.forEach((item, index) => {
@@ -1395,7 +1337,6 @@
       setInputValue('checkoutFullName', state.account.fullName);
       setInputValue('checkoutEmail', state.account.email);
       setInputValue('checkoutPassword', state.account.password);
-      setInputValue('checkoutLoginEmail', state.account.email);
       const notes = document.getElementById('checkoutNotes');
       if (notes) notes.value = state.account.notes || '';
       setInputValue('checkoutPhone', state.verify.phone);
@@ -1517,26 +1458,7 @@
       state.account.password = formData.get('password')?.toString() || '';
       state.account.notes = formData.get('notes')?.toString().trim() || '';
       saveState();
-      showStep(Math.max(1, computeCurrentStepIndex()));
-    }
-
-    function handleLoginSubmit(event){
-      event.preventDefault();
-      const data = new FormData(loginForm);
-      const email = (data.get('loginEmail') || '').toString().trim().toLowerCase();
-      const password = (data.get('loginPassword') || '').toString();
-      const storedEmail = (state.account.email || '').toLowerCase();
-      const storedPassword = state.account.password || '';
-      if (!email || !password || !storedEmail || !storedPassword || storedEmail !== email || storedPassword !== password){
-        if (loginErrorEl){
-          loginErrorEl.textContent = translate('checkout.login.error');
-          loginErrorEl.classList.remove('hidden');
-        }
-        return;
-      }
-      if (loginErrorEl) loginErrorEl.classList.add('hidden');
-      showToast(translate('checkout.login.success'));
-      showStep(Math.max(1, computeCurrentStepIndex()));
+      showStep(1);
     }
 
     function handleVerifySubmit(event){
@@ -1762,12 +1684,6 @@
       });
     }
 
-    if (loginForm){
-      loginForm.addEventListener('submit', handleLoginSubmit);
-      loginForm.addEventListener('input', () => {
-        if (loginErrorEl) loginErrorEl.classList.add('hidden');
-      });
-    }
     if (accountForm) accountForm.addEventListener('submit', handleAccountSubmit);
     if (verifyForm) verifyForm.addEventListener('submit', handleVerifySubmit);
     if (shippingForm) shippingForm.addEventListener('submit', handleShippingSubmit);
@@ -1796,18 +1712,6 @@
     });
     if (placeOrderBtn) placeOrderBtn.addEventListener('click', handlePlaceOrder);
 
-    scrollButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const selector = btn.getAttribute('data-scroll-target');
-        if (!selector) return;
-        const target = selector ? root.querySelector(selector) : null;
-        if (!target) return;
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        const focusable = target.querySelector('input, textarea');
-        if (focusable) focusable.focus({ preventScroll: true });
-      });
-    });
-
     bindBackButtons();
     hydrateForms();
     renderSummary();
@@ -1820,9 +1724,6 @@
       updateProgress();
       updateStatusMessage();
       renderSummary();
-      if (loginErrorEl && !loginErrorEl.classList.contains('hidden')){
-        loginErrorEl.textContent = translate('checkout.login.error');
-      }
       if (currentOrder) renderTracking(currentOrder);
     });
   }
