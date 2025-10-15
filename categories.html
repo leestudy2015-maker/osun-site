@@ -84,135 +84,274 @@
   <main class="pt-28 pb-20">
     <section class="bg-gradient-to-b from-pink-50 via-white to-white" aria-labelledby="catpage-title">
       <div class="max-w-5xl mx-auto px-6 py-16 text-center">
-        <p class="text-sm uppercase tracking-[0.4em] text-brand.red" data-i18n="catpage.tag">Category Library</p>
-        <h1 id="catpage-title" class="mt-4 text-4xl font-bold text-gray-900" data-i18n="catpage.title">Explore Every Osun Category</h1>
-        <p class="mt-4 text-base md:text-lg text-gray-600" data-i18n="catpage.subtitle">Browse our full range of apparel, beauty rituals, and lifestyle services designed to celebrate your elegance.</p>
+        <p class="text-sm uppercase tracking-[0.4em] text-brand.red" data-i18n="catpage.hero.tag">Curated Categories</p>
+        <h1 id="catpage-title" class="mt-4 text-4xl font-bold text-gray-900" data-i18n="catpage.hero.title">Dive into our boutique wardrobe library</h1>
+        <p class="mt-4 text-base md:text-lg text-gray-600" data-i18n="catpage.hero.subtitle">Swipe through seasonal edits and uncover the looks that keep your style effortless.</p>
         <div class="mt-8 flex flex-wrap justify-center gap-3">
-          <a href="index.html#shop" class="shine-btn inline-flex items-center rounded-full bg-brand.red px-6 py-3 text-sm font-semibold text-white hover:bg-rose-600 transition" data-i18n="catpage.cta.primary">Shop featured styles</a>
-          <a href="index.html#beauty" class="shine-btn inline-flex items-center rounded-full border border-brand.red px-6 py-3 text-sm font-semibold text-brand.red hover:bg-white hover:shadow transition" data-i18n="catpage.cta.secondary">Jump to beauty</a>
+          <a href="index.html#shop" class="shine-btn inline-flex items-center rounded-full bg-brand.red px-6 py-3 text-sm font-semibold text-white hover:bg-rose-600 transition" data-i18n="catpage.hero.cta">Back to shop</a>
         </div>
       </div>
     </section>
 
-    <section class="max-w-6xl mx-auto px-6 py-16 space-y-16">
-      <div data-aos="fade-up">
-        <p class="text-sm uppercase tracking-[0.35em] text-brand.red" data-i18n="catpage.section1.tag">Apparel</p>
-        <div class="mt-4 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+    <section class="max-w-6xl mx-auto px-6 py-16 space-y-20">
+      <div data-aos="fade-up" class="space-y-6">
+        <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div class="max-w-2xl">
-            <h2 class="text-3xl font-bold text-gray-900" data-i18n="catpage.section1.title">Wardrobe Foundations</h2>
-            <p class="mt-3 text-gray-600" data-i18n="catpage.section1.desc">From day-to-night silhouettes to modest layers, discover the fits that make every moment yours.</p>
+            <p class="text-sm uppercase tracking-[0.35em] text-brand.red" data-i18n="catpage.wardrobe.tag">Wardrobe Foundations</p>
+            <h2 class="mt-2 text-3xl font-bold text-gray-900" data-i18n="catpage.wardrobe.title">Everyday layers for your signature style.</h2>
+            <p class="mt-3 text-gray-600" data-i18n="catpage.wardrobe.desc">Mix-and-match staples that balance polish and comfort from office hours to weekend brunch.</p>
           </div>
+          <p class="text-sm text-gray-500" data-i18n="catpage.slider.hint">Swipe sideways to explore every look</p>
         </div>
-        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
-            <img src="product1.jpg" alt="Dresses" class="h-44 w-full rounded-xl object-cover shadow" />
-            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.dresses.title">Statement Dresses</h3>
-            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.dresses.desc">Romantic silhouettes, petite to plus sizing, and special-occasion exclusives.</p>
-          </article>
-          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
-            <img src="dress_pink.jpg" alt="Tops" class="h-44 w-full rounded-xl object-cover shadow" />
-            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.tops.title">Tops &amp; Blouses</h3>
-            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.tops.desc">Silk, satin, and breathable cotton staples tailored for tropical days.</p>
-          </article>
-          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
-            <img src="dress_black.jpg" alt="Bottoms" class="h-44 w-full rounded-xl object-cover shadow" />
-            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.bottoms.title">Elevated Bottoms</h3>
-            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.bottoms.desc">Wide-leg trousers, sculpted skirts, and denim with polished finishes.</p>
-          </article>
-          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
-            <img src="store.jpg" alt="Modest Layers" class="h-44 w-full rounded-xl object-cover shadow" />
-            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.modest.title">Modest Layers</h3>
-            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.modest.desc">Kaftans, abayas, and layering essentials that balance coverage and style.</p>
-          </article>
-          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
-            <img src="hero.jpg" alt="Outerwear" class="h-44 w-full rounded-xl object-cover shadow" />
-            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.outerwear.title">Outerwear &amp; Knits</h3>
-            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.outerwear.desc">Lightweight blazers, cropped jackets, and textured knits for every climate.</p>
-          </article>
-          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
-            <img src="model1.png" alt="Occasionwear" class="h-44 w-full rounded-xl object-cover shadow" />
-            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.occasion.title">Occasionwear</h3>
-            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.occasion.desc">Evening gowns, bridesmaid edits, and bespoke tailoring appointments.</p>
-          </article>
+        <div class="relative">
+          <div class="flex gap-6 overflow-x-auto pb-4 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory" role="list" aria-label="Wardrobe Foundations carousel">
+            <article class="min-w-[260px] max-w-xs snap-start rounded-3xl border border-rose-100 bg-white shadow-sm" role="listitem">
+              <div class="relative">
+                <img src="product1.jpg" alt="Lotus wrap dress in coral" class="h-60 w-full rounded-t-3xl object-cover" />
+                <span class="absolute left-4 top-4 rounded-full bg-brand.red px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white" data-i18n="tag.bestseller">Best Seller</span>
+              </div>
+              <div class="p-6 space-y-3">
+                <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.wardrobe1.name">Lotus Wrap Dress</h3>
+                <p class="text-sm text-gray-600" data-i18n="catpage.wardrobe1.desc">Satin drape with adjustable waist ties and flutter sleeves.</p>
+                <div class="flex items-center justify-between text-sm font-semibold text-brand.red">
+                  <span>MYR 289</span>
+                  <span data-i18n="tag.bestseller">Best Seller</span>
+                </div>
+                <p class="text-sm text-gray-500">
+                  <span data-i18n="catpage.inventory">Inventory</span>
+                  <span class="ml-1 font-medium text-gray-700" data-i18n="catpage.wardrobe1.stock">12 pieces left</span>
+                </p>
+              </div>
+            </article>
+            <article class="min-w-[260px] max-w-xs snap-start rounded-3xl border border-amber-100 bg-white shadow-sm" role="listitem">
+              <div class="relative">
+                <img src="dress_pink.jpg" alt="Citrine co-ord set displayed on hanger" class="h-60 w-full rounded-t-3xl object-cover" />
+                <span class="absolute left-4 top-4 rounded-full bg-amber-500 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white" data-i18n="tag.new">New</span>
+              </div>
+              <div class="p-6 space-y-3">
+                <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.wardrobe2.name">Citrine Co-ord Set</h3>
+                <p class="text-sm text-gray-600" data-i18n="catpage.wardrobe2.desc">Two-piece cotton set with cropped shirt and high-rise trousers.</p>
+                <div class="flex items-center justify-between text-sm font-semibold text-brand.red">
+                  <span>MYR 239</span>
+                  <span data-i18n="tag.new">New</span>
+                </div>
+                <p class="text-sm text-gray-500">
+                  <span data-i18n="catpage.inventory">Inventory</span>
+                  <span class="ml-1 font-medium text-gray-700" data-i18n="catpage.wardrobe2.stock">18 sets available</span>
+                </p>
+              </div>
+            </article>
+            <article class="min-w-[260px] max-w-xs snap-start rounded-3xl border border-emerald-100 bg-white shadow-sm" role="listitem">
+              <div class="relative">
+                <img src="dress_black.jpg" alt="Soft pleated skirt on mannequin" class="h-60 w-full rounded-t-3xl object-cover" />
+                <span class="absolute left-4 top-4 rounded-full bg-emerald-500 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white" data-i18n="tag.restocked">Restocked</span>
+              </div>
+              <div class="p-6 space-y-3">
+                <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.wardrobe3.name">Aura Pleat Skirt</h3>
+                <p class="text-sm text-gray-600" data-i18n="catpage.wardrobe3.desc">Weightless pleats with elastic comfort waistband.</p>
+                <div class="flex items-center justify-between text-sm font-semibold text-brand.red">
+                  <span>MYR 199</span>
+                  <span data-i18n="tag.restocked">Restocked</span>
+                </div>
+                <p class="text-sm text-gray-500">
+                  <span data-i18n="catpage.inventory">Inventory</span>
+                  <span class="ml-1 font-medium text-gray-700" data-i18n="catpage.wardrobe3.stock">24 skirts ready</span>
+                </p>
+              </div>
+            </article>
+            <article class="min-w-[260px] max-w-xs snap-start rounded-3xl border border-slate-100 bg-white shadow-sm" role="listitem">
+              <div class="relative">
+                <img src="store.jpg" alt="Neutral layering essentials on rack" class="h-60 w-full rounded-t-3xl object-cover" />
+                <span class="absolute left-4 top-4 rounded-full bg-slate-700 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white" data-i18n="tag.capsule">Capsule</span>
+              </div>
+              <div class="p-6 space-y-3">
+                <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.wardrobe4.name">Layered Essentials Pack</h3>
+                <p class="text-sm text-gray-600" data-i18n="catpage.wardrobe4.desc">Cardigan, slip, and scarf trio curated for effortless layering.</p>
+                <div class="flex items-center justify-between text-sm font-semibold text-brand.red">
+                  <span>MYR 259</span>
+                  <span data-i18n="tag.capsule">Capsule</span>
+                </div>
+                <p class="text-sm text-gray-500">
+                  <span data-i18n="catpage.inventory">Inventory</span>
+                  <span class="ml-1 font-medium text-gray-700" data-i18n="catpage.wardrobe4.stock">9 sets remaining</span>
+                </p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
 
-      <div data-aos="fade-up">
-        <p class="text-sm uppercase tracking-[0.35em] text-brand.red" data-i18n="catpage.section2.tag">Beauty &amp; Glow</p>
-        <div class="mt-4 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+      <div data-aos="fade-up" class="space-y-6">
+        <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div class="max-w-2xl">
-            <h2 class="text-3xl font-bold text-gray-900" data-i18n="catpage.section2.title">Radiance Rituals</h2>
-            <p class="mt-3 text-gray-600" data-i18n="catpage.section2.desc">Build your glow routine with clean skincare, artistry pigments, and sensorial treats.</p>
+            <p class="text-sm uppercase tracking-[0.35em] text-brand.red" data-i18n="catpage.ritual.tag">Lifestyle Rituals</p>
+            <h2 class="mt-2 text-3xl font-bold text-gray-900" data-i18n="catpage.ritual.title">Comfort-led looks for slow mornings and mindful evenings.</h2>
+            <p class="mt-3 text-gray-600" data-i18n="catpage.ritual.desc">Loungewear, weekend staples, and mindful textiles for every daily ritual.</p>
           </div>
+          <p class="text-sm text-gray-500" data-i18n="catpage.slider.hint">Swipe sideways to explore every look</p>
         </div>
-        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
-            <img src="model1.png" alt="Skincare" class="h-44 w-full rounded-xl object-cover shadow" />
-            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.skincare.title">Glow Skincare Rituals</h3>
-            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.skincare.desc">Cleansers, essences, serums, and creams curated for humid climates.</p>
-          </article>
-          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
-            <img src="dress_pink.jpg" alt="Makeup" class="h-44 w-full rounded-xl object-cover shadow" />
-            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.makeup.title">Color Cosmetics</h3>
-            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.makeup.desc">Skin-first foundations, multi-use palettes, and high-performance lip tints.</p>
-          </article>
-          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
-            <img src="store.jpg" alt="Body" class="h-44 w-full rounded-xl object-cover shadow" />
-            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.body.title">Body &amp; Wellness</h3>
-            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.body.desc">Body scrubs, spa-grade oils, and at-home massage essentials.</p>
-          </article>
-          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
-            <img src="product1.jpg" alt="Fragrance" class="h-44 w-full rounded-xl object-cover shadow" />
-            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.fragrance.title">Fragrance Library</h3>
-            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.fragrance.desc">Bespoke perfumes, travel atomisers, and home scents to set the mood.</p>
-          </article>
-          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
-            <img src="dress_black.jpg" alt="Beauty Tools" class="h-44 w-full rounded-xl object-cover shadow" />
-            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.beautytools.title">Beauty Tools</h3>
-            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.beautytools.desc">Facial rollers, LED tech, and pro brushes vetted by our glow artists.</p>
-          </article>
-          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
-            <img src="hero.jpg" alt="Gift sets" class="h-44 w-full rounded-xl object-cover shadow" />
-            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.giftsets.title">Gift Sets &amp; Minis</h3>
-            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.giftsets.desc">Ready-to-gift curation for bridesmaids, besties, and self-care moments.</p>
-          </article>
+        <div class="relative">
+          <div class="flex gap-6 overflow-x-auto pb-4 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory" role="list" aria-label="Lifestyle Rituals carousel">
+            <article class="min-w-[260px] max-w-xs snap-start rounded-3xl border border-brand.red/20 bg-white shadow-sm" role="listitem">
+              <div class="relative">
+                <img src="store.jpg" alt="Lounge robe with belt" class="h-60 w-full rounded-t-3xl object-cover" />
+                <span class="absolute left-4 top-4 rounded-full bg-brand.red px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white" data-i18n="tag.limited">Limited</span>
+              </div>
+              <div class="p-6 space-y-3">
+                <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.ritual1.name">Velvet Dawn Robe</h3>
+                <p class="text-sm text-gray-600" data-i18n="catpage.ritual1.desc">Plush lounge robe with detachable sash and deep pockets.</p>
+                <div class="flex items-center justify-between text-sm font-semibold text-brand.red">
+                  <span>MYR 189</span>
+                  <span data-i18n="tag.limited">Limited</span>
+                </div>
+                <p class="text-sm text-gray-500">
+                  <span data-i18n="catpage.inventory">Inventory</span>
+                  <span class="ml-1 font-medium text-gray-700" data-i18n="catpage.ritual1.stock">6 robes remaining</span>
+                </p>
+              </div>
+            </article>
+            <article class="min-w-[260px] max-w-xs snap-start rounded-3xl border border-amber-100 bg-white shadow-sm" role="listitem">
+              <div class="relative">
+                <img src="hero.jpg" alt="Weekend jumpsuit styled outdoors" class="h-60 w-full rounded-t-3xl object-cover" />
+                <span class="absolute left-4 top-4 rounded-full bg-amber-500 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white" data-i18n="tag.new">New</span>
+              </div>
+              <div class="p-6 space-y-3">
+                <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.ritual2.name">Weekend Glow Jumpsuit</h3>
+                <p class="text-sm text-gray-600" data-i18n="catpage.ritual2.desc">Relaxed-fit jumpsuit with breathable linen blend fabric.</p>
+                <div class="flex items-center justify-between text-sm font-semibold text-brand.red">
+                  <span>MYR 249</span>
+                  <span data-i18n="tag.new">New</span>
+                </div>
+                <p class="text-sm text-gray-500">
+                  <span data-i18n="catpage.inventory">Inventory</span>
+                  <span class="ml-1 font-medium text-gray-700" data-i18n="catpage.ritual2.stock">20 pieces stocked</span>
+                </p>
+              </div>
+            </article>
+            <article class="min-w-[260px] max-w-xs snap-start rounded-3xl border border-emerald-100 bg-white shadow-sm" role="listitem">
+              <div class="relative">
+                <img src="model1.png" alt="Two-piece lounge set in sage" class="h-60 w-full rounded-t-3xl object-cover" />
+                <span class="absolute left-4 top-4 rounded-full bg-emerald-500 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white" data-i18n="tag.restocked">Restocked</span>
+              </div>
+              <div class="p-6 space-y-3">
+                <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.ritual3.name">Sage Ritual Set</h3>
+                <p class="text-sm text-gray-600" data-i18n="catpage.ritual3.desc">Mindful knit top and culottes designed for stretch and breathability.</p>
+                <div class="flex items-center justify-between text-sm font-semibold text-brand.red">
+                  <span>MYR 229</span>
+                  <span data-i18n="tag.restocked">Restocked</span>
+                </div>
+                <p class="text-sm text-gray-500">
+                  <span data-i18n="catpage.inventory">Inventory</span>
+                  <span class="ml-1 font-medium text-gray-700" data-i18n="catpage.ritual3.stock">15 sets ready</span>
+                </p>
+              </div>
+            </article>
+            <article class="min-w-[260px] max-w-xs snap-start rounded-3xl border border-indigo-100 bg-white shadow-sm" role="listitem">
+              <div class="relative">
+                <img src="dress_pink.jpg" alt="Knit lounge dress in blush" class="h-60 w-full rounded-t-3xl object-cover" />
+                <span class="absolute left-4 top-4 rounded-full bg-indigo-500 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white" data-i18n="tag.editor">Editor Pick</span>
+              </div>
+              <div class="p-6 space-y-3">
+                <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.ritual4.name">Moonbeam Knit Dress</h3>
+                <p class="text-sm text-gray-600" data-i18n="catpage.ritual4.desc">Cozy rib-knit midi that drapes without clinging.</p>
+                <div class="flex items-center justify-between text-sm font-semibold text-brand.red">
+                  <span>MYR 209</span>
+                  <span data-i18n="tag.editor">Editor Pick</span>
+                </div>
+                <p class="text-sm text-gray-500">
+                  <span data-i18n="catpage.inventory">Inventory</span>
+                  <span class="ml-1 font-medium text-gray-700" data-i18n="catpage.ritual4.stock">14 dresses in stock</span>
+                </p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
 
-      <div data-aos="fade-up">
-        <p class="text-sm uppercase tracking-[0.35em] text-brand.red" data-i18n="catpage.section3.tag">Lifestyle &amp; Services</p>
-        <div class="mt-4 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+      <div data-aos="fade-up" class="space-y-6">
+        <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div class="max-w-2xl">
-            <h2 class="text-3xl font-bold text-gray-900" data-i18n="catpage.section3.title">Beyond the Boutique</h2>
-            <p class="mt-3 text-gray-600" data-i18n="catpage.section3.desc">Experience Osun through bespoke services and community-driven happenings.</p>
+            <p class="text-sm uppercase tracking-[0.35em] text-brand.red" data-i18n="catpage.designer.tag">Designer Exclusives</p>
+            <h2 class="mt-2 text-3xl font-bold text-gray-900" data-i18n="catpage.designer.title">Statement eveningwear crafted for unforgettable nights.</h2>
+            <p class="mt-3 text-gray-600" data-i18n="catpage.designer.desc">Limited couture edits and bespoke gowns tailored by Southeast Asian designers.</p>
           </div>
+          <p class="text-sm text-gray-500" data-i18n="catpage.slider.hint">Swipe sideways to explore every look</p>
         </div>
-        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
-            <img src="hero.jpg" alt="Bridal" class="h-44 w-full rounded-xl object-cover shadow" />
-            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.bridal.title">Bridal Studio</h3>
-            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.bridal.desc">Made-to-measure gowns, veil styling, and premium fitting appointments.</p>
-          </article>
-          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
-            <img src="product1.jpg" alt="Styling" class="h-44 w-full rounded-xl object-cover shadow" />
-            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.styling.title">Personal Styling</h3>
-            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.styling.desc">One-on-one wardrobe edits and capsule-building sessions with our experts.</p>
-          </article>
-          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
-            <img src="store.jpg" alt="Workshops" class="h-44 w-full rounded-xl object-cover shadow" />
-            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.workshops.title">Workshops &amp; Events</h3>
-            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.workshops.desc">Weekend masterclasses on skincare layering, mindful beauty, and styling.</p>
-          </article>
-          <article class="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
-            <img src="model1.png" alt="Lounge" class="h-44 w-full rounded-xl object-cover shadow" />
-            <h3 class="mt-4 text-xl font-semibold text-gray-900" data-i18n="catpage.card.lounge.title">Lounge &amp; Café</h3>
-            <p class="mt-2 text-sm text-gray-600" data-i18n="catpage.card.lounge.desc">Sip artisanal tea, preview lookbooks, and enjoy member-only pop-ups.</p>
-          </article>
-        </div>
-        <div class="mt-12 rounded-3xl border border-rose-100 bg-white/80 p-10 text-center shadow-sm">
-          <h3 class="text-2xl font-semibold text-gray-900" data-i18n="catpage.cta.title">Need a curated recommendation?</h3>
-          <p class="mt-3 text-gray-600" data-i18n="catpage.cta.desc">Book a styling or beauty consultation and our team will handpick pieces that match your lifestyle.</p>
-          <a href="index.html#visit" class="shine-btn mt-6 inline-flex items-center rounded-full bg-brand.red px-6 py-3 text-sm font-semibold text-white hover:bg-rose-600 transition" data-i18n="catpage.cta.button">Visit our boutique</a>
+        <div class="relative">
+          <div class="flex gap-6 overflow-x-auto pb-4 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory" role="list" aria-label="Designer Exclusives carousel">
+            <article class="min-w-[260px] max-w-xs snap-start rounded-3xl border border-purple-100 bg-white shadow-sm" role="listitem">
+              <div class="relative">
+                <img src="model1.png" alt="Hand-beaded mermaid gown" class="h-60 w-full rounded-t-3xl object-cover" />
+                <span class="absolute left-4 top-4 rounded-full bg-purple-600 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white" data-i18n="tag.exclusive">Exclusive</span>
+              </div>
+              <div class="p-6 space-y-3">
+                <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.designer1.name">Aurora Beaded Gown</h3>
+                <p class="text-sm text-gray-600" data-i18n="catpage.designer1.desc">Hand-applied beadwork with illusion neckline and dramatic train.</p>
+                <div class="flex items-center justify-between text-sm font-semibold text-brand.red">
+                  <span>MYR 1290</span>
+                  <span data-i18n="tag.exclusive">Exclusive</span>
+                </div>
+                <p class="text-sm text-gray-500">
+                  <span data-i18n="catpage.inventory">Inventory</span>
+                  <span class="ml-1 font-medium text-gray-700" data-i18n="catpage.designer1.stock">3 gowns remaining</span>
+                </p>
+              </div>
+            </article>
+            <article class="min-w-[260px] max-w-xs snap-start rounded-3xl border border-rose-200 bg-white shadow-sm" role="listitem">
+              <div class="relative">
+                <img src="hero.jpg" alt="Sculptural satin evening dress" class="h-60 w-full rounded-t-3xl object-cover" />
+                <span class="absolute left-4 top-4 rounded-full bg-brand.red px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white" data-i18n="tag.limited">Limited</span>
+              </div>
+              <div class="p-6 space-y-3">
+                <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.designer2.name">Celeste Column Dress</h3>
+                <p class="text-sm text-gray-600" data-i18n="catpage.designer2.desc">Structured satin silhouette with detachable overskirt.</p>
+                <div class="flex items-center justify-between text-sm font-semibold text-brand.red">
+                  <span>MYR 990</span>
+                  <span data-i18n="tag.limited">Limited</span>
+                </div>
+                <p class="text-sm text-gray-500">
+                  <span data-i18n="catpage.inventory">Inventory</span>
+                  <span class="ml-1 font-medium text-gray-700" data-i18n="catpage.designer2.stock">5 dresses available</span>
+                </p>
+              </div>
+            </article>
+            <article class="min-w-[260px] max-w-xs snap-start rounded-3xl border border-amber-100 bg-white shadow-sm" role="listitem">
+              <div class="relative">
+                <img src="product1.jpg" alt="Sequinned evening cape" class="h-60 w-full rounded-t-3xl object-cover" />
+                <span class="absolute left-4 top-4 rounded-full bg-amber-500 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white" data-i18n="tag.editor">Editor Pick</span>
+              </div>
+              <div class="p-6 space-y-3">
+                <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.designer3.name">Nocturne Cape Dress</h3>
+                <p class="text-sm text-gray-600" data-i18n="catpage.designer3.desc">Sequinned cape overlay with minimalist slip base.</p>
+                <div class="flex items-center justify-between text-sm font-semibold text-brand.red">
+                  <span>MYR 1050</span>
+                  <span data-i18n="tag.editor">Editor Pick</span>
+                </div>
+                <p class="text-sm text-gray-500">
+                  <span data-i18n="catpage.inventory">Inventory</span>
+                  <span class="ml-1 font-medium text-gray-700" data-i18n="catpage.designer3.stock">4 dresses left</span>
+                </p>
+              </div>
+            </article>
+            <article class="min-w-[260px] max-w-xs snap-start rounded-3xl border border-slate-200 bg-white shadow-sm" role="listitem">
+              <div class="relative">
+                <img src="dress_black.jpg" alt="Velvet evening suit" class="h-60 w-full rounded-t-3xl object-cover" />
+                <span class="absolute left-4 top-4 rounded-full bg-slate-800 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white" data-i18n="tag.couture">Couture</span>
+              </div>
+              <div class="p-6 space-y-3">
+                <h3 class="text-xl font-semibold text-gray-900" data-i18n="catpage.designer4.name">Obsidian Velvet Suit</h3>
+                <p class="text-sm text-gray-600" data-i18n="catpage.designer4.desc">Tailored velvet tux with crystal lapel embellishments.</p>
+                <div class="flex items-center justify-between text-sm font-semibold text-brand.red">
+                  <span>MYR 1190</span>
+                  <span data-i18n="tag.couture">Couture</span>
+                </div>
+                <p class="text-sm text-gray-500">
+                  <span data-i18n="catpage.inventory">Inventory</span>
+                  <span class="ml-1 font-medium text-gray-700" data-i18n="catpage.designer4.stock">2 suits remaining</span>
+                </p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
