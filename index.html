@@ -120,17 +120,17 @@
   </header>
 
   <section class="relative" aria-labelledby="hero-title">
-    <img src="hero.jpg" alt="Osun Boutique hero" class="w-full h-[62vh] md:h-[76vh] object-cover" />
+    <img src="hero.jpg" alt="Osun Boutique hero" class="w-full h-[62vh] md:h-[76vh] object-cover" data-content-image="hero.image" id="hero-image" />
     <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" aria-hidden="true"></div>
     <div class="absolute inset-0 flex items-center justify-center text-center px-6">
       <div data-aos="fade-up" data-aos-delay="300">
         <h1 id="hero-title" class="text-white text-4xl md:text-6xl font-extrabold drop-shadow mb-4">
-          <span data-i18n="hero.title">Elegance. Confidence. Osun.</span>
+          <span data-i18n="hero.title" data-content-key="hero.title">Elegance. Confidence. Osun.</span>
         </h1>
-        <p class="text-white/90 md:text-lg mb-8 max-w-2xl mx-auto" data-i18n="hero.subtitle">Discover your radiance where fashion meets inner glow.</p>
+        <p class="text-white/90 md:text-lg mb-8 max-w-2xl mx-auto" data-i18n="hero.subtitle" data-content-key="hero.subtitle">Discover your radiance where fashion meets inner glow.</p>
         <div class="flex justify-center gap-4">
-          <a href="#shop" class="shine-btn inline-flex items-center rounded-full bg-brand.red px-8 py-3 font-semibold text-white hover:bg-rose-600 transition" data-i18n="hero.cta1">Shop Now</a>
-          <a href="about.html" class="shine-btn inline-flex items-center rounded-full border border-white/70 text-white px-8 py-3 font-semibold hover:bg-white hover:text-gray-900 transition" data-i18n="hero.cta2">Discover Our Story</a>
+          <a href="#shop" class="shine-btn inline-flex items-center rounded-full bg-brand.red px-8 py-3 font-semibold text-white hover:bg-rose-600 transition" data-i18n="hero.cta1" data-content-key="hero.primaryCta" data-content-link="hero.primaryLink">Shop Now</a>
+          <a href="about.html" class="shine-btn inline-flex items-center rounded-full border border-white/70 text-white px-8 py-3 font-semibold hover:bg-white hover:text-gray-900 transition" data-i18n="hero.cta2" data-content-key="hero.secondaryCta" data-content-link="hero.secondaryLink">Discover Our Story</a>
         </div>
       </div>
     </div>
@@ -307,6 +307,7 @@
     </aside>
   </div>
 
+  <script src="js/content.js"></script>
   <script src="js/site.js"></script>
 </body>
 </html>

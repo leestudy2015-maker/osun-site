@@ -74,6 +74,8 @@
       'catpage.hero.cta': 'Back to shop',
       'catpage.slider.hint': 'Swipe sideways to explore every look',
       'catpage.inventory': 'Inventory',
+      'catpage.empty': 'New looks coming soon',
+      'catpage.card.defaultName': 'Coming soon',
       'catpage.wardrobe.tag': 'Wardrobe Foundations',
       'catpage.wardrobe.title': 'Everyday layers for your signature style.',
       'catpage.wardrobe.desc': 'Mix-and-match staples that balance polish and comfort from office hours to weekend brunch.',
@@ -152,6 +154,27 @@
       'aboutpage.community.title': 'Join the glow community',
       'aboutpage.community.desc': 'RSVP to our upcoming masterclasses, seasonal lookbook launches, and founder-led conversations.',
       'aboutpage.community.cta': 'Book an in-store session',
+      'admin.language.en': 'English',
+      'admin.language.zh': 'Chinese',
+      'admin.field.title': 'Title',
+      'admin.field.subtitle': 'Subtitle',
+      'admin.field.name': 'Name',
+      'admin.field.description': 'Description',
+      'admin.field.inventory': 'Inventory note',
+      'admin.field.price': 'Price',
+      'admin.field.badgeTheme': 'Badge theme',
+      'admin.field.badgeText': 'Badge label',
+      'admin.field.tag': 'Tag',
+      'admin.field.story': 'Story',
+      'admin.field.quote': 'Quote',
+      'admin.field.altText': 'Alt text',
+      'admin.field.ctaPrimary': 'Primary CTA',
+      'admin.field.ctaSecondary': 'Secondary CTA',
+      'admin.field.ctaText': 'CTA text',
+      'admin.field.ctaLink': 'CTA link',
+      'admin.field.imageUrl': 'Image URL',
+      'admin.field.imageUpload': 'Upload image',
+      'admin.field.highlight': 'Highlight',
       'admin.title': 'Osun Content Studio',
       'admin.subtitle': 'Update homepage copy, surface new categories, and refresh hero imagery before publishing.',
       'admin.status.storage': 'Local save',
@@ -164,6 +187,8 @@
       'admin.hero.subtitle': 'Hero subtitle',
       'admin.hero.cta': 'Primary CTA',
       'admin.hero.secondary': 'Secondary CTA',
+      'admin.hero.primaryLink': 'Primary CTA link',
+      'admin.hero.secondaryLink': 'Secondary CTA link',
       'admin.hero.imageUrl': 'Hero image URL',
       'admin.hero.imageUpload': 'Upload new hero image',
       'admin.hero.save': 'Save hero section',
@@ -173,12 +198,42 @@
       'admin.categories.heading': 'Category library',
       'admin.categories.desc': 'Add new collections and reorder highlights for the categories page.',
       'admin.categories.export': 'Export JSON',
+      'admin.categories.add': 'Add item',
+      'admin.categories.save': 'Save group',
+      'admin.categories.empty': 'No looks yet — add your first highlight.',
+      'admin.categories.moveUp': 'Move up',
+      'admin.categories.moveDown': 'Move down',
+      'admin.categories.remove': 'Remove',
+      'admin.categories.theme.rose': 'Rose glow',
+      'admin.categories.theme.amber': 'Amber',
+      'admin.categories.theme.emerald': 'Emerald',
+      'admin.categories.theme.slate': 'Slate',
+      'admin.categories.theme.violet': 'Violet',
+      'admin.categories.theme.sky': 'Sky',
       'admin.categories.table.name': 'Name',
       'admin.categories.table.description': 'Description',
       'admin.categories.table.group': 'Group',
       'admin.categories.group.apparel': 'Apparel',
       'admin.categories.group.beauty': 'Beauty',
       'admin.categories.group.lifestyle': 'Lifestyle',
+      'admin.result.heroSaved': 'Homepage hero updated',
+      'admin.result.categoriesSaved': 'Category group saved',
+      'admin.result.aboutSaved': 'About page updated',
+      'admin.nav.hero': 'Homepage',
+      'admin.nav.categories': 'Categories',
+      'admin.nav.about': 'About page',
+      'admin.about.heading': 'About page',
+      'admin.about.desc': 'Refresh founder stories, milestones, and community invitations.',
+      'admin.about.heroSection': 'Hero intro',
+      'admin.about.founderSection': 'Founder spotlight',
+      'admin.about.valuesSection': 'Values',
+      'admin.about.timelineSection': 'Timeline',
+      'admin.about.communitySection': 'Community invite',
+      'admin.about.founderHighlights': 'Founder highlights',
+      'admin.about.values.item': 'Value',
+      'admin.about.timeline.item': 'Milestone',
+      'admin.about.save': 'Save about page',
+      'admin.about.reset': 'Reset to defaults',
       'admin.notes.heading': 'Publishing notes',
       'admin.notes.desc': 'Share the exported configuration or manually replace copy within the HTML files. For rapid updates, coordinate with your developer to connect these inputs to a CMS or headless backend.',
       'admin.notes.item1.prefix': 'Homepage hero updates live in',
@@ -269,6 +324,8 @@
       'catpage.hero.cta': '返回精選商品',
       'catpage.slider.hint': '左右滑動瀏覽更多造型',
       'catpage.inventory': '庫存',
+      'catpage.empty': '新系列即將登場',
+      'catpage.card.defaultName': '敬請期待',
       'catpage.wardrobe.tag': '衣櫥基礎',
       'catpage.wardrobe.title': '打造每日儀式感的必備層次。',
       'catpage.wardrobe.desc': '從通勤到週末早午餐，兼顧舒適與俐落的混搭單品。',
@@ -347,6 +404,27 @@
       'aboutpage.community.title': '加入光采社群',
       'aboutpage.community.desc': '立即報名即將到來的大師課、季節型錄發佈與創辦人對談。',
       'aboutpage.community.cta': '預約門市體驗',
+      'admin.language.en': '英文',
+      'admin.language.zh': '中文',
+      'admin.field.title': '標題',
+      'admin.field.subtitle': '副標題',
+      'admin.field.name': '名稱',
+      'admin.field.description': '描述',
+      'admin.field.inventory': '庫存資訊',
+      'admin.field.price': '價格',
+      'admin.field.badgeTheme': '標語色系',
+      'admin.field.badgeText': '標語文字',
+      'admin.field.tag': '標籤',
+      'admin.field.story': '故事',
+      'admin.field.quote': '引言',
+      'admin.field.altText': '替代文字',
+      'admin.field.ctaPrimary': '主要 CTA',
+      'admin.field.ctaSecondary': '次要 CTA',
+      'admin.field.ctaText': 'CTA 文案',
+      'admin.field.ctaLink': 'CTA 連結',
+      'admin.field.imageUrl': '圖片網址',
+      'admin.field.imageUpload': '上傳圖片',
+      'admin.field.highlight': '亮點',
       'admin.title': 'OSUN 內容工作室',
       'admin.subtitle': '快速更新首頁文案、分類重點與主視覺，隨時保持網站新鮮。',
       'admin.status.storage': '本地儲存',
@@ -359,6 +437,8 @@
       'admin.hero.subtitle': '副標題',
       'admin.hero.cta': '主要行動按鈕',
       'admin.hero.secondary': '次要行動按鈕',
+      'admin.hero.primaryLink': '主要 CTA 連結',
+      'admin.hero.secondaryLink': '次要 CTA 連結',
       'admin.hero.imageUrl': '主視覺圖片網址',
       'admin.hero.imageUpload': '上傳新圖片',
       'admin.hero.save': '儲存主視覺',
@@ -368,12 +448,39 @@
       'admin.categories.heading': '分類管理',
       'admin.categories.desc': '新增集合並調整分類頁面的呈現。',
       'admin.categories.export': '匯出 JSON',
+      'admin.categories.add': '新增項目',
+      'admin.categories.save': '儲存分類',
+      'admin.categories.empty': '尚未新增造型，請先加入。',
+      'admin.categories.moveUp': '上移',
+      'admin.categories.moveDown': '下移',
+      'admin.categories.remove': '移除',
+      'admin.categories.theme.rose': '玫瑰光',
+      'admin.categories.theme.amber': '琥珀',
+      'admin.categories.theme.emerald': '祖母綠',
+      'admin.categories.theme.slate': '岩灰',
+      'admin.categories.theme.violet': '紫羅蘭',
+      'admin.categories.theme.sky': '天青',
       'admin.categories.table.name': '名稱',
       'admin.categories.table.description': '描述',
       'admin.categories.table.group': '群組',
       'admin.categories.group.apparel': '服飾',
       'admin.categories.group.beauty': '美妝',
       'admin.categories.group.lifestyle': '生活',
+      'admin.nav.hero': '首頁',
+      'admin.nav.categories': '分類',
+      'admin.nav.about': '關於頁面',
+      'admin.about.heading': '關於頁面',
+      'admin.about.desc': '更新創辦人故事、里程碑與社群邀請。',
+      'admin.about.heroSection': '品牌開場',
+      'admin.about.founderSection': '創辦人焦點',
+      'admin.about.valuesSection': '品牌理念',
+      'admin.about.timelineSection': '里程碑',
+      'admin.about.communitySection': '社群邀請',
+      'admin.about.founderHighlights': '創辦人亮點',
+      'admin.about.values.item': '理念',
+      'admin.about.timeline.item': '里程碑',
+      'admin.about.save': '儲存關於頁面',
+      'admin.about.reset': '恢復預設內容',
       'admin.notes.heading': '發佈提醒',
       'admin.notes.desc': '可將匯出的設定檔交給工程團隊，或手動複製到 HTML。建議後續串接 CMS 或 Headless 後台以自動化流程。',
       'admin.notes.item1.prefix': '首頁主視覺位於',
@@ -391,9 +498,264 @@
       'admin.result.nameFallback': '未命名項目',
       'admin.result.imageFallback': '未選擇圖片',
       'admin.result.image': '圖片',
+      'admin.result.heroSaved': '首頁主視覺已更新',
+      'admin.result.categoriesSaved': '分類已儲存',
+      'admin.result.aboutSaved': '關於頁面已更新',
       'admin.result.exportReady': 'JSON 已複製到剪貼簿'
     }
   };
+
+  const CONTENT_KEY = (window.OSUN_CONTENT && window.OSUN_CONTENT.STORAGE_KEY) || 'osun-content-config';
+  let contentCache = null;
+
+  const CATEGORY_FALLBACK_KEYS = {
+    wardrobe: { tag: 'catpage.wardrobe.tag', title: 'catpage.wardrobe.title', description: 'catpage.wardrobe.desc' },
+    ritual: { tag: 'catpage.ritual.tag', title: 'catpage.ritual.title', description: 'catpage.ritual.desc' },
+    designer: { tag: 'catpage.designer.tag', title: 'catpage.designer.title', description: 'catpage.designer.desc' }
+  };
+
+  const BADGE_THEMES = {
+    rose: { badge: 'bg-brand.red text-white', border: 'border-rose-100' },
+    amber: { badge: 'bg-amber-500 text-white', border: 'border-amber-100' },
+    emerald: { badge: 'bg-emerald-500 text-white', border: 'border-emerald-100' },
+    slate: { badge: 'bg-slate-700 text-white', border: 'border-slate-100' },
+    violet: { badge: 'bg-violet-500 text-white', border: 'border-violet-200' },
+    sky: { badge: 'bg-sky-500 text-white', border: 'border-sky-100' }
+  };
+
+  function readStoredContent(){
+    try {
+      const raw = localStorage.getItem(CONTENT_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch (err){
+      console.warn('Failed to parse stored content', err);
+      return null;
+    }
+  }
+
+  function getContent(){
+    if (!contentCache){
+      const stored = readStoredContent();
+      if (window.OSUN_CONTENT && typeof window.OSUN_CONTENT.merge === 'function'){
+        contentCache = window.OSUN_CONTENT.merge(stored);
+      } else {
+        contentCache = stored || {};
+      }
+    }
+    return contentCache;
+  }
+
+  function invalidateContent(){
+    contentCache = null;
+    const currentLang = localStorage.getItem(LANG_KEY) || getSavedLang();
+    applyContent(currentLang);
+  }
+
+  function escapeHtml(value){
+    if (value == null) return '';
+    return String(value).replace(/[&<>"]+/g, match => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;'
+    })[match] || match);
+  }
+
+  function setTextKey(key, value){
+    if (typeof value !== 'string') return;
+    document.querySelectorAll(`[data-content-key="${key}"]`).forEach(el => {
+      el.textContent = value;
+    });
+  }
+
+  function setLinkKey(key, value){
+    if (!value) return;
+    document.querySelectorAll(`[data-content-link="${key}"]`).forEach(el => {
+      el.setAttribute('href', value);
+    });
+  }
+
+  function setImageKey(key, value){
+    if (!value) return;
+    document.querySelectorAll(`[data-content-image="${key}"]`).forEach(el => {
+      el.setAttribute('src', value);
+    });
+  }
+
+  function setAltKey(key, value){
+    if (!value) return;
+    document.querySelectorAll(`[data-content-alt="${key}"]`).forEach(el => {
+      el.setAttribute('alt', value);
+    });
+  }
+
+  function setListText(key, index, value){
+    if (typeof value !== 'string') return;
+    document.querySelectorAll(`[data-content-key="${key}"][data-content-index="${index}"]`).forEach(el => {
+      el.textContent = value;
+    });
+  }
+
+  function getBadgeTheme(theme){
+    return BADGE_THEMES[theme] || BADGE_THEMES.rose;
+  }
+
+  function applyHeroContent(heroConfig, lang){
+    if (!heroConfig) return;
+    const data = heroConfig[lang] || heroConfig.en || {};
+    setTextKey('hero.title', data.title || getText('hero.title'));
+    setTextKey('hero.subtitle', data.subtitle || getText('hero.subtitle'));
+    setTextKey('hero.primaryCta', data.primaryCta || getText('hero.cta1'));
+    setTextKey('hero.secondaryCta', data.secondaryCta || getText('hero.cta2'));
+    setLinkKey('hero.primaryLink', data.primaryLink || heroConfig.primaryLink || '#shop');
+    setLinkKey('hero.secondaryLink', data.secondaryLink || heroConfig.secondaryLink || 'about.html');
+    const imageSrc = data.image || heroConfig.en?.image || heroConfig.image || 'hero.jpg';
+    setImageKey('hero.image', imageSrc);
+  }
+
+  function renderCategoryGroup(key, groupConfig, lang, sliderHint){
+    const section = document.querySelector(`[data-category-section="${key}"]`);
+    if (!section) return;
+    const fallback = CATEGORY_FALLBACK_KEYS[key] || {};
+    const tagText = groupConfig?.tag?.[lang] || groupConfig?.tag?.en || getText(fallback.tag || 'catpage.hero.tag');
+    const titleText = groupConfig?.title?.[lang] || groupConfig?.title?.en || getText(fallback.title || 'catpage.hero.title');
+    const descText = groupConfig?.description?.[lang] || groupConfig?.description?.en || getText(fallback.description || 'catpage.hero.subtitle');
+    const tagEl = section.querySelector('[data-category-field="tag"]');
+    if (tagEl) tagEl.textContent = tagText;
+    const titleEl = section.querySelector('[data-category-field="title"]');
+    if (titleEl) titleEl.textContent = titleText;
+    const descEl = section.querySelector('[data-category-field="description"]');
+    if (descEl) descEl.textContent = descText;
+    const hintEl = section.querySelector('[data-category-field="hint"]');
+    if (hintEl) hintEl.textContent = sliderHint;
+
+    const container = section.querySelector('[data-category-items]');
+    if (!container) return;
+    container.innerHTML = '';
+    const items = Array.isArray(groupConfig?.items) ? groupConfig.items : [];
+    if (!items.length){
+      const empty = document.createElement('p');
+      empty.className = 'text-sm text-gray-500';
+      empty.textContent = getText('catpage.empty');
+      container.appendChild(empty);
+      return;
+    }
+    items.forEach(item => {
+      container.appendChild(createCategoryCard(item, lang));
+    });
+  }
+
+  function createCategoryCard(item, lang){
+    const theme = getBadgeTheme(item?.badge?.theme);
+    const card = document.createElement('article');
+    card.className = `min-w-[260px] max-w-xs snap-start rounded-3xl border ${theme.border} bg-white shadow-sm`;
+    card.setAttribute('role', 'listitem');
+    const badgeLabel = item?.badge?.[lang] || item?.badge?.en || '';
+    const price = item?.price || '—';
+    const name = item?.texts?.[lang]?.name || item?.texts?.en?.name || getText('catpage.card.defaultName');
+    const description = item?.texts?.[lang]?.description || item?.texts?.en?.description || '';
+    const stock = item?.inventory?.[lang] || item?.inventory?.en || '';
+    const imageSrc = item?.image || 'store.jpg';
+    const badgeTop = badgeLabel ? `<span class="absolute left-4 top-4 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide ${theme.badge}">${escapeHtml(badgeLabel)}</span>` : '';
+    card.innerHTML = `
+      <div class="relative">
+        <img src="${escapeHtml(imageSrc)}" alt="${escapeHtml(name)}" class="h-60 w-full rounded-t-3xl object-cover" />
+        ${badgeTop}
+      </div>
+      <div class="p-6 space-y-3">
+        <h3 class="text-xl font-semibold text-gray-900">${escapeHtml(name)}</h3>
+        <p class="text-sm text-gray-600">${escapeHtml(description)}</p>
+        <div class="flex items-center justify-between text-sm font-semibold text-brand.red">
+          <span>${escapeHtml(price)}</span>
+          <span>${escapeHtml(badgeLabel)}</span>
+        </div>
+        <p class="text-sm text-gray-500">
+          <span>${escapeHtml(getText('catpage.inventory'))}</span>
+          <span class="ml-1 font-medium text-gray-700">${escapeHtml(stock)}</span>
+        </p>
+      </div>
+    `;
+    return card;
+  }
+
+  function applyCategoriesContent(categoriesConfig, lang){
+    if (!categoriesConfig) return;
+    const hero = categoriesConfig.hero;
+    if (hero){
+      const tagText = hero.tag?.[lang] || hero.tag?.en || getText('catpage.hero.tag');
+      const titleText = hero.title?.[lang] || hero.title?.en || getText('catpage.hero.title');
+      const subText = hero.subtitle?.[lang] || hero.subtitle?.en || getText('catpage.hero.subtitle');
+      const ctaText = hero.ctaText?.[lang] || hero.ctaText?.en || getText('catpage.hero.cta');
+      setTextKey('categories.hero.tag', tagText);
+      setTextKey('categories.hero.title', titleText);
+      setTextKey('categories.hero.subtitle', subText);
+      setTextKey('categories.hero.ctaText', ctaText);
+      setLinkKey('categories.hero.ctaLink', hero.ctaLink || 'index.html#shop');
+    }
+    const sliderHint = categoriesConfig.sliderHint?.[lang] || categoriesConfig.sliderHint?.en || getText('catpage.slider.hint');
+    Object.keys(CATEGORY_FALLBACK_KEYS).forEach(key => {
+      renderCategoryGroup(key, categoriesConfig.groups?.[key], lang, sliderHint);
+    });
+  }
+
+  function applyAboutContent(aboutConfig, lang){
+    if (!aboutConfig) return;
+    const hero = aboutConfig.hero;
+    if (hero){
+      setTextKey('about.hero.tag', hero.tag?.[lang] || hero.tag?.en || getText('aboutpage.hero.tag'));
+      setTextKey('about.hero.title', hero.title?.[lang] || hero.title?.en || getText('aboutpage.hero.title'));
+      setTextKey('about.hero.subtitle', hero.subtitle?.[lang] || hero.subtitle?.en || getText('aboutpage.hero.subtitle'));
+      setTextKey('about.hero.primaryCta', hero.primaryCta?.[lang] || hero.primaryCta?.en || getText('aboutpage.hero.cta'));
+      setTextKey('about.hero.secondaryCta', hero.secondaryCta?.[lang] || hero.secondaryCta?.en || getText('aboutpage.hero.secondary'));
+      setLinkKey('about.hero.primaryLink', hero.primaryLink || '#founder');
+      setLinkKey('about.hero.secondaryLink', hero.secondaryLink || 'index.html#visit');
+    }
+
+    const founder = aboutConfig.founder || {};
+    setTextKey('about.founder.tag', founder.tag?.[lang] || founder.tag?.en || getText('aboutpage.owner.tag'));
+    setTextKey('about.founder.title', founder.title?.[lang] || founder.title?.en || getText('aboutpage.owner.title'));
+    setTextKey('about.founder.story', founder.story?.[lang] || founder.story?.en || getText('aboutpage.owner.story'));
+    setTextKey('about.founder.quote', founder.quote?.[lang] || founder.quote?.en || getText('aboutpage.owner.quote'));
+    setImageKey('about.founder.image', founder.image || 'model1.png');
+    setAltKey('about.founder.alt', founder.alt?.[lang] || founder.alt?.en || getText('aboutpage.owner.name'));
+    const highlights = Array.isArray(founder.highlights) ? founder.highlights : [];
+    highlights.forEach((item, index) => {
+      setListText('about.founder.highlights', index, item?.[lang] || item?.en || '');
+    });
+
+    const values = aboutConfig.values || {};
+    setTextKey('about.values.tag', values.tag?.[lang] || values.tag?.en || getText('aboutpage.values.tag'));
+    setTextKey('about.values.title', values.title?.[lang] || values.title?.en || getText('aboutpage.values.title'));
+    setTextKey('about.values.description', values.description?.[lang] || values.description?.en || getText('aboutpage.values.desc'));
+    const valueItems = Array.isArray(values.items) ? values.items : [];
+    valueItems.forEach((item, index) => {
+      setListText('about.values.items.title', index, item?.title?.[lang] || item?.title?.en || getText(`aboutpage.values.value${index + 1}.title`));
+      setListText('about.values.items.description', index, item?.description?.[lang] || item?.description?.en || getText(`aboutpage.values.value${index + 1}.desc`));
+    });
+
+    const timeline = aboutConfig.timeline || {};
+    setTextKey('about.timeline.tag', timeline.tag?.[lang] || timeline.tag?.en || getText('aboutpage.timeline.tag'));
+    setTextKey('about.timeline.title', timeline.title?.[lang] || timeline.title?.en || getText('aboutpage.timeline.title'));
+    setTextKey('about.timeline.description', timeline.description?.[lang] || timeline.description?.en || getText('aboutpage.timeline.desc'));
+    const timelineItems = Array.isArray(timeline.items) ? timeline.items : [];
+    timelineItems.forEach((item, index) => {
+      setListText('about.timeline.items.title', index, item?.title?.[lang] || item?.title?.en || getText(`aboutpage.timeline.${index + 1}.title`));
+      setListText('about.timeline.items.description', index, item?.description?.[lang] || item?.description?.en || getText(`aboutpage.timeline.${index + 1}.desc`));
+    });
+
+    const community = aboutConfig.community || {};
+    setTextKey('about.community.title', community.title?.[lang] || community.title?.en || getText('aboutpage.community.title'));
+    setTextKey('about.community.description', community.description?.[lang] || community.description?.en || getText('aboutpage.community.desc'));
+    setTextKey('about.community.ctaText', community.ctaText?.[lang] || community.ctaText?.en || getText('aboutpage.community.cta'));
+    setLinkKey('about.community.ctaLink', community.ctaLink || 'index.html#visit');
+  }
+
+  function applyContent(lang){
+    const content = getContent();
+    applyHeroContent(content.hero, lang);
+    applyCategoriesContent(content.categories, lang);
+    applyAboutContent(content.about, lang);
+  }
 
   const PRODUCTS = {
     p1: { id: 'p1', price: 279, image: 'product1.jpg', i18nNameKey: 'prod1.name' },
@@ -435,6 +797,7 @@
     });
     localStorage.setItem(LANG_KEY, selected);
     renderCart();
+    applyContent(selected);
   }
 
   function loadCart(){
@@ -643,6 +1006,7 @@
   window.OSUN = {
     getText,
     applyLang,
-    getCurrentLang: () => localStorage.getItem(LANG_KEY) || getSavedLang()
+    getCurrentLang: () => localStorage.getItem(LANG_KEY) || getSavedLang(),
+    invalidateContent
   };
 })();

@@ -114,91 +114,37 @@
             <p data-i18n="admin.status.workflowDesc">After saving, share the export file with your web developer or replace content manually.</p>
           </div>
         </div>
+        <nav class="mt-10 flex flex-wrap items-center justify-center gap-3" data-aos="fade-up" data-aos-delay="140">
+          <a href="#hero-panel" class="shine-btn rounded-full border border-brand.red px-5 py-2 text-sm font-semibold text-brand.red hover:bg-white hover:shadow transition" data-i18n="admin.nav.hero">Homepage</a>
+          <a href="#categories-panel" class="shine-btn rounded-full border border-brand.red px-5 py-2 text-sm font-semibold text-brand.red hover:bg-white hover:shadow transition" data-i18n="admin.nav.categories">Categories</a>
+          <a href="#about-panel" class="shine-btn rounded-full border border-brand.red px-5 py-2 text-sm font-semibold text-brand.red hover:bg-white hover:shadow transition" data-i18n="admin.nav.about">About page</a>
+          <button type="button" id="adminExport" class="shine-btn rounded-full bg-brand.red px-5 py-2 text-sm font-semibold text-white shadow hover:bg-rose-600 transition" data-i18n="admin.categories.export">Export JSON</button>
+        </nav>
 
-        <form id="adminForm" class="mt-10 space-y-6" data-aos="fade-up" data-aos-delay="150">
-          <fieldset class="space-y-4">
-            <legend class="text-lg font-semibold text-gray-900" data-i18n="admin.hero.heading">Homepage hero</legend>
-            <p class="text-sm text-gray-600" data-i18n="admin.hero.desc">Adjust the main headline, supporting copy, and call-to-action buttons.</p>
-            <div>
-              <label for="title" class="block text-sm font-semibold text-gray-700" data-i18n="admin.hero.title">Hero title</label>
-              <input id="title" name="title" type="text" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand.red focus:outline-none" placeholder="Elegance. Confidence. Osun." />
-            </div>
-            <div>
-              <label for="description" class="block text-sm font-semibold text-gray-700" data-i18n="admin.hero.subtitle">Hero subtitle</label>
-              <textarea id="description" name="description" rows="3" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand.red focus:outline-none" placeholder="Discover your radiance where fashion meets inner glow."></textarea>
-            </div>
-            <div class="grid gap-4 md:grid-cols-2">
-              <div>
-                <label for="primaryCta" class="block text-sm font-semibold text-gray-700" data-i18n="admin.hero.cta">Primary CTA</label>
-                <input id="primaryCta" name="primaryCta" type="text" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand.red focus:outline-none" placeholder="Shop Now" />
-              </div>
-              <div>
-                <label for="secondaryCta" class="block text-sm font-semibold text-gray-700" data-i18n="admin.hero.secondary">Secondary CTA</label>
-                <input id="secondaryCta" name="secondaryCta" type="text" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand.red focus:outline-none" placeholder="Explore Beauty" />
-              </div>
-            </div>
-            <div>
-              <label for="imageUrl" class="block text-sm font-semibold text-gray-700" data-i18n="admin.hero.imageUrl">Hero image URL</label>
-              <input id="imageUrl" name="imageUrl" type="url" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand.red focus:outline-none" placeholder="https://..." />
-            </div>
-            <div>
-              <label for="imageUpload" class="block text-sm font-semibold text-gray-700" data-i18n="admin.hero.imageUpload">Upload new hero image</label>
-              <input id="imageUpload" name="imageUpload" type="file" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand.red focus:outline-none" />
-            </div>
-            <div class="flex flex-wrap gap-3">
-              <button type="submit" class="shine-btn rounded-full bg-brand.red px-6 py-3 text-sm font-semibold text-white shadow hover:bg-rose-600 transition" data-i18n="admin.hero.save">Save hero section</button>
-              <button type="button" id="adminReset" class="shine-btn rounded-full border border-brand.red px-6 py-3 text-sm font-semibold text-brand.red hover:bg-white hover:shadow transition" data-i18n="admin.hero.reset">Reset to defaults</button>
-            </div>
-          </fieldset>
-        </form>
-
-        <section class="mt-12 grid gap-6 md:grid-cols-[1fr,1fr]" data-aos="fade-up" data-aos-delay="200">
-          <div class="rounded-2xl border border-rose-100 bg-white p-5 shadow-sm">
-            <h2 class="text-lg font-semibold text-gray-900" data-i18n="admin.preview.heading">Live preview</h2>
-            <p class="mt-2 text-sm text-gray-600" data-i18n="admin.preview.desc">This preview reflects the text and image you save above.</p>
-            <div class="mt-4 space-y-2 text-sm text-gray-700">
-              <p><span class="font-semibold" data-i18n="admin.hero.title">Hero title</span>: <span id="previewTitle">Elegance. Confidence. Osun.</span></p>
-              <p><span class="font-semibold" data-i18n="admin.hero.subtitle">Hero subtitle</span>: <span id="previewSubtitle">Discover your radiance where fashion meets inner glow.</span></p>
-              <p><span class="font-semibold" data-i18n="admin.hero.cta">Primary CTA</span>: <span id="previewPrimary">Shop Now</span></p>
-              <p><span class="font-semibold" data-i18n="admin.hero.secondary">Secondary CTA</span>: <span id="previewSecondary">Explore Beauty</span></p>
-            </div>
-          </div>
-          <div class="rounded-2xl border border-rose-100 bg-white p-5 shadow-sm">
-            <h2 class="text-lg font-semibold text-gray-900" data-i18n="admin.categories.heading">Category library</h2>
-            <p class="mt-2 text-sm text-gray-600" data-i18n="admin.categories.desc">Add new collections and reorder highlights for the categories page.</p>
-            <div class="mt-4 flex flex-wrap gap-3">
-              <button type="button" id="adminExport" class="shine-btn rounded-full bg-brand.red px-6 py-3 text-sm font-semibold text-white shadow hover:bg-rose-600 transition" data-i18n="admin.categories.export">Export JSON</button>
-            </div>
-            <table class="mt-5 w-full text-left text-sm text-gray-700 border-collapse">
-              <thead>
-                <tr class="border-b text-xs uppercase tracking-wide text-gray-500">
-                  <th class="pb-2" data-i18n="admin.categories.table.name">Name</th>
-                  <th class="pb-2" data-i18n="admin.categories.table.description">Description</th>
-                  <th class="pb-2" data-i18n="admin.categories.table.group">Group</th>
-                </tr>
-              </thead>
-              <tbody id="categoryTable">
-                <tr>
-                  <td data-i18n="catpage.card.dresses.title">Statement Dresses</td>
-                  <td data-i18n="catpage.card.dresses.desc">Romantic silhouettes, petite to plus sizing, and special-occasion exclusives.</td>
-                  <td data-i18n="admin.categories.group.apparel">Apparel</td>
-                </tr>
-                <tr>
-                  <td data-i18n="catpage.card.skincare.title">Glow Skincare Rituals</td>
-                  <td data-i18n="catpage.card.skincare.desc">Cleansers, essences, serums, and creams curated for humid climates.</td>
-                  <td data-i18n="admin.categories.group.beauty">Beauty</td>
-                </tr>
-                <tr>
-                  <td data-i18n="catpage.card.bridal.title">Bridal Studio</td>
-                  <td data-i18n="catpage.card.bridal.desc">Made-to-measure gowns, veil styling, and premium fitting appointments.</td>
-                  <td data-i18n="admin.categories.group.lifestyle">Lifestyle</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <section id="hero-panel" class="mt-12 rounded-3xl border border-rose-100 bg-white p-8 shadow-sm" data-aos="fade-up" data-aos-delay="180">
+          <h2 class="text-2xl font-semibold text-gray-900" data-i18n="admin.hero.heading">Homepage hero</h2>
+          <p class="mt-2 text-sm text-gray-600" data-i18n="admin.hero.desc">Adjust the main headline, supporting copy, and call-to-action buttons.</p>
+          <div id="hero-form-wrap" class="mt-6"></div>
         </section>
 
-        <section class="mt-12 rounded-2xl border border-dashed border-rose-200 bg-rose-50/70 p-6 text-sm text-gray-600" data-aos="fade-up" data-aos-delay="250">
+        <section id="categories-panel" class="mt-12 rounded-3xl border border-rose-100 bg-white p-8 shadow-sm" data-aos="fade-up" data-aos-delay="220">
+          <div class="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+            <div>
+              <h2 class="text-2xl font-semibold text-gray-900" data-i18n="admin.categories.heading">Category library</h2>
+              <p class="mt-2 text-sm text-gray-600" data-i18n="admin.categories.desc">Add new collections and reorder highlights for the categories page.</p>
+            </div>
+            <button type="button" id="categoryAddItem" class="shine-btn self-start rounded-full bg-brand.red px-5 py-2 text-sm font-semibold text-white shadow hover:bg-rose-600 transition" data-i18n="admin.categories.add">Add</button>
+          </div>
+          <div id="category-manager" class="mt-6 space-y-6"></div>
+        </section>
+
+        <section id="about-panel" class="mt-12 rounded-3xl border border-rose-100 bg-white p-8 shadow-sm" data-aos="fade-up" data-aos-delay="260">
+          <h2 class="text-2xl font-semibold text-gray-900" data-i18n="admin.about.heading">About page</h2>
+          <p class="mt-2 text-sm text-gray-600" data-i18n="admin.about.desc">Refresh founder stories, milestones, and community invitations.</p>
+          <div id="about-form-wrap" class="mt-6 space-y-8"></div>
+        </section>
+
+        <section class="mt-12 rounded-2xl border border-dashed border-rose-200 bg-rose-50/70 p-6 text-sm text-gray-600" data-aos="fade-up" data-aos-delay="300">
           <h2 class="text-base font-semibold text-brand.red" data-i18n="admin.notes.heading">Publishing notes</h2>
           <p class="mt-2" data-i18n="admin.notes.desc">Share the exported configuration or manually replace copy within the HTML files. For rapid updates, coordinate with your developer to connect these inputs to a CMS or headless backend.</p>
           <ul class="mt-4 list-disc space-y-2 pl-5">
@@ -266,6 +212,7 @@
     </aside>
   </div>
 
+  <script src="js/content.js"></script>
   <script src="js/site.js"></script>
   <script src="js/admin.js"></script>
 </body>
