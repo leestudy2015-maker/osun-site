@@ -176,7 +176,7 @@
       'checkout.tracking.stage.note.preparing': 'Our stylists are carefully packing your garments.',
       'checkout.tracking.stage.note.shipped': 'Courier picked up your parcel. Tracking updates will refresh soon.',
       'checkout.tracking.stage.note.out': 'Your courier will contact you shortly before arrival.',
-      'checkout.tracking.stage.note.pickup': 'Your order is ready for collection at the boutique front desk.'
+      'checkout.tracking.stage.note.pickup': 'Your order is ready for collection at the boutique front desk.',
       'catpage.hero.tag': 'Curated Categories',
       'catpage.hero.title': 'Dive into our boutique wardrobe library',
       'catpage.hero.subtitle': 'Swipe through seasonal edits and uncover the looks that keep your style effortless.',
