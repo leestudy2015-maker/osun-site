@@ -81,7 +81,25 @@
     </nav>
   </header>
 
-  <main class="pt-28 pb-20">
+  <section id="admin-login" class="pt-28 pb-20">
+    <div class="max-w-md mx-auto px-6" data-aos="fade-up">
+      <div class="rounded-3xl bg-white shadow-xl border border-rose-100/80 p-8 text-center">
+        <span class="inline-flex items-center justify-center rounded-full bg-rose-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-brand.red" data-i18n="admin.login.title">Secure admin access</span>
+        <h1 class="mt-4 text-2xl font-bold text-gray-900" data-i18n="admin.login.subtitle">Enter the admin password to continue updating boutique content.</h1>
+        <form id="adminLoginForm" class="mt-6 space-y-4" autocomplete="off">
+          <div class="text-left">
+            <label for="adminPassword" class="block text-sm font-semibold text-gray-700" data-i18n="admin.login.password">Admin password</label>
+            <input id="adminPassword" name="password" type="password" class="mt-2 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand.red focus:outline-none" placeholder="••••••" required />
+          </div>
+          <button type="submit" class="shine-btn w-full rounded-full bg-brand.red px-6 py-3 text-sm font-semibold text-white shadow hover:bg-rose-600 transition" data-i18n="admin.login.submit">Unlock dashboard</button>
+        </form>
+        <p id="adminLoginError" class="mt-4 hidden text-sm font-medium text-red-600" role="alert" data-i18n="admin.login.error">Incorrect password. Please try again.</p>
+        <p class="mt-4 text-xs text-gray-500" data-i18n="admin.login.hint">Need the password? Reach out to your Osun web partner.</p>
+      </div>
+    </div>
+  </section>
+
+  <main id="admin-app" class="hidden pt-28 pb-20">
     <section class="max-w-4xl mx-auto px-6" aria-labelledby="admin-title">
       <div class="rounded-3xl bg-white shadow-xl border border-rose-100/80 p-8" data-aos="fade-up">
         <h1 id="admin-title" class="text-3xl font-bold text-gray-900 text-center" data-i18n="admin.title">Osun Content Studio</h1>

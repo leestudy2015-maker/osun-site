@@ -1,4 +1,6 @@
 const STORAGE_KEY = 'osun-admin-config';
+const AUTH_KEY = 'osun-admin-auth';
+const ADMIN_PASSWORD = 'OsunGlow2024!';
 
 const form = document.getElementById('adminForm');
 const previewTitle = document.getElementById('previewTitle');
@@ -8,6 +10,11 @@ const previewSecondary = document.getElementById('previewSecondary');
 const resultBox = document.getElementById('admin-result');
 const resetBtn = document.getElementById('adminReset');
 const exportBtn = document.getElementById('adminExport');
+const loginSection = document.getElementById('admin-login');
+const appShell = document.getElementById('admin-app');
+const loginForm = document.getElementById('adminLoginForm');
+const passwordField = document.getElementById('adminPassword');
+const loginError = document.getElementById('adminLoginError');
 
 const defaults = {
   title: previewTitle?.textContent?.trim() || 'Elegance. Confidence. Osun.',
@@ -63,16 +70,61 @@ function loadData(){
   }
 }
 
-function showResult(lines){
+function showResult(lines, headingKey = 'admin.result.success'){
   if (!resultBox) return;
   resultBox.innerHTML = `
-    <p class="font-semibold text-brand.red">${t('admin.result.success')}</p>
+    <p class="font-semibold text-brand.red">${t(headingKey)}</p>
     <ul class="mt-3 list-disc space-y-1 pl-5">
       ${lines.map(item => `<li>${item}</li>`).join('')}
     </ul>
     <p class="mt-4 text-xs text-gray-500">${t('admin.notes.desc')}</p>
   `;
   resultBox.classList.remove('hidden');
+}
+
+function isAuthenticated(){
+  return sessionStorage.getItem(AUTH_KEY) === 'true';
+}
+
+function unlockAdmin(){
+  sessionStorage.setItem(AUTH_KEY, 'true');
+  revealApp();
+}
+
+function revealApp(){
+  loginSection?.classList.add('hidden');
+  appShell?.classList.remove('hidden');
+  if (loginError) loginError.classList.add('hidden');
+  if (passwordField) passwordField.value = '';
+  if (form){
+    const stored = loadData();
+    applyToForm(stored || defaults);
+  }
+}
+
+function showLogin(){
+  appShell?.classList.add('hidden');
+  loginSection?.classList.remove('hidden');
+  if (loginError) loginError.classList.add('hidden');
+  if (passwordField) passwordField.focus();
+}
+
+function handleLogin(event){
+  event.preventDefault();
+  const value = passwordField?.value || '';
+  if (value === ADMIN_PASSWORD){
+    unlockAdmin();
+    showResult([t('admin.login.success')], 'admin.login.successTitle');
+  } else {
+    if (loginError){
+      loginError.textContent = t('admin.login.error');
+      loginError.classList.remove('hidden');
+    }
+    if (passwordField){
+      passwordField.focus();
+      passwordField.select();
+    }
+  }
 }
 
 function handleSubmit(event){
@@ -120,9 +172,6 @@ function handleExport(){
 }
 
 if (form){
-  const stored = loadData();
-  if (stored) applyToForm(stored);
-
   form.addEventListener('submit', handleSubmit);
   form.querySelectorAll('input[type="text"], input[type="url"], textarea').forEach(field => {
     field.addEventListener('input', () => {
@@ -134,3 +183,19 @@ if (form){
 
 resetBtn?.addEventListener('click', handleReset);
 exportBtn?.addEventListener('click', handleExport);
+
+if (passwordField){
+  passwordField.addEventListener('input', () => {
+    if (loginError) loginError.classList.add('hidden');
+  });
+}
+
+if (loginForm){
+  loginForm.addEventListener('submit', handleLogin);
+}
+
+if (isAuthenticated()){
+  revealApp();
+} else {
+  showLogin();
+}
