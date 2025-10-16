@@ -37,17 +37,15 @@
   </header>
   <main class="mx-auto max-w-5xl px-4 py-8">
 
-  <section class="bg-white card rounded-2xl p-8">
-    <h1 class="text-2xl font-bold mb-2">歡迎來到 Osun</h1>
-    <p class="text-gray-600 mb-6">這是示範首頁。點擊下方按鈕開始多頁式結帳流程。</p>
-    <div class="flex items-center gap-3">
-      <a href="login.html" class="inline-flex items-center px-5 py-3 rounded-full bg-osun-pink text-white hover:opacity-90">前往結帳</a>
-      <button id="addDemo" class="px-4 py-2 text-sm rounded-full border">加入示範商品</button>
-    </div>
+  <section class="bg-white card rounded-2xl p-8 max-w-xl mx-auto text-center">
+    <h2 class="text-2xl font-extrabold text-green-600 mb-2">付款成功 🎉</h2>
+    <p class="text-gray-600 mb-6">感謝您的訂購！我們已寄出確認信（示意）。</p>
+    <a href="index.html" class="inline-flex bg-gray-800 text-white rounded-full px-6 py-3">返回首頁</a>
   </section>
   <script>
-    OSUN.ensureDemoCart();
-    document.getElementById('addDemo').addEventListener('click', function(){ OSUN.ensureDemoCart(); alert('已加入示範商品'); });
+    // 清空示範購物車（可依需求保留）
+    // localStorage.removeItem('osun_cart_items');
+    // localStorage.removeItem('osun_total_cents');
   </script>
 
   </main>
