@@ -34,31 +34,33 @@
         <a href="login.html" class="hover:text-osun-pink">結帳</a>
       </nav>
     </div>
-
-    <nav id="mobile-menu" class="md:hidden hidden border-t bg-white" aria-label="Mobile">
-      <div class="px-4 py-3 space-y-2">
-        <a href="#shop" class="block py-2" data-i18n="nav.shop">Shop</a>
-        <a href="categories.html" class="block py-2" data-i18n="nav.categories">Categories</a>
-        <a href="#beauty" class="block py-2" data-i18n="nav.beauty">Beauty</a>
-        <a href="about.html" class="block py-2" data-i18n="nav.about">About</a>
-        <a href="admin.html" class="block py-2" data-i18n="nav.admin">Admin</a>
-      </div>
-    </nav>
   </header>
   <main class="mx-auto max-w-5xl px-4 py-8">
 
-  <section class="bg-white card rounded-2xl p-8">
-    <h1 class="text-2xl font-bold mb-2">歡迎來到 Osun</h1>
-    <p class="text-gray-600 mb-6">這是示範首頁。點擊下方按鈕開始多頁式結帳流程。</p>
-    <div class="flex items-center gap-3">
-      <a href="login.html" class="inline-flex items-center px-5 py-3 rounded-full bg-osun-pink text-white hover:opacity-90">前往結帳</a>
-      <button id="addDemo" class="px-4 py-2 text-sm rounded-full border">加入示範商品</button>
+  <section class="grid md:grid-cols-2 gap-8">
+    <div class="bg-white card rounded-2xl p-8">
+      <h2 class="text-xl font-bold mb-4">會員登入</h2>
+      <form class="space-y-4">
+        <div>
+          <label class="block text-sm mb-1">會員信箱</label>
+          <input type="email" class="w-full border rounded-lg px-3 py-2" placeholder="Email Address">
+        </div>
+        <div>
+          <label class="block text-sm mb-1">會員密碼</label>
+          <input type="password" class="w-full border rounded-lg px-3 py-2" placeholder="********">
+        </div>
+        <button type="button" class="w-full bg-gray-800 text-white rounded-lg py-3">登入（示意）</button>
+        <p class="text-xs text-gray-500 text-center">* 本示範不含真實登入，可直接訪客結帳</p>
+      </form>
+    </div>
+    <div class="bg-white card rounded-2xl p-8">
+      <h2 class="text-xl font-bold mb-4">首次購物</h2>
+      <p class="text-gray-600 mb-4">無須註冊，僅需填寫收件資訊即可完成結帳流程。</p>
+      <button onclick="window.location.href='checkout-info.html'"
+        class="w-full bg-osun-pink text-white rounded-lg py-3 hover:opacity-90">訪客結帳</button>
+      <button onclick="alert('示意：前往註冊頁')" class="w-full mt-3 border rounded-lg py-3">註冊會員（示意）</button>
     </div>
   </section>
-  <script>
-    OSUN.ensureDemoCart();
-    document.getElementById('addDemo').addEventListener('click', function(){ OSUN.ensureDemoCart(); alert('已加入示範商品'); });
-  </script>
 
   </main>
   <footer class="mt-16 border-t py-8 text-center text-sm text-gray-500">
