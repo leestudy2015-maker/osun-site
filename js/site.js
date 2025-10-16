@@ -2,16 +2,6 @@
   const LANG_KEY = 'osun-lang';
   const CART_KEY = 'osun-cart';
 
-  let aosInitialized = false;
-
-  function initAOS(){
-    if (aosInitialized) return;
-    if (window.AOS && typeof window.AOS.init === 'function'){
-      window.AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic' });
-      aosInitialized = true;
-    }
-  }
-
   const dict = {
     en: {
       'bar.free': 'Free shipping',
@@ -1872,7 +1862,9 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    initAOS();
+    if (window.AOS && typeof window.AOS.init === 'function') {
+      window.AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic' });
+    }
     applyLang(getSavedLang());
     updateCartCount();
     initCheckoutPage();
@@ -1885,7 +1877,6 @@
     translate,
     applyLang,
     getCurrentLang: () => localStorage.getItem(LANG_KEY) || getSavedLang(),
-    invalidateContent,
-    initAOS
+    invalidateContent
   };
 })();

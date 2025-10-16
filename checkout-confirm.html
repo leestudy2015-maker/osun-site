@@ -34,30 +34,35 @@
         <a href="login.html" class="hover:text-osun-pink">結帳</a>
       </nav>
     </div>
-
-    <nav id="mobile-menu" class="md:hidden hidden border-t bg-white" aria-label="Mobile">
-      <div class="px-4 py-3 space-y-2">
-        <a href="#shop" class="block py-2" data-i18n="nav.shop">Shop</a>
-        <a href="categories.html" class="block py-2" data-i18n="nav.categories">Categories</a>
-        <a href="#beauty" class="block py-2" data-i18n="nav.beauty">Beauty</a>
-        <a href="about.html" class="block py-2" data-i18n="nav.about">About</a>
-        <a href="admin.html" class="block py-2" data-i18n="nav.admin">Admin</a>
-      </div>
-    </nav>
   </header>
   <main class="mx-auto max-w-5xl px-4 py-8">
 
-  <section class="bg-white card rounded-2xl p-8">
-    <h1 class="text-2xl font-bold mb-2">歡迎來到 Osun</h1>
-    <p class="text-gray-600 mb-6">這是示範首頁。點擊下方按鈕開始多頁式結帳流程。</p>
-    <div class="flex items-center gap-3">
-      <a href="login.html" class="inline-flex items-center px-5 py-3 rounded-full bg-osun-pink text-white hover:opacity-90">前往結帳</a>
-      <button id="addDemo" class="px-4 py-2 text-sm rounded-full border">加入示範商品</button>
+  <section class="grid md:grid-cols-2 gap-8">
+    <div class="bg-white card rounded-2xl p-8">
+      <h2 class="text-xl font-bold mb-4">訂單明細</h2>
+      <div id="summary"></div>
+      <div class="text-sm text-gray-500 mt-4">* 可於下個步驟選擇付款方式</div>
+    </div>
+    <div class="bg-white card rounded-2xl p-8">
+      <h2 class="text-xl font-bold mb-4">收件資訊</h2>
+      <div id="customerBox" class="space-y-1 text-gray-700"></div>
+      <div class="flex items-center justify-between mt-6">
+        <a href="checkout-info.html" class="text-sm text-gray-600 hover:text-gray-800">← 上一步</a>
+        <a href="payment.html" class="bg-osun-pink text-white rounded-lg px-6 py-3 hover:opacity-90">前往付款</a>
+      </div>
     </div>
   </section>
   <script>
     OSUN.ensureDemoCart();
-    document.getElementById('addDemo').addEventListener('click', function(){ OSUN.ensureDemoCart(); alert('已加入示範商品'); });
+    renderOrderSummary('summary');
+    const c = OSUN.getCustomer();
+    const box = document.getElementById('customerBox');
+    box.innerHTML = c ? (
+      '<div>姓名：' + c.name + '</div>' +
+      '<div>Email：' + c.email + '</div>' +
+      '<div>電話：' + c.phone + '</div>' +
+      '<div>地址：' + c.city + c.district + c.address + '</div>'
+    ) : '<div class="text-gray-500">尚未填寫資料</div>';
   </script>
 
   </main>

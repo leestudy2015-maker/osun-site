@@ -193,14 +193,5 @@
 
   <script src="js/content.js"></script>
   <script src="js/site.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.OSUN && typeof window.OSUN.initAOS === 'function') {
-        window.OSUN.initAOS();
-      } else if (window.AOS && typeof window.AOS.init === 'function') {
-        window.AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic' });
-      }
-    });
-  </script>
 </body>
 </html>
