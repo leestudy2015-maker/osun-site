@@ -15,6 +15,7 @@ const categoryWrap = document.getElementById('category-manager');
 const addCategoryBtn = document.getElementById('categoryAddItem');
 const aboutWrap = document.getElementById('about-form-wrap');
 const exportBtn = document.getElementById('adminExport');
+const resetBtn = document.getElementById('adminReset');
 const resultBox = document.getElementById('admin-result');
 
 const defaults = window.OSUN_CONTENT && typeof window.OSUN_CONTENT.clone === 'function'
@@ -135,7 +136,7 @@ function showResult(messageKey, lines = []){
     ? `<ul class="mt-3 list-disc space-y-1 pl-5">${items.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`
     : '';
   resultBox.innerHTML = `
-    <p class="font-semibold text-brand.red">${escapeHtml(t(messageKey))}</p>
+    <p class="font-semibold text-brand-red">${escapeHtml(t(messageKey))}</p>
     ${listMarkup}
     <p class="mt-4 text-xs text-gray-500">${escapeHtml(t('admin.notes.desc'))}</p>
   `;
@@ -177,22 +178,22 @@ function renderHeroForm(){
       <div class="grid gap-6 md:grid-cols-2">
         ${languages.map(lang => `
           <fieldset class="rounded-2xl border border-rose-100 bg-rose-50/40 p-5 space-y-4">
-            <legend class="text-sm font-semibold text-brand.red">${escapeHtml(t(`admin.language.${lang}`))}</legend>
+            <legend class="text-sm font-semibold text-brand-red">${escapeHtml(t(`admin.language.${lang}`))}</legend>
             <div>
               <label class="block text-sm font-semibold text-gray-700">${escapeHtml(t('admin.field.title'))}</label>
-              <input name="hero-${lang}-title" value="${escapeHtml(hero[lang]?.title || '')}" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand.red focus:outline-none" type="text" />
+              <input name="hero-${lang}-title" value="${escapeHtml(hero[lang]?.title || '')}" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand-red focus:outline-none" type="text" />
             </div>
             <div>
               <label class="block text-sm font-semibold text-gray-700">${escapeHtml(t('admin.field.subtitle'))}</label>
-              <textarea name="hero-${lang}-subtitle" rows="3" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand.red focus:outline-none">${escapeHtml(hero[lang]?.subtitle || '')}</textarea>
+              <textarea name="hero-${lang}-subtitle" rows="3" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand-red focus:outline-none">${escapeHtml(hero[lang]?.subtitle || '')}</textarea>
             </div>
             <div>
               <label class="block text-sm font-semibold text-gray-700">${escapeHtml(t('admin.hero.cta'))}</label>
-              <input name="hero-${lang}-primaryCta" value="${escapeHtml(hero[lang]?.primaryCta || '')}" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand.red focus:outline-none" type="text" />
+              <input name="hero-${lang}-primaryCta" value="${escapeHtml(hero[lang]?.primaryCta || '')}" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand-red focus:outline-none" type="text" />
             </div>
             <div>
               <label class="block text-sm font-semibold text-gray-700">${escapeHtml(t('admin.hero.secondary'))}</label>
-              <input name="hero-${lang}-secondaryCta" value="${escapeHtml(hero[lang]?.secondaryCta || '')}" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand.red focus:outline-none" type="text" />
+              <input name="hero-${lang}-secondaryCta" value="${escapeHtml(hero[lang]?.secondaryCta || '')}" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand-red focus:outline-none" type="text" />
             </div>
           </fieldset>
         `).join('')}
