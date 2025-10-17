@@ -2,16 +2,6 @@
   const LANG_KEY = 'osun-lang';
   const CART_KEY = 'osun-cart';
 
-  let aosInitialized = false;
-
-  function initAOS(){
-    if (aosInitialized) return;
-    if (window.AOS && typeof window.AOS.init === 'function'){
-      window.AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic' });
-      aosInitialized = true;
-    }
-  }
-
   const dict = {
     en: {
       'bar.free': 'Free shipping',
@@ -889,7 +879,7 @@
     setTextKey('hero.secondaryCta', data.secondaryCta || getText('hero.cta2'));
     setLinkKey('hero.primaryLink', data.primaryLink || heroConfig.primaryLink || '#shop');
     setLinkKey('hero.secondaryLink', data.secondaryLink || heroConfig.secondaryLink || 'about.html');
-    const imageSrc = data.image || heroConfig.en?.image || heroConfig.image || 'assets/images/hero.jpg';
+    const imageSrc = data.image || heroConfig.en?.image || heroConfig.image || 'hero.jpg';
     setImageKey('hero.image', imageSrc);
   }
 
@@ -935,7 +925,7 @@
     const name = item?.texts?.[lang]?.name || item?.texts?.en?.name || getText('catpage.card.defaultName');
     const description = item?.texts?.[lang]?.description || item?.texts?.en?.description || '';
     const stock = item?.inventory?.[lang] || item?.inventory?.en || '';
-    const imageSrc = item?.image || 'assets/images/store.jpg';
+    const imageSrc = item?.image || 'store.jpg';
     const badgeTop = badgeLabel ? `<span class="absolute left-4 top-4 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide ${theme.badge}">${escapeHtml(badgeLabel)}</span>` : '';
     card.innerHTML = `
       <div class="relative">
@@ -996,7 +986,7 @@
     setTextKey('about.founder.title', founder.title?.[lang] || founder.title?.en || getText('aboutpage.owner.title'));
     setTextKey('about.founder.story', founder.story?.[lang] || founder.story?.en || getText('aboutpage.owner.story'));
     setTextKey('about.founder.quote', founder.quote?.[lang] || founder.quote?.en || getText('aboutpage.owner.quote'));
-    setImageKey('about.founder.image', founder.image || 'assets/images/model1.png');
+    setImageKey('about.founder.image', founder.image || 'model1.png');
     setAltKey('about.founder.alt', founder.alt?.[lang] || founder.alt?.en || getText('aboutpage.owner.name'));
     const highlights = Array.isArray(founder.highlights) ? founder.highlights : [];
     highlights.forEach((item, index) => {
@@ -1038,9 +1028,9 @@
   }
 
   const PRODUCTS = {
-    p1: { id: 'p1', price: 279, image: 'assets/images/product1.jpg', i18nNameKey: 'prod1.name' },
-    p2: { id: 'p2', price: 169, image: 'assets/images/dress_pink.jpg', i18nNameKey: 'prod2.name' },
-    p3: { id: 'p3', price: 329, image: 'assets/images/model1.png', i18nNameKey: 'prod3.name' }
+    p1: { id: 'p1', price: 279, image: 'product1.jpg', i18nNameKey: 'prod1.name' },
+    p2: { id: 'p2', price: 169, image: 'dress_pink.jpg', i18nNameKey: 'prod2.name' },
+    p3: { id: 'p3', price: 329, image: 'model1.png', i18nNameKey: 'prod3.name' }
   };
 
   function getSavedLang(){
@@ -1872,7 +1862,9 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    initAOS();
+    if (window.AOS && typeof window.AOS.init === 'function') {
+      window.AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic' });
+    }
     applyLang(getSavedLang());
     updateCartCount();
     initCheckoutPage();
@@ -1885,7 +1877,6 @@
     translate,
     applyLang,
     getCurrentLang: () => localStorage.getItem(LANG_KEY) || getSavedLang(),
-    invalidateContent,
-    initAOS
+    invalidateContent
   };
 })();

@@ -10,6 +10,7 @@
   <meta property="og:description" content="Keep your boutique content fresh with quick notes and exports." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/images/hero.jpg" />
+  <meta property="og:image" content="hero.jpg" />
   <meta property="og:url" content="https://osun.example.com/admin" />
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -29,6 +30,17 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <link rel="stylesheet" href="assets/css/site.css" />
+  <style>
+    html { scroll-behavior: smooth; }
+    .shine-btn{ position:relative; overflow:hidden; }
+    .shine-btn::after{
+      content:''; position:absolute; top:0; left:-75%; width:50%; height:100%;
+      background:linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.5) 50%, rgba(255,255,255,0) 100%);
+      transform:skewX(-20deg); transition:.9s;
+    }
+    .shine-btn:hover::after{ left:125%; }
+    .mask { background: rgba(0,0,0,.35); backdrop-filter: saturate(120%) blur(1px); }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
   <header class="sticky top-0 z-40 bg-white/85 backdrop-blur border-b">
@@ -108,6 +120,9 @@
           <a href="#hero-panel" class="shine-btn rounded-full border border-brand.red bg-rose-50/80 px-5 py-2 text-sm font-semibold text-brand.red hover:bg-rose-100 hover:shadow transition" data-i18n="admin.nav.hero">Homepage</a>
           <a href="#categories-panel" class="shine-btn rounded-full border border-brand.red bg-rose-50/80 px-5 py-2 text-sm font-semibold text-brand.red hover:bg-rose-100 hover:shadow transition" data-i18n="admin.nav.categories">Categories</a>
           <a href="#about-panel" class="shine-btn rounded-full border border-brand.red bg-rose-50/80 px-5 py-2 text-sm font-semibold text-brand.red hover:bg-rose-100 hover:shadow transition" data-i18n="admin.nav.about">About page</a>
+          <a href="#hero-panel" class="shine-btn rounded-full border border-brand.red px-5 py-2 text-sm font-semibold text-brand.red hover:bg-white hover:shadow transition" data-i18n="admin.nav.hero">Homepage</a>
+          <a href="#categories-panel" class="shine-btn rounded-full border border-brand.red px-5 py-2 text-sm font-semibold text-brand.red hover:bg-white hover:shadow transition" data-i18n="admin.nav.categories">Categories</a>
+          <a href="#about-panel" class="shine-btn rounded-full border border-brand.red px-5 py-2 text-sm font-semibold text-brand.red hover:bg-white hover:shadow transition" data-i18n="admin.nav.about">About page</a>
           <button type="button" id="adminExport" class="shine-btn rounded-full bg-brand.red px-5 py-2 text-sm font-semibold text-white shadow hover:bg-rose-600 transition" data-i18n="admin.categories.export">Export JSON</button>
         </nav>
 
@@ -137,6 +152,7 @@
         <section class="mt-12 rounded-2xl border border-dashed border-rose-200 bg-rose-50/70 p-6 text-sm text-gray-600" data-aos="fade-up" data-aos-delay="300">
           <h2 class="text-base font-semibold text-brand.red" data-i18n="admin.notes.heading">Publishing notes</h2>
           <p class="mt-2" data-i18n="admin.notes.desc">Share the exported configuration or manually replace copy within the HTML files. A condensed integration checklist is included below when you are ready to connect a CMS.</p>
+          <p class="mt-2" data-i18n="admin.notes.desc">Share the exported configuration or manually replace copy within the HTML files. For rapid updates, coordinate with your developer to connect these inputs to a CMS or headless backend.</p>
           <ul class="mt-4 list-disc space-y-2 pl-5">
             <li><span data-i18n="admin.notes.item1.prefix">Homepage hero updates live in</span> <code class="rounded bg-white px-2 py-1 text-xs text-brand.red">index.html</code></li>
             <li><span data-i18n="admin.notes.item2.prefix">Category cards can be updated in</span> <code class="rounded bg-white px-2 py-1 text-xs text-brand.red">categories.html</code></li>
@@ -225,5 +241,8 @@
       }
     });
   </script>
+  <script src="js/content.js"></script>
+  <script src="js/site.js"></script>
+  <script src="js/admin.js"></script>
 </body>
 </html>

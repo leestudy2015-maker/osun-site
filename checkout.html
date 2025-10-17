@@ -10,6 +10,7 @@
   <meta property="og:description" content="Register, verify, and pay with your preferred method before tracking your glow delivery." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/images/hero.jpg" />
+  <meta property="og:image" content="hero.jpg" />
   <meta property="og:url" content="https://osun.example.com/checkout" />
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -29,6 +30,21 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <link rel="stylesheet" href="assets/css/site.css" />
+  <style>
+    html { scroll-behavior: smooth; }
+    .shine-btn{ position:relative; overflow:hidden; }
+    .shine-btn::after{
+      content:''; position:absolute; top:0; left:-75%; width:50%; height:100%;
+      background:linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.5) 50%, rgba(255,255,255,0) 100%);
+      transform:skewX(-20deg); transition:.9s;
+    }
+    .shine-btn:hover::after{ left:125%; }
+    .mask { background: rgba(0,0,0,.35); backdrop-filter: saturate(120%) blur(1px); }
+    .checkout-step-active{ display:block; }
+    .checkout-step{ display:none; }
+    .timeline-line::before{ content:''; position:absolute; left:12px; top:0; bottom:0; width:2px; background:rgba(225,29,72,0.15); }
+    .timeline-item::before{ content:''; position:absolute; left:8px; top:0.5rem; width:10px; height:10px; border-radius:9999px; background:#E11D48; box-shadow:0 0 0 4px rgba(225,29,72,0.12); }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
   <header class="sticky top-0 z-40 bg-white/85 backdrop-blur border-b">
@@ -78,10 +94,6 @@
         <h1 class="mt-4 text-3xl md:text-4xl font-bold text-gray-900" data-i18n="checkout.hero.title">Finish your order in three mindful steps.</h1>
         <p class="mt-3 text-gray-600 md:text-lg" data-i18n="checkout.hero.subtitle">Register, verify your phone by SMS, choose a payment method, and follow your glow parcel on its way to you.</p>
         <div class="mt-6 flex flex-wrap gap-3 text-sm text-gray-600" data-i18n="checkout.hero.secure">All payments are encrypted. Card data is never stored.</div>
-        <div class="mt-6 rounded-2xl border border-dashed border-rose-200 bg-rose-50/60 p-4 text-sm text-gray-700 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-          <span class="font-medium" data-i18n="checkout.flow.altTitle">Prefer a step-by-step experience?</span>
-          <a href="checkout-start.html" class="inline-flex items-center rounded-full border border-brand.red/40 px-4 py-2 text-sm font-semibold text-brand.red hover:bg-rose-50 transition" data-i18n="checkout.flow.altLink">Open the multi-page checkout</a>
-        </div>
       </div>
     </section>
 
@@ -159,6 +171,7 @@
               <p class="text-sm text-gray-600" data-i18n="checkout.account.sectionDesc">Enter your details below to store them for future checkouts.</p>
             </div>
             <form id="checkout-account-form" class="mt-4 grid gap-4 md:grid-cols-2">
+            <form id="checkout-account-form" class="mt-6 grid gap-4 md:grid-cols-2">
               <div class="md:col-span-2">
                 <label for="checkoutFullName" class="block text-sm font-semibold text-gray-700" data-i18n="checkout.account.fullName">Full name</label>
                 <input id="checkoutFullName" name="fullName" type="text" class="mt-2 w-full rounded-xl border border-gray-200 px-4 py-3 focus:border-brand.red focus:outline-none" data-i18n-placeholder="checkout.account.fullName.placeholder" required />
@@ -190,6 +203,7 @@
                 <div class="mt-2 flex flex-col gap-3 md:flex-row">
                   <input id="checkoutPhone" name="phone" type="tel" class="w-full rounded-xl border border-gray-200 px-4 py-3 focus:border-brand.red focus:outline-none" data-i18n-placeholder="checkout.verify.phone.placeholder" required />
                   <button type="button" id="checkoutSendCode" class="shine-btn rounded-full border border-brand.red bg-rose-50/80 px-6 py-3 text-sm font-semibold text-brand.red hover:bg-rose-100 hover:shadow transition" data-i18n="checkout.verify.send">Send SMS</button>
+                  <button type="button" id="checkoutSendCode" class="shine-btn rounded-full border border-brand.red px-6 py-3 text-sm font-semibold text-brand.red hover:bg-white hover:shadow transition" data-i18n="checkout.verify.send">Send SMS</button>
                 </div>
               </div>
               <div>
@@ -402,5 +416,7 @@
       }
     });
   </script>
+  <script src="js/content.js"></script>
+  <script src="js/site.js"></script>
 </body>
 </html>

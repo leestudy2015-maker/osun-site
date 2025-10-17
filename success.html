@@ -37,32 +37,15 @@
   </header>
   <main class="mx-auto max-w-5xl px-4 py-8">
 
-  <section class="grid md:grid-cols-2 gap-8">
-    <div class="bg-white card rounded-2xl p-8">
-      <h2 class="text-xl font-bold mb-4">訂單明細</h2>
-      <div id="summary"></div>
-      <div class="text-sm text-gray-500 mt-4">* 可於下個步驟選擇付款方式</div>
-    </div>
-    <div class="bg-white card rounded-2xl p-8">
-      <h2 class="text-xl font-bold mb-4">收件資訊</h2>
-      <div id="customerBox" class="space-y-1 text-gray-700"></div>
-      <div class="flex items-center justify-between mt-6">
-        <a href="checkout-info.html" class="text-sm text-gray-600 hover:text-gray-800">← 上一步</a>
-        <a href="payment.html" class="bg-osun-pink text-white rounded-lg px-6 py-3 hover:opacity-90">前往付款</a>
-      </div>
-    </div>
+  <section class="bg-white card rounded-2xl p-8 max-w-xl mx-auto text-center">
+    <h2 class="text-2xl font-extrabold text-green-600 mb-2">付款成功 🎉</h2>
+    <p class="text-gray-600 mb-6">感謝您的訂購！我們已寄出確認信（示意）。</p>
+    <a href="index.html" class="inline-flex bg-gray-800 text-white rounded-full px-6 py-3">返回首頁</a>
   </section>
   <script>
-    OSUN.ensureDemoCart();
-    renderOrderSummary('summary');
-    const c = OSUN.getCustomer();
-    const box = document.getElementById('customerBox');
-    box.innerHTML = c ? (
-      '<div>姓名：' + c.name + '</div>' +
-      '<div>Email：' + c.email + '</div>' +
-      '<div>電話：' + c.phone + '</div>' +
-      '<div>地址：' + c.city + c.district + c.address + '</div>'
-    ) : '<div class="text-gray-500">尚未填寫資料</div>';
+    // 清空示範購物車（可依需求保留）
+    // localStorage.removeItem('osun_cart_items');
+    // localStorage.removeItem('osun_total_cents');
   </script>
 
   </main>
