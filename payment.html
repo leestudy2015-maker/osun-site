@@ -37,32 +37,42 @@
   </header>
   <main class="mx-auto max-w-5xl px-4 py-8">
 
-  <section class="grid md:grid-cols-2 gap-8">
-    <div class="bg-white card rounded-2xl p-8">
-      <h2 class="text-xl font-bold mb-4">訂單明細</h2>
-      <div id="summary"></div>
-      <div class="text-sm text-gray-500 mt-4">* 可於下個步驟選擇付款方式</div>
+  <section class="bg-white card rounded-2xl p-8 max-w-2xl mx-auto">
+    <h2 class="text-xl font-bold mb-6">選擇付款方式</h2>
+    <div id="summary" class="mb-6"></div>
+
+    <div class="space-y-3">
+      <button id="payVisa" class="w-full bg-osun-pink text-white rounded-lg py-3 hover:opacity-90">
+        使用 Visa / MasterCard（Stripe）
+      </button>
+      <button id="payTnG" class="w-full border rounded-lg py-3" disabled title="之後可接 iPay88">
+        Touch'n Go（iPay88）— 即將推出
+      </button>
     </div>
-    <div class="bg-white card rounded-2xl p-8">
-      <h2 class="text-xl font-bold mb-4">收件資訊</h2>
-      <div id="customerBox" class="space-y-1 text-gray-700"></div>
-      <div class="flex items-center justify-between mt-6">
-        <a href="checkout-info.html" class="text-sm text-gray-600 hover:text-gray-800">← 上一步</a>
-        <a href="payment.html" class="bg-osun-pink text-white rounded-lg px-6 py-3 hover:opacity-90">前往付款</a>
-      </div>
+
+    <div class="flex items-center justify-between mt-6">
+      <a href="checkout-confirm.html" class="text-sm text-gray-600 hover:text-gray-800">← 上一步</a>
+      <a href="index.html" class="text-sm text-gray-600 hover:text-gray-800">取消</a>
     </div>
   </section>
+
   <script>
     OSUN.ensureDemoCart();
     renderOrderSummary('summary');
-    const c = OSUN.getCustomer();
-    const box = document.getElementById('customerBox');
-    box.innerHTML = c ? (
-      '<div>姓名：' + c.name + '</div>' +
-      '<div>Email：' + c.email + '</div>' +
-      '<div>電話：' + c.phone + '</div>' +
-      '<div>地址：' + c.city + c.district + c.address + '</div>'
-    ) : '<div class="text-gray-500">尚未填寫資料</div>';
+
+    document.getElementById('payVisa').addEventListener('click', async function(){
+      const order = { currency: 'myr', items: OSUN.getCart() };
+      try {
+        const res = await fetch('/api/create-checkout-session', {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({ order })
+        });
+        const data = await res.json();
+        if (data.url) window.location.href = data.url;
+        else alert('付款啟動失敗：' + (data.error||'未知錯誤'));
+      } catch (e) { alert('請稍後再試'); }
+    });
   </script>
 
   </main>
