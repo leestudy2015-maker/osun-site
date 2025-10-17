@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Osun Boutique Checkout</title>
-  <meta name="description" content="Complete your Osun Beauty & Boutique order with secure registration, SMS verification, and live tracking." />
+  <meta name="description" content="Complete your Osun Beauty & Boutique order with secure registration, payment selection, and live tracking." />
   <link rel="canonical" href="https://osun.example.com/checkout" />
   <meta property="og:title" content="Osun Beauty | Secure Checkout" />
-  <meta property="og:description" content="Register, verify, and pay with your preferred method before tracking your glow delivery." />
+  <meta property="og:description" content="Sign in, complete your details, pay with your preferred method, and track your glow delivery." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/images/hero.jpg" />
   <meta property="og:image" content="hero.jpg" />
@@ -92,7 +92,7 @@
       <div class="max-w-5xl mx-auto rounded-3xl bg-white shadow-xl border border-rose-100/80 p-8 md:p-12" data-aos="fade-up">
         <span class="inline-flex items-center justify-center rounded-full bg-rose-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-brand.red" data-i18n="checkout.hero.tag">Secure checkout</span>
         <h1 class="mt-4 text-3xl md:text-4xl font-bold text-gray-900" data-i18n="checkout.hero.title">Finish your order in three mindful steps.</h1>
-        <p class="mt-3 text-gray-600 md:text-lg" data-i18n="checkout.hero.subtitle">Register, verify your phone by SMS, choose a payment method, and follow your glow parcel on its way to you.</p>
+        <p class="mt-3 text-gray-600 md:text-lg" data-i18n="checkout.hero.subtitle">Sign in, fill in your contact details, choose a payment method, and follow your glow parcel on its way to you.</p>
         <div class="mt-6 flex flex-wrap gap-3 text-sm text-gray-600" data-i18n="checkout.hero.secure">All payments are encrypted. Card data is never stored.</div>
       </div>
     </section>
@@ -102,24 +102,20 @@
         <div class="rounded-3xl bg-white shadow-lg border border-rose-100/70 p-6 md:p-8" data-aos="fade-up" data-aos-delay="80">
           <h2 class="text-xl font-semibold text-gray-900" data-i18n="checkout.progress.title">Your journey</h2>
           <p class="mt-2 text-sm text-gray-600" data-i18n="checkout.progress.desc">Follow the guided steps below. You can return to previous sections anytime.</p>
-          <ol id="checkout-progress" class="mt-6 grid gap-4 md:grid-cols-5 text-sm">
+          <ol id="checkout-progress" class="mt-6 grid gap-4 md:grid-cols-4 text-sm">
             <li class="rounded-2xl border border-rose-100 px-4 py-3 flex flex-col gap-1" data-step="0">
               <span class="text-xs font-semibold uppercase tracking-wide text-brand.red" data-i18n="checkout.progress.account">Account</span>
               <span data-i18n="checkout.progress.account.desc">Create profile</span>
             </li>
             <li class="rounded-2xl border border-rose-100 px-4 py-3 flex flex-col gap-1" data-step="1">
-              <span class="text-xs font-semibold uppercase tracking-wide text-brand.red" data-i18n="checkout.progress.verify">Verify</span>
-              <span data-i18n="checkout.progress.verify.desc">SMS confirm</span>
-            </li>
-            <li class="rounded-2xl border border-rose-100 px-4 py-3 flex flex-col gap-1" data-step="2">
               <span class="text-xs font-semibold uppercase tracking-wide text-brand.red" data-i18n="checkout.progress.shipping">Shipping</span>
               <span data-i18n="checkout.progress.shipping.desc">Address &amp; delivery</span>
             </li>
-            <li class="rounded-2xl border border-rose-100 px-4 py-3 flex flex-col gap-1" data-step="3">
+            <li class="rounded-2xl border border-rose-100 px-4 py-3 flex flex-col gap-1" data-step="2">
               <span class="text-xs font-semibold uppercase tracking-wide text-brand.red" data-i18n="checkout.progress.payment">Payment</span>
               <span data-i18n="checkout.progress.payment.desc">Select method</span>
             </li>
-            <li class="rounded-2xl border border-rose-100 px-4 py-3 flex flex-col gap-1" data-step="4">
+            <li class="rounded-2xl border border-rose-100 px-4 py-3 flex flex-col gap-1" data-step="3">
               <span class="text-xs font-semibold uppercase tracking-wide text-brand.red" data-i18n="checkout.progress.review">Confirm</span>
               <span data-i18n="checkout.progress.review.desc">Review &amp; track</span>
             </li>
@@ -170,11 +166,14 @@
               <h4 class="text-xl font-semibold text-gray-900" data-i18n="checkout.account.sectionTitle">New member registration</h4>
               <p class="text-sm text-gray-600" data-i18n="checkout.account.sectionDesc">Enter your details below to store them for future checkouts.</p>
             </div>
-            <form id="checkout-account-form" class="mt-4 grid gap-4 md:grid-cols-2">
             <form id="checkout-account-form" class="mt-6 grid gap-4 md:grid-cols-2">
               <div class="md:col-span-2">
                 <label for="checkoutFullName" class="block text-sm font-semibold text-gray-700" data-i18n="checkout.account.fullName">Full name</label>
                 <input id="checkoutFullName" name="fullName" type="text" class="mt-2 w-full rounded-xl border border-gray-200 px-4 py-3 focus:border-brand.red focus:outline-none" data-i18n-placeholder="checkout.account.fullName.placeholder" required />
+              </div>
+              <div>
+                <label for="checkoutAccountPhone" class="block text-sm font-semibold text-gray-700" data-i18n="checkout.account.phone">Contact number</label>
+                <input id="checkoutAccountPhone" name="phone" type="tel" class="mt-2 w-full rounded-xl border border-gray-200 px-4 py-3 focus:border-brand.red focus:outline-none" data-i18n-placeholder="checkout.account.phone.placeholder" required />
               </div>
               <div>
                 <label for="checkoutEmail" class="block text-sm font-semibold text-gray-700" data-i18n="checkout.account.email">Email</label>
@@ -190,33 +189,6 @@
               </div>
               <div class="md:col-span-2 flex justify-end gap-3">
                 <button type="submit" class="shine-btn rounded-full bg-brand.red px-6 py-3 text-sm font-semibold text-white shadow hover:bg-rose-600 transition" data-i18n="checkout.common.next">Save &amp; continue</button>
-              </div>
-            </form>
-          </section>
-
-          <section class="checkout-step" data-checkout-step="verify">
-            <h3 class="text-2xl font-semibold text-gray-900" data-i18n="checkout.verify.title">Verify your phone number</h3>
-            <p class="mt-2 text-sm text-gray-600" data-i18n="checkout.verify.desc">We will send a one-time code to keep your parcel updates secure.</p>
-            <form id="checkout-verify-form" class="mt-6 grid gap-4 md:grid-cols-2">
-              <div class="md:col-span-2">
-                <label for="checkoutPhone" class="block text-sm font-semibold text-gray-700" data-i18n="checkout.verify.phone">Mobile number</label>
-                <div class="mt-2 flex flex-col gap-3 md:flex-row">
-                  <input id="checkoutPhone" name="phone" type="tel" class="w-full rounded-xl border border-gray-200 px-4 py-3 focus:border-brand.red focus:outline-none" data-i18n-placeholder="checkout.verify.phone.placeholder" required />
-                  <button type="button" id="checkoutSendCode" class="shine-btn rounded-full border border-brand.red bg-rose-50/80 px-6 py-3 text-sm font-semibold text-brand.red hover:bg-rose-100 hover:shadow transition" data-i18n="checkout.verify.send">Send SMS</button>
-                  <button type="button" id="checkoutSendCode" class="shine-btn rounded-full border border-brand.red px-6 py-3 text-sm font-semibold text-brand.red hover:bg-white hover:shadow transition" data-i18n="checkout.verify.send">Send SMS</button>
-                </div>
-              </div>
-              <div>
-                <label for="checkoutCode" class="block text-sm font-semibold text-gray-700" data-i18n="checkout.verify.code">Verification code</label>
-                <input id="checkoutCode" name="code" type="text" class="mt-2 w-full rounded-xl border border-gray-200 px-4 py-3 focus:border-brand.red focus:outline-none" data-i18n-placeholder="checkout.verify.code.placeholder" required />
-              </div>
-              <div class="flex flex-col justify-end gap-3 md:flex-row md:items-center">
-                <button type="button" id="checkoutResendCode" class="text-sm font-semibold text-brand.red hover:underline" data-i18n="checkout.verify.resend">Resend code</button>
-                <div class="flex-1 text-xs text-gray-500" id="checkoutCodeStatus"></div>
-              </div>
-              <div class="md:col-span-2 flex justify-between items-center">
-                <button type="button" class="text-sm font-semibold text-gray-500 hover:text-brand.red" data-checkout-back="account" data-i18n="checkout.common.back">Back</button>
-                <button type="submit" class="shine-btn rounded-full bg-brand.red px-6 py-3 text-sm font-semibold text-white shadow hover:bg-rose-600 transition" data-i18n="checkout.verify.next">Verify &amp; continue</button>
               </div>
             </form>
           </section>
@@ -250,7 +222,7 @@
                 </select>
               </div>
               <div class="md:col-span-2 flex justify-between items-center">
-                <button type="button" class="text-sm font-semibold text-gray-500 hover:text-brand.red" data-checkout-back="verify" data-i18n="checkout.common.back">Back</button>
+                <button type="button" class="text-sm font-semibold text-gray-500 hover:text-brand.red" data-checkout-back="account" data-i18n="checkout.common.back">Back</button>
                 <button type="submit" class="shine-btn rounded-full bg-brand.red px-6 py-3 text-sm font-semibold text-white shadow hover:bg-rose-600 transition" data-i18n="checkout.shipping.next">Save shipping</button>
               </div>
             </form>
@@ -336,7 +308,7 @@
             <div>
               <span class="inline-flex items-center justify-center rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600" data-i18n="checkout.success.tag">Order placed</span>
               <h3 class="mt-3 text-2xl font-semibold text-gray-900" data-i18n="checkout.success.title">Your glow pieces are on the way</h3>
-              <p class="mt-2 text-sm text-gray-600" data-i18n="checkout.success.subtitle">Track each milestone below and expect an SMS when your courier is nearby.</p>
+              <p class="mt-2 text-sm text-gray-600" data-i18n="checkout.success.subtitle">Track each milestone below and receive timely updates before your courier arrives.</p>
             </div>
             <div class="rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
               <p class="font-semibold" data-i18n="checkout.success.trackingLabel">Tracking ID</p>
