@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Osun Beauty &amp; Boutique | Elegance. Confidence. Osun.</title>
   <meta name="description" content="Osun Beauty &amp; Boutique — Fashion &amp; beauty curated for elegance and confidence. Shop dresses, blouses, skincare and more." />
   <link rel="canonical" href="https://osun.example.com/" />
@@ -12,32 +12,30 @@
   <meta property="og:image" content="assets/images/hero.jpg" />
   <meta property="og:url" content="https://osun.example.com/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Osun Beauty & Boutique</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
-          colors: { brand: { red:'#E11D48', yellow:'#F59E0B' } },
-          boxShadow: {
-            'elev': '0 10px 30px -12px rgba(0,0,0,0.25)'
           colors: {
-            osun: {
-              pink: '#f472b6',
-              dark: '#111827',
-              soft: '#f9fafb'
-            }
+            brand: { red: '#E11D48', yellow: '#F59E0B' },
+            osun: { pink: '#f472b6', dark: '#111827', soft: '#f9fafb' }
+          },
+          boxShadow: {
+            elev: '0 10px 30px -12px rgba(0,0,0,0.25)'
           }
         }
       }
-    }
+    };
   </script>
 
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <link rel="stylesheet" href="assets/css/site.css" />
+  <style>
+    .card { box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+  </style>
 </head>
 
 <body class="bg-white text-gray-800">
@@ -296,50 +294,8 @@
         window.AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic' });
       }
     });
-  <style>
-    .card { box-shadow: 0 8px 24px rgba(0,0,0,.08); }
-  </style>
-</head>
-
-<body class="bg-osun-soft text-gray-800">
-  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
-    <div class="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between">
-      <a href="index.html" class="font-semibold text-lg">Osun Beauty & Boutique</a>
-      <nav class="flex items-center gap-4 text-sm">
-        <a href="index.html" class="hover:text-osun-pink">首頁</a>
-        <a href="login.html" class="hover:text-osun-pink">結帳</a>
-      </nav>
-    </div>
-
-    <nav id="mobile-menu" class="md:hidden hidden border-t bg-white" aria-label="Mobile">
-      <div class="px-4 py-3 space-y-2">
-        <a href="#shop" class="block py-2" data-i18n="nav.shop">Shop</a>
-        <a href="categories.html" class="block py-2" data-i18n="nav.categories">Categories</a>
-        <a href="#beauty" class="block py-2" data-i18n="nav.beauty">Beauty</a>
-        <a href="about.html" class="block py-2" data-i18n="nav.about">About</a>
-        <a href="admin.html" class="block py-2" data-i18n="nav.admin">Admin</a>
-      </div>
-    </nav>
-  </header>
-  <main class="mx-auto max-w-5xl px-4 py-8">
-
-  <section class="bg-white card rounded-2xl p-8">
-    <h1 class="text-2xl font-bold mb-2">歡迎來到 Osun</h1>
-    <p class="text-gray-600 mb-6">這是示範首頁。點擊下方按鈕開始多頁式結帳流程。</p>
-    <div class="flex items-center gap-3">
-      <a href="login.html" class="inline-flex items-center px-5 py-3 rounded-full bg-osun-pink text-white hover:opacity-90">前往結帳</a>
-      <button id="addDemo" class="px-4 py-2 text-sm rounded-full border">加入示範商品</button>
-    </div>
-  </section>
-  <script>
-    OSUN.ensureDemoCart();
-    document.getElementById('addDemo').addEventListener('click', function(){ OSUN.ensureDemoCart(); alert('已加入示範商品'); });
   </script>
 
-  </main>
-  <footer class="mt-16 border-t py-8 text-center text-sm text-gray-500">
-    © 2025 Osun Beauty & Boutique
-  </footer>
   <script src="assets/osun-flow.js"></script>
   <script>
     // Development helper: confirm OSUN helper loaded
