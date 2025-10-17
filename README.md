@@ -15,6 +15,14 @@
 - `privacy.html`、`shipping.html`、`returns.html`：政策相關靜態頁面。
 - 其他 `.jpg/.png`：示意用圖片資源。
 
+- `js/site.js`：全站多語、購物車、結帳流程與入場動畫邏輯。
+- `js/admin.js`：後台表單的互動邏輯。
+- `assets/osun-flow.js`：購物車 flow 的前端 helper，供多個 checkout 頁面共用（已新增）。
+
+注意：為避免重複載入，專案 root 下原本的 `site.js` 和 `admin.js` 已移至 `archive/`（保留備份）。請確保 HTML 檔案引用 `js/site.js` 與 `js/admin.js` 作為 canonical 檔案來源；若需要還原，請從 `archive/` 複製回 root。
+- `privacy.html`、`shipping.html`、`returns.html`：政策相關靜態頁面。
+- 其他 `.jpg/.png`：示意用圖片資源。
+
 ## 部署方式
 1. 在 GitHub 建立新儲存庫並上傳所有檔案，或直接上傳到任何支援靜態檔案的主機。
 2. 若使用 GitHub Pages：
@@ -28,10 +36,12 @@
 - 多語與購物車狀態會記錄在瀏覽器 localStorage，重新載入仍能保留選擇。
 - 結帳流程使用 sessionStorage 暫存資料，提供密碼註冊、SMS 驗證碼模擬、付款方式與物流節點展示，可依需求串接真實金流與簡訊服務。
 - 後台表單具備密碼鎖與即時預覽，送出後會在頁面顯示整理結果並可匯出 JSON，不會寫入資料庫。
-- 如需與後端整合，可將 `assets/js/site.js` 與 `assets/js/content.js` 的資料來源改為 API 或串接實際 CMS。
+- 如需與後端整合，可將 `js/site.js` 與 `js/content.js` 的資料來源改為 API 或串接實際 CMS。
 
 ## Headless CMS integration
 1. **定義內容模型**：在 Sanity、Contentful、Strapi 等 Headless CMS 中建立與後台相同欄位的模型（首頁 hero、分類輪播、關於我們區塊）。
-2. **串接資料來源**：以 CMS API 取代 `assets/js/content.js` 內的預設資料，並沿用頁面上的 `data-content-*` 屬性進行渲染。
+2. **串接資料來源**：以 CMS API 取代 `js/content.js` 內的預設資料，並沿用頁面上的 `data-content-*` 屬性進行渲染。
 3. **同步後台輸出**：使用後台的 JSON 匯出功能作為初始種子資料，協助建立 CMS 內容。
 4. **自動化佈署**：在 CMS 設定 Webhook，於內容儲存後觸發靜態網站重新部署或清除快取，確保前台即時更新。
+- 後台表單僅示意用途，送出後會在頁面顯示整理結果並可匯出 JSON，不會寫入資料庫。
+- 如需與後端整合，可將 `js/site.js` 中的資料來源改為 API 或串接實際 CMS。
