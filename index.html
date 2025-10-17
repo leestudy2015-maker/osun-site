@@ -65,5 +65,15 @@
     © 2025 Osun Beauty & Boutique
   </footer>
   <script src="assets/osun-flow.js"></script>
+  <script>
+    // Development helper: confirm OSUN helper loaded
+    (function(){
+      if (window.OSUN) {
+        console.info('OSUN loaded — cart helper available.');
+      } else {
+        console.warn('OSUN not found. Ensure assets/osun-flow.js is present and loaded.');
+      }
+    })();
+  </script>
 </body>
 </html>

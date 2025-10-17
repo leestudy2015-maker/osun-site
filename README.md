@@ -10,6 +10,9 @@
 - `admin.html`：後台管理表單，可暫存商品名稱、亮點與圖片檔名。
 - `js/site.js`：全站多語、購物車、結帳流程與入場動畫邏輯。
 - `js/admin.js`：後台表單的互動邏輯。
+- `assets/osun-flow.js`：購物車 flow 的前端 helper，供多個 checkout 頁面共用（已新增）。
+
+注意：為避免重複載入，專案 root 下原本的 `site.js` 和 `admin.js` 已移至 `archive/`（保留備份）。請確保 HTML 檔案引用 `js/site.js` 與 `js/admin.js` 作為 canonical 檔案來源；若需要還原，請從 `archive/` 複製回 root。
 - `privacy.html`、`shipping.html`、`returns.html`：政策相關靜態頁面。
 - 其他 `.jpg/.png`：示意用圖片資源。
 
