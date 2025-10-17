@@ -9,6 +9,7 @@
   <meta property="og:title" content="Osun Beauty | Admin" />
   <meta property="og:description" content="Keep your boutique content fresh with quick notes and exports." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/hero.jpg" />
   <meta property="og:image" content="hero.jpg" />
   <meta property="og:url" content="https://osun.example.com/admin" />
 
@@ -28,6 +29,7 @@
   </script>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="assets/css/site.css" />
   <style>
     html { scroll-behavior: smooth; }
     .shine-btn{ position:relative; overflow:hidden; }
@@ -115,6 +117,9 @@
           </div>
         </div>
         <nav class="mt-10 flex flex-wrap items-center justify-center gap-3" data-aos="fade-up" data-aos-delay="140">
+          <a href="#hero-panel" class="shine-btn rounded-full border border-brand.red bg-rose-50/80 px-5 py-2 text-sm font-semibold text-brand.red hover:bg-rose-100 hover:shadow transition" data-i18n="admin.nav.hero">Homepage</a>
+          <a href="#categories-panel" class="shine-btn rounded-full border border-brand.red bg-rose-50/80 px-5 py-2 text-sm font-semibold text-brand.red hover:bg-rose-100 hover:shadow transition" data-i18n="admin.nav.categories">Categories</a>
+          <a href="#about-panel" class="shine-btn rounded-full border border-brand.red bg-rose-50/80 px-5 py-2 text-sm font-semibold text-brand.red hover:bg-rose-100 hover:shadow transition" data-i18n="admin.nav.about">About page</a>
           <a href="#hero-panel" class="shine-btn rounded-full border border-brand.red px-5 py-2 text-sm font-semibold text-brand.red hover:bg-white hover:shadow transition" data-i18n="admin.nav.hero">Homepage</a>
           <a href="#categories-panel" class="shine-btn rounded-full border border-brand.red px-5 py-2 text-sm font-semibold text-brand.red hover:bg-white hover:shadow transition" data-i18n="admin.nav.categories">Categories</a>
           <a href="#about-panel" class="shine-btn rounded-full border border-brand.red px-5 py-2 text-sm font-semibold text-brand.red hover:bg-white hover:shadow transition" data-i18n="admin.nav.about">About page</a>
@@ -146,12 +151,24 @@
 
         <section class="mt-12 rounded-2xl border border-dashed border-rose-200 bg-rose-50/70 p-6 text-sm text-gray-600" data-aos="fade-up" data-aos-delay="300">
           <h2 class="text-base font-semibold text-brand.red" data-i18n="admin.notes.heading">Publishing notes</h2>
+          <p class="mt-2" data-i18n="admin.notes.desc">Share the exported configuration or manually replace copy within the HTML files. A condensed integration checklist is included below when you are ready to connect a CMS.</p>
           <p class="mt-2" data-i18n="admin.notes.desc">Share the exported configuration or manually replace copy within the HTML files. For rapid updates, coordinate with your developer to connect these inputs to a CMS or headless backend.</p>
           <ul class="mt-4 list-disc space-y-2 pl-5">
             <li><span data-i18n="admin.notes.item1.prefix">Homepage hero updates live in</span> <code class="rounded bg-white px-2 py-1 text-xs text-brand.red">index.html</code></li>
             <li><span data-i18n="admin.notes.item2.prefix">Category cards can be updated in</span> <code class="rounded bg-white px-2 py-1 text-xs text-brand.red">categories.html</code></li>
             <li><span data-i18n="admin.notes.item3.prefix">Founder story copy resides in</span> <code class="rounded bg-white px-2 py-1 text-xs text-brand.red">about.html</code></li>
           </ul>
+        </section>
+
+        <section class="mt-6 rounded-2xl border border-rose-100 bg-white/90 p-6 text-sm text-gray-600" data-aos="fade-up" data-aos-delay="340">
+          <h2 class="text-base font-semibold text-brand.red" data-i18n="admin.integration.heading">Headless CMS integration guide</h2>
+          <p class="mt-2" data-i18n="admin.integration.desc">When you are ready to automate updates, follow the quick plan below or share it with your developer.</p>
+          <ol class="mt-4 list-decimal space-y-2 pl-5">
+            <li data-i18n="admin.integration.step1">Connect a headless CMS such as Sanity, Contentful, or Strapi and recreate the hero, category, and about models that mirror the forms above.</li>
+            <li data-i18n="admin.integration.step2">Replace the demo fetch in <code class="rounded bg-rose-50/80 px-2 py-0.5 text-xs text-brand.red">assets/js/content.js</code> with live API calls, then hydrate the pages using the same data attributes.</li>
+            <li data-i18n="admin.integration.step3">Use the export JSON action as your migration seed and schedule webhooks so content saves trigger a redeploy or cache refresh.</li>
+          </ol>
+          <a href="README.md#headless-cms-integration" class="mt-4 inline-flex items-center text-sm font-semibold text-brand.red hover:underline" data-i18n="admin.integration.link">View the README integration checklist →</a>
         </section>
 
         <div id="admin-result" class="mt-8 hidden rounded-2xl border border-rose-200 bg-rose-50/80 p-5 text-sm text-gray-700"></div>
@@ -212,6 +229,18 @@
     </aside>
   </div>
 
+  <script src="assets/js/content.js"></script>
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/admin.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.OSUN && typeof window.OSUN.initAOS === 'function') {
+        window.OSUN.initAOS();
+      } else if (window.AOS && typeof window.AOS.init === 'function') {
+        window.AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic' });
+      }
+    });
+  </script>
   <script src="js/content.js"></script>
   <script src="js/site.js"></script>
   <script src="js/admin.js"></script>

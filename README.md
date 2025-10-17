@@ -8,6 +8,13 @@
 - `about.html`：品牌故事與創辦人介紹。
 - `checkout.html`：安全結帳頁，含帳戶註冊、手機簡訊驗證、付款方式與物流追蹤示意。
 - `admin.html`：後台管理表單，可暫存商品名稱、亮點與圖片檔名。
+- `assets/css/site.css`：客製化動畫、遮罩與結帳時間軸樣式。
+- `assets/js/site.js`：全站多語、購物車、結帳流程與入場動畫邏輯。
+- `assets/js/admin.js`：後台表單的互動邏輯。
+- `assets/js/content.js`：預設文案與分類項目資料。
+- `privacy.html`、`shipping.html`、`returns.html`：政策相關靜態頁面。
+- 其他 `.jpg/.png`：示意用圖片資源。
+
 - `js/site.js`：全站多語、購物車、結帳流程與入場動畫邏輯。
 - `js/admin.js`：後台表單的互動邏輯。
 - `assets/osun-flow.js`：購物車 flow 的前端 helper，供多個 checkout 頁面共用（已新增）。

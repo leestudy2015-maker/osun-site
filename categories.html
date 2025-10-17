@@ -9,6 +9,7 @@
   <meta property="og:title" content="Osun Beauty | Categories" />
   <meta property="og:description" content="Explore dresses, tops, beauty rituals and lifestyle services." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/hero.jpg" />
   <meta property="og:image" content="hero.jpg" />
   <meta property="og:url" content="https://osun.example.com/categories" />
 
@@ -28,6 +29,7 @@
   </script>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="assets/css/site.css" />
   <style>
     html { scroll-behavior: smooth; }
     .shine-btn{ position:relative; overflow:hidden; }
@@ -191,6 +193,17 @@
     </aside>
   </div>
 
+  <script src="assets/js/content.js"></script>
+  <script src="assets/js/site.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.OSUN && typeof window.OSUN.initAOS === 'function') {
+        window.OSUN.initAOS();
+      } else if (window.AOS && typeof window.AOS.init === 'function') {
+        window.AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic' });
+      }
+    });
+  </script>
   <script src="js/content.js"></script>
   <script src="js/site.js"></script>
 </body>
