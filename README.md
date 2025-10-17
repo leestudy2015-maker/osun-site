@@ -1,12 +1,12 @@
 # Osun Beauty & Boutique 靜態網站
 
-這是一個可直接部署的多頁式展示網站，提供首頁、分類頁、品牌故事、結帳流程以及後台紀錄表單。使用 Tailwind CSS CDN 實作，內建入場動畫、雙語切換、示範購物車與 SMS 驗證結帳體驗，適合快速建立品牌形象頁面。
+這是一個可直接部署的多頁式展示網站，提供首頁、分類頁、品牌故事、結帳流程以及後台紀錄表單。使用 Tailwind CSS CDN 實作，內建入場動畫、雙語切換、示範購物車與完整結帳體驗，適合快速建立品牌形象頁面。
 
 ## 專案結構
 - `index.html`：首頁，包含品牌標語、精選分類、入場動畫及示範購物車。
 - `categories.html`：依分類選購頁面，呈現主要商品分類。
 - `about.html`：品牌故事與創辦人介紹。
-- `checkout.html`：安全結帳頁，含帳戶註冊、手機簡訊驗證、付款方式與物流追蹤示意。
+- `checkout.html`：安全結帳頁，含帳戶註冊、聯絡資訊填寫、付款方式與物流追蹤示意。
 - `checkout-start.html`、`checkout-login.html`、`checkout-info.html`、`checkout-confirm.html`、`checkout-payment.html`、`checkout-success.html`、`checkout-cancel.html`：多頁式結帳示範流程，可體驗登入/訪客註冊、資料填寫、付款與成功/取消頁面。
 - `admin.html`：後台管理表單，可暫存商品名稱、亮點與圖片檔名。
 - `assets/css/site.css`：客製化動畫、遮罩與結帳時間軸樣式。
@@ -45,7 +45,7 @@
 ## 開發說明
 - Tailwind CSS 透過 CDN 載入，方便快速調整樣式。如需最佳化，可改用官方建置流程以移除未使用的樣式。
 - 多語與購物車狀態會記錄在瀏覽器 localStorage，重新載入仍能保留選擇。
-- 結帳流程使用 sessionStorage 暫存資料，提供密碼註冊、SMS 驗證碼模擬、付款方式與物流節點展示，可依需求串接真實金流與簡訊服務。
+- 結帳流程使用 sessionStorage 暫存資料，提供密碼註冊、聯絡資訊填寫、付款方式與物流節點展示，可依需求串接真實金流與簡訊服務。
 - 多頁式結帳會透過 `OSUN.flow` 將購物車與顧客資料儲存在 localStorage；如需正式運作，可改為連結後端 API 或資料庫。
 - 後台表單具備密碼鎖與即時預覽，送出後會在頁面顯示整理結果並可匯出 JSON，不會寫入資料庫。
 - 如需與後端整合，可將 `assets/js/site.js` 與 `assets/js/content.js` 的資料來源改為 API 或串接實際 CMS。
