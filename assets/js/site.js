@@ -80,14 +80,12 @@
       'toast.added': 'Added to cart',
       'checkout.hero.tag': 'Secure checkout',
       'checkout.hero.title': 'Finish your order in three mindful steps.',
-      'checkout.hero.subtitle': 'Register, verify your phone by SMS, choose a payment method, and follow your glow parcel on its way to you.',
+      'checkout.hero.subtitle': 'Sign in, fill in your contact details, choose a payment method, and follow your glow parcel on its way to you.',
       'checkout.hero.secure': 'All payments are encrypted. Card data is never stored.',
       'checkout.progress.title': 'Your journey',
       'checkout.progress.desc': 'Follow the guided steps below. You can return to previous sections anytime.',
       'checkout.progress.account': 'Account',
-      'checkout.progress.account.desc': 'Create profile',
-      'checkout.progress.verify': 'Verify',
-      'checkout.progress.verify.desc': 'SMS confirm',
+      'checkout.progress.account.desc': 'Sign in & details',
       'checkout.progress.shipping': 'Shipping',
       'checkout.progress.shipping.desc': 'Address & delivery',
       'checkout.progress.payment': 'Payment',
@@ -108,6 +106,8 @@
       'checkout.account.sectionDesc': 'Enter your details below to store them for future checkouts.',
       'checkout.account.fullName': 'Full name',
       'checkout.account.fullName.placeholder': 'e.g. Liyana Osman',
+      'checkout.account.phone': 'Contact number',
+      'checkout.account.phone.placeholder': 'e.g. +60 12-345 6789',
       'checkout.account.email': 'Email',
       'checkout.account.email.placeholder': 'you@example.com',
       'checkout.account.password': 'Password',
@@ -125,22 +125,6 @@
       'checkout.login.forgot': 'Forgot password?',
       'checkout.login.error': 'We could not find an account with those details. Please register below.',
       'checkout.login.success': 'Welcome back! Your saved details have been loaded.',
-      'checkout.verify.title': 'Verify your phone number',
-      'checkout.verify.desc': 'We will send a one-time code to keep your parcel updates secure.',
-      'checkout.verify.phone': 'Mobile number',
-      'checkout.verify.phone.placeholder': '+60 12-345 6789',
-      'checkout.verify.send': 'Send SMS',
-      'checkout.verify.code': 'Verification code',
-      'checkout.verify.code.placeholder': 'Enter 6-digit code',
-      'checkout.verify.resend': 'Resend code',
-      'checkout.verify.next': 'Verify & continue',
-      'checkout.verify.sent': 'Demo SMS code {{code}} sent to {{phone}}. Valid for 3 minutes.',
-      'checkout.verify.wait': 'You can resend a code in {{seconds}}s.',
-      'checkout.verify.success': 'Number verified. You can continue.',
-      'checkout.verify.error': 'Please enter the six-digit code we sent to your phone.',
-      'checkout.verify.mismatch': 'That code did not match. Please try again.',
-      'checkout.verify.phoneError': 'Please enter a valid mobile number before requesting a code.',
-      'checkout.verify.expired': 'Your code expired. Please request a new SMS.',
       'checkout.shipping.title': 'Where should we deliver?',
       'checkout.shipping.desc': 'Share your address and choose the delivery speed that fits your week.',
       'checkout.shipping.address': 'Street address',
@@ -193,7 +177,7 @@
       'checkout.summary.empty': 'Your cart is empty. Head back to the boutique to add items.',
       'checkout.success.tag': 'Order placed',
       'checkout.success.title': 'Your glow pieces are on the way',
-      'checkout.success.subtitle': 'Track each milestone below and expect an SMS when your courier is nearby.',
+      'checkout.success.subtitle': 'Track each milestone below and receive timely updates before your courier arrives.',
       'checkout.success.trackingLabel': 'Tracking ID',
       'checkout.tracking.eta': 'Estimated delivery: {{date}}',
       'checkout.tracking.stage.ordered': 'Order confirmed',
@@ -465,14 +449,12 @@
       'toast.added': '已加入購物車',
       'checkout.hero.tag': '安全結帳',
       'checkout.hero.title': '三個步驟完成你的訂單。',
-      'checkout.hero.subtitle': '註冊資料、以 SMS 驗證手機、選擇付款方式，並即時掌握包裹進度。',
+      'checkout.hero.subtitle': '登入後填寫聯絡資料、選擇付款方式，立即掌握包裹進度。',
       'checkout.hero.secure': '全程加密處理，卡號不會被儲存。',
       'checkout.progress.title': '結帳流程',
       'checkout.progress.desc': '依序完成下列步驟，隨時可返回修改。',
       'checkout.progress.account': '帳戶',
-      'checkout.progress.account.desc': '建立資料',
-      'checkout.progress.verify': '驗證',
-      'checkout.progress.verify.desc': '手機簡訊',
+      'checkout.progress.account.desc': '登入與填寫資料',
       'checkout.progress.shipping': '配送',
       'checkout.progress.shipping.desc': '地址與方式',
       'checkout.progress.payment': '付款',
@@ -493,6 +475,8 @@
       'checkout.account.sectionDesc': '填寫以下資料，未來結帳即可直接套用。',
       'checkout.account.fullName': '姓名',
       'checkout.account.fullName.placeholder': '例：Liyana Osman',
+      'checkout.account.phone': '聯絡電話',
+      'checkout.account.phone.placeholder': '例如：0912-345-678',
       'checkout.account.email': '電子郵件',
       'checkout.account.email.placeholder': 'you@example.com',
       'checkout.account.password': '密碼',
@@ -510,22 +494,6 @@
       'checkout.login.forgot': '忘記密碼',
       'checkout.login.error': '查無此帳戶資訊，請於下方完成註冊。',
       'checkout.login.success': '歡迎回來！已載入你的帳戶資料。',
-      'checkout.verify.title': '驗證你的手機號碼',
-      'checkout.verify.desc': '我們會傳送一次性驗證碼，保護配送通知安全。',
-      'checkout.verify.phone': '手機號碼',
-      'checkout.verify.phone.placeholder': '+60 12-345 6789',
-      'checkout.verify.send': '發送簡訊',
-      'checkout.verify.code': '驗證碼',
-      'checkout.verify.code.placeholder': '輸入 6 位數字',
-      'checkout.verify.resend': '重新發送',
-      'checkout.verify.next': '驗證並繼續',
-      'checkout.verify.sent': '示範驗證碼 {{code}} 已傳送至 {{phone}}，有效期限 3 分鐘。',
-      'checkout.verify.wait': '{{seconds}} 秒後可重新發送。',
-      'checkout.verify.success': '已驗證成功，可以繼續下一步。',
-      'checkout.verify.error': '請輸入我們傳送到手機的六位數驗證碼。',
-      'checkout.verify.mismatch': '驗證碼不正確，請再試一次。',
-      'checkout.verify.phoneError': '請先輸入正確的手機號碼再索取驗證碼。',
-      'checkout.verify.expired': '驗證碼已過期，請重新索取簡訊。',
       'checkout.shipping.title': '要寄送到哪裡？',
       'checkout.shipping.desc': '填寫地址並挑選最適合的配送時程。',
       'checkout.shipping.address': '街道地址',
@@ -578,7 +546,7 @@
       'checkout.summary.empty': '購物車為空，歡迎返回商店挑選商品。',
       'checkout.success.tag': '訂單已成立',
       'checkout.success.title': '你的光采商品正在路上',
-      'checkout.success.subtitle': '下方即時更新物流節點，司機抵達前也會發送 SMS。',
+      'checkout.success.subtitle': '下方即時更新物流節點，司機抵達前會提供最新通知。',
       'checkout.success.trackingLabel': '追蹤編號',
       'checkout.tracking.eta': '預估送達時間：{{date}}',
       'checkout.tracking.stage.ordered': '訂單確認',
@@ -589,7 +557,7 @@
       'checkout.tracking.stage.note.ordered': '我們已收到訂單並寄出確認信。',
       'checkout.tracking.stage.note.preparing': '造型團隊正在仔細檢查與包裝你的商品。',
       'checkout.tracking.stage.note.shipped': '物流業者已取件，追蹤資訊即將更新。',
-      'checkout.tracking.stage.note.out': '配送人員抵達前會再以簡訊通知。',
+      'checkout.tracking.stage.note.out': '配送人員抵達前會再與你聯繫。',
       'checkout.tracking.stage.note.pickup': '商品已備妥，可於門市前台取件。',
       'catpage.hero.tag': '精選分類',
       'catpage.hero.title': '滑動探索 OSUN 衣櫥圖書館',
@@ -1272,14 +1240,13 @@
     const root = document.getElementById('checkout-app');
     if (!root) return;
 
-    const stepsOrder = ['account', 'verify', 'shipping', 'payment', 'review'];
+    const stepsOrder = ['account', 'shipping', 'payment', 'review'];
     const progressItems = Array.from(document.querySelectorAll('#checkout-progress [data-step]'));
     const stepElements = Object.fromEntries(stepsOrder.map(step => [step, root.querySelector(`[data-checkout-step="${step}"]`)]));
     const CHECKOUT_STORAGE_KEY = 'osun-checkout-state';
     const ORDER_STORAGE_KEY = 'osun-checkout-order';
     const defaultState = {
-      account: { fullName: '', email: '', password: '', notes: '' },
-      verify: { phone: '', verified: false },
+      account: { fullName: '', phone: '', email: '', password: '', notes: '' },
       shipping: { address: '', city: '', state: '', postcode: '', delivery: 'standard' },
       payment: { method: 'visa', cardName: '', cardNumber: '', cardExpiry: '', cardCvv: '' }
     };
@@ -1295,7 +1262,6 @@
         const parsed = JSON.parse(raw);
         return {
           account: { ...defaultState.account, ...(parsed.account || {}) },
-          verify: { ...defaultState.verify, ...(parsed.verify || {}) },
           shipping: { ...defaultState.shipping, ...(parsed.shipping || {}) },
           payment: { ...defaultState.payment, ...(parsed.payment || {}) }
         };
@@ -1325,39 +1291,26 @@
 
     let state = loadState();
     let currentStepIndex = 0;
-    let smsCode = '';
-    let smsExpiry = 0;
-    let countdownTimer = null;
-    let countdownSeconds = 0;
-    let lastSentCode = '';
-    let lastSentPhone = '';
     let currentOrder = loadOrder();
 
     function computeCurrentStepIndex(){
       if (currentOrder){
-        return 4;
+        return 3;
       }
       if (!state.account.fullName || !state.account.email){
         return 0;
       }
-      if (!state.verify.verified){
+      if (!state.shipping.address || !state.shipping.city || !state.shipping.postcode){
         return 1;
       }
-      if (!state.shipping.address || !state.shipping.city || !state.shipping.postcode){
-        return 2;
-      }
-      return 3;
+      return 2;
     }
 
     currentStepIndex = computeCurrentStepIndex();
 
-    const sendBtn = document.getElementById('checkoutSendCode');
-    const resendBtn = document.getElementById('checkoutResendCode');
-    const statusEl = document.getElementById('checkoutCodeStatus');
     const accountForm = document.getElementById('checkout-account-form');
     const loginForm = document.getElementById('checkout-login-form');
     const loginErrorEl = document.getElementById('checkoutLoginError');
-    const verifyForm = document.getElementById('checkout-verify-form');
     const shippingForm = document.getElementById('checkout-shipping-form');
     const paymentForm = document.getElementById('checkout-payment-form');
     const summaryEl = document.getElementById('checkout-summary');
@@ -1405,14 +1358,12 @@
 
     function hydrateForms(){
       setInputValue('checkoutFullName', state.account.fullName);
+      setInputValue('checkoutAccountPhone', state.account.phone);
       setInputValue('checkoutEmail', state.account.email);
       setInputValue('checkoutPassword', state.account.password);
       setInputValue('checkoutLoginEmail', state.account.email);
       const notes = document.getElementById('checkoutNotes');
       if (notes) notes.value = state.account.notes || '';
-      setInputValue('checkoutPhone', state.verify.phone);
-      const codeInput = document.getElementById('checkoutCode');
-      if (codeInput) codeInput.value = '';
       const address = document.getElementById('checkoutAddress');
       if (address) address.value = state.shipping.address || '';
       setInputValue('checkoutCity', state.shipping.city);
@@ -1431,7 +1382,6 @@
       setInputValue('checkoutCardExpiry', state.payment.cardExpiry);
       setInputValue('checkoutCardCvv', state.payment.cardCvv);
       toggleCardFields();
-      updateStatusMessage();
     }
 
     function toggleCardFields(){
@@ -1447,84 +1397,11 @@
       });
     }
 
-    function disableResend(disabled){
-      if (!resendBtn) return;
-      resendBtn.disabled = disabled;
-      if (disabled){
-        resendBtn.classList.add('pointer-events-none', 'opacity-60');
-      } else {
-        resendBtn.classList.remove('pointer-events-none', 'opacity-60');
-      }
-    }
-
-    function updateStatusMessage(){
-      if (!statusEl) return;
-      if (state.verify.verified){
-        statusEl.textContent = translate('checkout.verify.success');
-        return;
-      }
-      if (lastSentCode && lastSentPhone){
-        const base = translate('checkout.verify.sent', { code: lastSentCode, phone: lastSentPhone });
-        if (countdownSeconds > 0){
-          statusEl.innerHTML = `${base}<br>${translate('checkout.verify.wait', { seconds: countdownSeconds })}`;
-        } else {
-          statusEl.innerHTML = base;
-        }
-      } else {
-        statusEl.textContent = '';
-      }
-    }
-
-    function startCountdown(){
-      countdownSeconds = 45;
-      disableResend(true);
-      updateStatusMessage();
-      if (countdownTimer) clearInterval(countdownTimer);
-      countdownTimer = setInterval(() => {
-        countdownSeconds -= 1;
-        if (countdownSeconds <= 0){
-          clearInterval(countdownTimer);
-          countdownTimer = null;
-          countdownSeconds = 0;
-          disableResend(false);
-          updateStatusMessage();
-        } else {
-          updateStatusMessage();
-        }
-      }, 1000);
-    }
-
-    function stopCountdown(){
-      if (countdownTimer) clearInterval(countdownTimer);
-      countdownTimer = null;
-      countdownSeconds = 0;
-      disableResend(false);
-    }
-
-    function requestSmsCode(){
-      const phoneInput = document.getElementById('checkoutPhone');
-      if (!phoneInput) return;
-      const phone = phoneInput.value.trim();
-      if (!phone){
-        statusEl.textContent = translate('checkout.verify.phoneError');
-        return;
-      }
-      smsCode = String(Math.floor(100000 + Math.random() * 900000));
-      smsExpiry = Date.now() + 3 * 60 * 1000;
-      lastSentCode = smsCode;
-      lastSentPhone = phone;
-      state.verify.phone = phone;
-      state.verify.verified = false;
-      saveState();
-      updateStatusMessage();
-      startCountdown();
-      showToast(translate('checkout.verify.sent', { code: smsCode, phone }));
-    }
-
     function handleAccountSubmit(event){
       event.preventDefault();
       const formData = new FormData(accountForm);
       state.account.fullName = formData.get('fullName')?.toString().trim() || '';
+      state.account.phone = formData.get('phone')?.toString().trim() || '';
       state.account.email = formData.get('email')?.toString().trim() || '';
       state.account.password = formData.get('password')?.toString() || '';
       state.account.notes = formData.get('notes')?.toString().trim() || '';
@@ -1551,38 +1428,6 @@
       showStep(Math.max(1, computeCurrentStepIndex()));
     }
 
-    function handleVerifySubmit(event){
-      event.preventDefault();
-      const phoneInput = document.getElementById('checkoutPhone');
-      const codeInput = document.getElementById('checkoutCode');
-      const phone = phoneInput ? phoneInput.value.trim() : '';
-      const code = codeInput ? codeInput.value.trim() : '';
-      if (!code){
-        statusEl.textContent = translate('checkout.verify.error');
-        return;
-      }
-      if (!smsCode || !phone || phone !== lastSentPhone){
-        statusEl.textContent = translate('checkout.verify.phoneError');
-        return;
-      }
-      if (Date.now() > smsExpiry){
-        statusEl.textContent = translate('checkout.verify.expired');
-        return;
-      }
-      if (code !== smsCode){
-        statusEl.textContent = translate('checkout.verify.mismatch');
-        return;
-      }
-      state.verify.phone = phone;
-      state.verify.verified = true;
-      saveState();
-      stopCountdown();
-      lastSentCode = '';
-      updateStatusMessage();
-      showToast(translate('checkout.verify.success'));
-      showStep(2);
-    }
-
     function handleShippingSubmit(event){
       event.preventDefault();
       const formData = new FormData(shippingForm);
@@ -1592,7 +1437,7 @@
       state.shipping.postcode = formData.get('postcode')?.toString().trim() || '';
       state.shipping.delivery = formData.get('delivery')?.toString() || 'standard';
       saveState();
-      showStep(3);
+      showStep(2);
     }
 
     function formatCardNumber(value){
@@ -1622,7 +1467,7 @@
       }
       saveState();
       renderSummary();
-      showStep(4);
+      showStep(3);
     }
 
     function computeShippingFee(){
@@ -1665,7 +1510,8 @@
           </div>
           <div class="rounded-2xl border border-gray-200 p-4 text-sm text-gray-700">
             <h4 class="text-sm font-semibold text-gray-900 mb-1">${translate('checkout.summary.contact')}</h4>
-            <p>${escapeHtml(state.verify.phone)}</p>
+            <p>${escapeHtml(state.account.phone)}</p>
+            ${state.account.notes ? `<p class="mt-1 text-xs text-gray-500">${escapeHtml(state.account.notes)}</p>` : ''}
           </div>
           <div class="rounded-2xl border border-gray-200 p-4 text-sm text-gray-700">
             <h4 class="text-sm font-semibold text-gray-900 mb-1">${translate('checkout.summary.shipping')}</h4>
@@ -1781,13 +1627,8 @@
       });
     }
     if (accountForm) accountForm.addEventListener('submit', handleAccountSubmit);
-    if (verifyForm) verifyForm.addEventListener('submit', handleVerifySubmit);
     if (shippingForm) shippingForm.addEventListener('submit', handleShippingSubmit);
     if (paymentForm) paymentForm.addEventListener('submit', handlePaymentSubmit);
-    if (sendBtn) sendBtn.addEventListener('click', requestSmsCode);
-    if (resendBtn) resendBtn.addEventListener('click', () => {
-      if (!resendBtn.disabled) requestSmsCode();
-    });
     if (cardNumberInput){
       cardNumberInput.addEventListener('input', event => {
         const target = event.target;
@@ -1830,7 +1671,6 @@
 
     document.addEventListener('osun:langchange', () => {
       updateProgress();
-      updateStatusMessage();
       renderSummary();
       if (loginErrorEl && !loginErrorEl.classList.contains('hidden')){
         loginErrorEl.textContent = translate('checkout.login.error');
