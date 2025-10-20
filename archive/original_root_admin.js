@@ -1,9 +1,6 @@
 const STORAGE_KEY = (window.OSUN_CONTENT && window.OSUN_CONTENT.STORAGE_KEY) || 'osun-content-config';
 const AUTH_KEY = 'osun-admin-auth';
-const LOCK_KEY = 'osun-admin-lock';
-const ADMIN_PASS_HASH = '0cd3ae9c48e1cc5b608cedeb3d7c207b59a53c730ba3f35cf331565edde4ccaf';
-const MAX_LOGIN_ATTEMPTS = 5;
-const LOCK_DURATION_MS = 30000;
+const ADMIN_PASSWORD = 'OsunGlow2024!';
 
 const loginSection = document.getElementById('admin-login');
 const appShell = document.getElementById('admin-app');
@@ -15,7 +12,6 @@ const categoryWrap = document.getElementById('category-manager');
 const addCategoryBtn = document.getElementById('categoryAddItem');
 const aboutWrap = document.getElementById('about-form-wrap');
 const exportBtn = document.getElementById('adminExport');
-const resetBtn = document.getElementById('adminReset');
 const resultBox = document.getElementById('admin-result');
 
 const defaults = window.OSUN_CONTENT && typeof window.OSUN_CONTENT.clone === 'function'
@@ -26,56 +22,11 @@ let adminConfig = loadConfig();
 let activeCategory = 'wardrobe';
 let pendingHeroImage = null;
 let pendingFounderImage = null;
-let failedAttempts = 0;
 
 const languages = ['en', 'zh'];
 
 function clone(obj){
   return JSON.parse(JSON.stringify(obj || {}));
-}
-
-async function hashPassword(value){
-  if (typeof value !== 'string' || !value) return '';
-  try {
-    if (typeof crypto !== 'undefined' && crypto.subtle && typeof TextEncoder !== 'undefined'){
-      const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(value));
-      return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, '0')).join('');
-    }
-  } catch (err){
-    console.warn('Password hashing failed, falling back to lightweight hash.', err);
-  }
-  let hash = 0;
-  for (let i = 0; i < value.length; i += 1){
-    hash = ((hash << 5) - hash) + value.charCodeAt(i);
-    hash |= 0;
-  }
-  return hash.toString(16);
-}
-
-function getLockUntil(){
-  const raw = sessionStorage.getItem(LOCK_KEY);
-  if (!raw) return 0;
-  const parsed = parseInt(raw, 10);
-  if (Number.isNaN(parsed)){
-    sessionStorage.removeItem(LOCK_KEY);
-    return 0;
-  }
-  if (Date.now() >= parsed){
-    sessionStorage.removeItem(LOCK_KEY);
-    return 0;
-  }
-  return parsed;
-}
-
-function setLock(){
-  const until = Date.now() + LOCK_DURATION_MS;
-  sessionStorage.setItem(LOCK_KEY, String(until));
-  failedAttempts = 0;
-  return until;
-}
-
-function formatSeconds(ms){
-  return Math.max(1, Math.ceil(ms / 1000));
 }
 
 function loadConfig(){
@@ -100,23 +51,8 @@ function saveConfig(){
   }
 }
 
-function t(key, vars){
-  if (window.OSUN){
-    if (typeof window.OSUN.translate === 'function'){
-      return window.OSUN.translate(key, vars);
-    }
-    if (typeof window.OSUN.getText === 'function'){
-      let template = window.OSUN.getText(key);
-      if (vars && typeof template === 'string'){
-        Object.keys(vars).forEach(k => {
-          template = template.replace(new RegExp(`{{\s*${k}\s*}}`, 'g'), vars[k]);
-        });
-      }
-      return template;
-    }
-  }
-  if (!vars) return key;
-  return Object.keys(vars).reduce((acc, current) => acc.replace(new RegExp(`{{\s*${current}\s*}}`, 'g'), vars[current]), key);
+function t(key){
+  return (window.OSUN && typeof window.OSUN.getText === 'function') ? window.OSUN.getText(key) : key;
 }
 
 function escapeHtml(value){
@@ -136,7 +72,7 @@ function showResult(messageKey, lines = []){
     ? `<ul class="mt-3 list-disc space-y-1 pl-5">${items.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`
     : '';
   resultBox.innerHTML = `
-    <p class="font-semibold text-brand-red">${escapeHtml(t(messageKey))}</p>
+    <p class="font-semibold text-brand.red">${escapeHtml(t(messageKey))}</p>
     ${listMarkup}
     <p class="mt-4 text-xs text-gray-500">${escapeHtml(t('admin.notes.desc'))}</p>
   `;
@@ -178,22 +114,22 @@ function renderHeroForm(){
       <div class="grid gap-6 md:grid-cols-2">
         ${languages.map(lang => `
           <fieldset class="rounded-2xl border border-rose-100 bg-rose-50/40 p-5 space-y-4">
-            <legend class="text-sm font-semibold text-brand-red">${escapeHtml(t(`admin.language.${lang}`))}</legend>
+            <legend class="text-sm font-semibold text-brand.red">${escapeHtml(t(`admin.language.${lang}`))}</legend>
             <div>
               <label class="block text-sm font-semibold text-gray-700">${escapeHtml(t('admin.field.title'))}</label>
-              <input name="hero-${lang}-title" value="${escapeHtml(hero[lang]?.title || '')}" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand-red focus:outline-none" type="text" />
+              <input name="hero-${lang}-title" value="${escapeHtml(hero[lang]?.title || '')}" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand.red focus:outline-none" type="text" />
             </div>
             <div>
               <label class="block text-sm font-semibold text-gray-700">${escapeHtml(t('admin.field.subtitle'))}</label>
-              <textarea name="hero-${lang}-subtitle" rows="3" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand-red focus:outline-none">${escapeHtml(hero[lang]?.subtitle || '')}</textarea>
+              <textarea name="hero-${lang}-subtitle" rows="3" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand.red focus:outline-none">${escapeHtml(hero[lang]?.subtitle || '')}</textarea>
             </div>
             <div>
               <label class="block text-sm font-semibold text-gray-700">${escapeHtml(t('admin.hero.cta'))}</label>
-              <input name="hero-${lang}-primaryCta" value="${escapeHtml(hero[lang]?.primaryCta || '')}" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand-red focus:outline-none" type="text" />
+              <input name="hero-${lang}-primaryCta" value="${escapeHtml(hero[lang]?.primaryCta || '')}" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand.red focus:outline-none" type="text" />
             </div>
             <div>
               <label class="block text-sm font-semibold text-gray-700">${escapeHtml(t('admin.hero.secondary'))}</label>
-              <input name="hero-${lang}-secondaryCta" value="${escapeHtml(hero[lang]?.secondaryCta || '')}" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand-red focus:outline-none" type="text" />
+              <input name="hero-${lang}-secondaryCta" value="${escapeHtml(hero[lang]?.secondaryCta || '')}" class="mt-1 w-full rounded-lg border border-gray-200 px-4 py-2 focus:border-brand.red focus:outline-none" type="text" />
             </div>
           </fieldset>
         `).join('')}
@@ -220,7 +156,7 @@ function renderHeroForm(){
       </div>
       <div class="flex flex-wrap gap-3">
         <button type="submit" class="shine-btn rounded-full bg-brand.red px-6 py-3 text-sm font-semibold text-white shadow hover:bg-rose-600 transition">${escapeHtml(t('admin.hero.save'))}</button>
-        <button type="button" data-action="reset-hero" class="shine-btn rounded-full border border-brand.red bg-rose-50/80 px-6 py-3 text-sm font-semibold text-brand.red hover:bg-rose-100 hover:shadow transition">${escapeHtml(t('admin.hero.reset'))}</button>
+        <button type="button" data-action="reset-hero" class="shine-btn rounded-full border border-brand.red px-6 py-3 text-sm font-semibold text-brand.red hover:bg-white hover:shadow transition">${escapeHtml(t('admin.hero.reset'))}</button>
       </div>
     </form>
   `;
@@ -317,7 +253,7 @@ function renderCategoryManager(){
     <div class="flex flex-wrap gap-3" role="tablist">
       ${Object.keys(groups).map(key => {
         const active = key === activeCategory;
-        return `<button type="button" data-category-tab="${key}" class="shine-btn rounded-full ${active ? 'bg-brand.red text-white shadow' : 'border border-brand.red bg-rose-50/80 text-brand.red hover:bg-rose-100 hover:shadow'} px-4 py-2 text-sm font-semibold">${escapeHtml(groupLabel(key))}</button>`;
+        return `<button type="button" data-category-tab="${key}" class="shine-btn rounded-full ${active ? 'bg-brand.red text-white shadow' : 'border border-brand.red text-brand.red hover:bg-white hover:shadow'} px-4 py-2 text-sm font-semibold">${escapeHtml(groupLabel(key))}</button>`;
       }).join('')}
     </div>
     <div id="categoryItemsWrap" class="mt-6 space-y-6">
@@ -325,7 +261,7 @@ function renderCategoryManager(){
     </div>
     <div class="mt-6 flex flex-wrap gap-3">
       <button type="button" class="shine-btn rounded-full bg-brand.red px-6 py-3 text-sm font-semibold text-white shadow hover:bg-rose-600 transition" data-action="save-category">${escapeHtml(t('admin.categories.save'))}</button>
-      <button type="button" class="shine-btn rounded-full border border-brand.red bg-rose-50/80 px-6 py-3 text-sm font-semibold text-brand.red hover:bg-rose-100 hover:shadow transition" data-action="add-item">${escapeHtml(t('admin.categories.add'))}</button>
+      <button type="button" class="shine-btn rounded-full border border-brand.red px-6 py-3 text-sm font-semibold text-brand.red hover:bg-white hover:shadow transition" data-action="add-item">${escapeHtml(t('admin.categories.add'))}</button>
     </div>
   `;
 
@@ -790,7 +726,7 @@ function renderAboutForm(){
 
       <div class="flex flex-wrap gap-3">
         <button type="submit" class="shine-btn rounded-full bg-brand.red px-6 py-3 text-sm font-semibold text-white shadow hover:bg-rose-600 transition">${escapeHtml(t('admin.about.save'))}</button>
-        <button type="button" data-action="reset-about" class="shine-btn rounded-full border border-brand.red bg-rose-50/80 px-6 py-3 text-sm font-semibold text-brand.red hover:bg-rose-100 hover:shadow transition">${escapeHtml(t('admin.about.reset'))}</button>
+        <button type="button" data-action="reset-about" class="shine-btn rounded-full border border-brand.red px-6 py-3 text-sm font-semibold text-brand.red hover:bg-white hover:shadow transition">${escapeHtml(t('admin.about.reset'))}</button>
       </div>
     </form>
   `;
@@ -960,52 +896,21 @@ function unlockAdmin(){
   if (loginSection) loginSection.classList.add('hidden');
   if (appShell) appShell.classList.remove('hidden');
   if (resultBox) resultBox.classList.add('hidden');
-  if (loginError){
-    loginError.classList.add('hidden');
-    loginError.textContent = t('admin.login.success');
-  }
   renderHeroForm();
   renderCategoryManager();
   renderAboutForm();
 }
 
-function showLockMessage(until){
-  if (!loginError) return;
-  const remainingMs = Math.max(0, until - Date.now());
-  loginError.textContent = t('admin.login.locked', { seconds: formatSeconds(remainingMs) });
-  loginError.classList.remove('hidden');
-}
-
-async function handleLoginSubmit(event){
+function handleLoginSubmit(event){
   event.preventDefault();
-  const lockUntil = getLockUntil();
-  if (lockUntil){
-    showLockMessage(lockUntil);
-    return;
-  }
   const password = passwordField ? passwordField.value.trim() : '';
-  const hashed = await hashPassword(password);
-  if (hashed === ADMIN_PASS_HASH){
+  if (password === ADMIN_PASSWORD){
     sessionStorage.setItem(AUTH_KEY, '1');
-    sessionStorage.removeItem(LOCK_KEY);
-    failedAttempts = 0;
     if (loginError) loginError.classList.add('hidden');
     if (passwordField) passwordField.value = '';
-    showResult('admin.login.successTitle', [t('admin.login.success')]);
     unlockAdmin();
-    return;
-  }
-
-  failedAttempts += 1;
-  if (failedAttempts >= MAX_LOGIN_ATTEMPTS){
-    const until = setLock();
-    showLockMessage(until);
-    return;
-  }
-
-  if (loginError){
-    loginError.textContent = t('admin.login.error');
-    loginError.classList.remove('hidden');
+  } else {
+    if (loginError) loginError.classList.remove('hidden');
   }
 }
 
@@ -1027,13 +932,7 @@ function initAdmin(){
   } else {
     if (loginSection) loginSection.classList.remove('hidden');
     if (appShell) appShell.classList.add('hidden');
-    const lockUntil = getLockUntil();
-    if (lockUntil){
-      showLockMessage(lockUntil);
-    } else if (loginError){
-      loginError.classList.add('hidden');
-      loginError.textContent = t('admin.login.error');
-    }
+    if (loginError) loginError.classList.add('hidden');
   }
 }
 
